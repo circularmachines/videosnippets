@@ -16,6 +16,7 @@
 
             socket.onopen = function() {
                 console.log('WebSocket connection established');
+                socket.send('Hello from client');
             };
 
             socket.onmessage = function(event) {

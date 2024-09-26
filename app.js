@@ -159,4 +159,15 @@ document.addEventListener('DOMContentLoaded', () => {
             audioContext.close();
         }
     });
+
+    // WebSocket setup
+    const socket = new WebSocket('ws://localhost:8765/ws');
+    const outputFiles = document.getElementById('output-files');
+
+    socket.onmessage = function(event) {
+        const filename = event.data;
+        const fileElement = document.createElement('p');
+        fileElement.textContent = `New file created: ${filename}`;
+        outputFiles.appendChild(fileElement);
+    };
 });

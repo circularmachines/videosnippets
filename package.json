@@ -7,5 +7,9 @@
     "devDependencies": {
       "webpack": "^5.95.0",
       "webpack-cli": "^5.1.4"
+    },
+    "dependencies": {
+      "watchdog": "^1.0.2",
+      "websockets": "^9.1.0"
     }
 }

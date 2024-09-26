@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, send_from_directory
+from flask import Flask, send_from_directory
 from threading import Thread
 import asyncio
 from aiohttp import web
@@ -7,32 +7,13 @@ from aiohttp import web
 # Flask app setup
 flask_app = Flask(__name__, static_folder='.')
 
-UPLOAD_FOLDER = 'uploads'
-if not os.path.exists(UPLOAD_FOLDER):
-    os.makedirs(UPLOAD_FOLDER)
-
 @flask_app.route('/')
 def index():
     return send_from_directory('.', 'index.html')
 
-@flask_app.route('/<path:path>')
-def serve_file(path):
-    return send_from_directory('.', path)
-
-@flask_app.route('/upload', methods=['POST'])
-def upload_video():
-    if 'video' not in request.files:
-        return 'No video file', 400
-    
-    video = request.files['video']
-    filename = video.filename
-
-    if filename == '':
-        return 'No selected file', 400
-    
-    if video:
-        video.save(os.path.join(UPLOAD_FOLDER, filename))
-        return 'File uploaded successfully', 200
+def run_flask():
+    print("Starting Flask server at http://127.0.0.1:5000")
+    flask_app.run(debug=True, use_reloader=False)
 
 # aiohttp WebSocket setup
 async def websocket_handler(request):
@@ -62,10 +43,6 @@ async def run_aiohttp():
             await asyncio.sleep(3600)
     except asyncio.CancelledError:
         pass
-
-def run_flask():
-    print("Starting Flask server at http://127.0.0.1:5000")
-    flask_app.run(debug=True, use_reloader=False)
 
 def main():
     flask_thread = Thread(target=run_flask)
