@@ -98,36 +98,43 @@ document.addEventListener('DOMContentLoaded', () => {
         mediaRecorder.onstop = async () => {
             const blob = new Blob(recordedChunks, { type: 'video/webm' });
             
-            // Create a timestamped filename
-            const timestamp = new Date().toISOString().replace(/[:.]/g, '-'); // Format timestamp
+            const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
             const filename = `recording-${timestamp}.webm`;
             
-            // Log the filename to the console
             console.log('Saving video as:', filename);
 
-            // Create a FormData object and append the blob
             const formData = new FormData();
-            formData.append('video', blob, filename); // Ensure filename is included
-            formData.append('filename', filename); // Add filename to FormData
+            formData.append('video', blob, filename);
+            formData.append('filename', filename);
 
             try {
-                // Send the video to the server
                 const response = await fetch('/upload', {
                     method: 'POST',
                     body: formData
                 });
 
                 if (response.ok) {
+                    const data = await response.json();
                     console.log('Video uploaded successfully');
+                    console.log('Altered filename:', data.alteredFilename);
+                    
+                    // Display the altered filename on the page
+                    const alteredFilenameElement = document.getElementById('alteredFilename');
+                    if (alteredFilenameElement) {
+                        alteredFilenameElement.textContent = `Altered filename: ${data.alteredFilename}`;
+                    } else {
+                        console.error('Element with id "alteredFilename" not found');
+                    }
                 } else {
-                    console.error('Failed to upload video');
+                    const errorData = await response.json();
+                    console.error('Failed to upload video:', errorData.error);
                 }
             } catch (error) {
                 console.error('Error uploading video:', error);
             }
 
             // Start a new recording immediately
-            startRecording(); // Start new recording
+            startRecording();
         };
 
         mediaRecorder.start();

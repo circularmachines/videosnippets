@@ -1,11 +1,30 @@
-from flask import Flask, request, send_from_directory
+from flask import Flask, request, send_from_directory, jsonify
 import os
+from watchdog.observers import Observer
+from watchdog.events import FileSystemEventHandler
+import time
 
 app = Flask(__name__, static_folder='.')
 
 UPLOAD_FOLDER = 'uploads'
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
+
+def alter_string(filename):
+    return filename[::-1]  # Reverse the filename
+
+class FileHandler(FileSystemEventHandler):
+    def on_created(self, event):
+        if not event.is_directory:
+            filename = os.path.basename(event.src_path)
+            print(f"New file detected: {filename}")
+            altered_filename = alter_string(filename)
+            print(f"Altered filename: {altered_filename}")
+
+file_handler = FileHandler()
+observer = Observer()
+observer.schedule(file_handler, path=UPLOAD_FOLDER, recursive=False)
+observer.start()
 
 @app.route('/')
 def index():
@@ -18,18 +37,29 @@ def serve_file(path):
 @app.route('/upload', methods=['POST'])
 def upload_video():
     if 'video' not in request.files:
-        return 'No video file', 400
+        return jsonify({'error': 'No video file'}), 400
     
     video = request.files['video']
-    filename = video.filename  # Get the filename from the request
+    filename = video.filename
 
     if filename == '':
-        return 'No selected file', 400
+        return jsonify({'error': 'No selected file'}), 400
     
     if video:
         # Save the video with the provided filename
         video.save(os.path.join(UPLOAD_FOLDER, filename))
-        return 'File uploaded successfully', 200
+        
+        # Process the filename
+        altered_filename = alter_string(filename)
+        
+        return jsonify({
+            'message': 'File uploaded successfully',
+            'alteredFilename': altered_filename
+        }), 200
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    try:
+        app.run(debug=True)
+    finally:
+        observer.stop()
+        observer.join()
