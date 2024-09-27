@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM content loaded');
 
+    // Parameters
+    const audioDetectionIntervalTime = 50; // Interval time in milliseconds
+    const audioThreshold = 5; // Audio detection threshold
+
     let mediaRecorder;
     let recordedChunks = [];
     let audioContext;
@@ -48,17 +52,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const bufferLength = analyser.frequencyBinCount;
         const dataArray = new Uint8Array(bufferLength);
         let audioDetected = false; // Track if audio was detected
+        let wasRed = true; // Track if the last state was red
         let wasYellow = false; // Track if the last state was yellow
 
         audioDetectionInterval = setInterval(() => {
             analyser.getByteFrequencyData(dataArray);
             const average = dataArray.reduce((sum, value) => sum + value, 0) / bufferLength;
 
-            if (average > 5) { // Adjust this threshold as needed
+            if (average > audioThreshold) { // Use parameter for threshold
                 audioIndicator.textContent = 'Audio Detected';
                 audioIndicator.style.backgroundColor = 'green'; // Green for audio on
                 audioDetected = true; // Set audio detected state
-                wasYellow = false; // Reset yellow state
+                
+                //if (wasRed) {startRecording();}
+                wasRed = false;
+
             } else {
                 if (audioDetected) {
                     audioIndicator.textContent = 'Audio Detected (Delayed)';
@@ -77,10 +85,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     } else {
                         audioIndicator.textContent = 'No Audio';
                         audioIndicator.style.backgroundColor = 'red'; // Red for no audio
+                        wasRed = true;
                     }
                 }
             }
-        }, 100);
+        }, audioDetectionIntervalTime); // Use parameter for interval time
     }
 
     function startRecording() {
@@ -142,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Start a new recording immediately
-            startRecording();
+            //startRecording();
         };
 
         mediaRecorder.start();
