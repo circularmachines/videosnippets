@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Parameters
     const audioDetectionIntervalTime = 50; // Interval time in milliseconds
     const audioThreshold = 5; // Audio detection threshold
+    const scrollDelay = 200; // Delay before scrolling in milliseconds
 
     let mediaRecorder;
     let recordedChunks = [];
@@ -26,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function scrollToBottom() {
         setTimeout(() => {
             resultsContainer.scrollTop = resultsContainer.scrollHeight;
-        }, 500); // 500ms delay
+        }, scrollDelay);
     }
 
     async function startWebcam() {
@@ -134,17 +135,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     const resultElement = document.createElement('div');
                     resultElement.className = 'result-item';
                     
-                    // Add transcription
-                    const transcriptionElement = document.createElement('p');
-                    transcriptionElement.textContent = `Transcription: ${data.transcription}`;
-                    resultElement.appendChild(transcriptionElement);
+                    // Create a container for the image and transcription
+                    const contentContainer = document.createElement('div');
+                    contentContainer.className = 'content-container';
+                    resultElement.appendChild(contentContainer);
 
                     // Add image
                     const frameImageElement = document.createElement('img');
                     frameImageElement.src = `data:image/jpeg;base64,${data.image}`;
                     frameImageElement.alt = 'Frame Image';
-                    frameImageElement.style.maxWidth = '100%';
-                    resultElement.appendChild(frameImageElement);
+                    frameImageElement.className = 'result-image';
+                    contentContainer.appendChild(frameImageElement);
+
+                    // Add transcription
+                    const transcriptionElement = document.createElement('p');
+                    transcriptionElement.textContent = `${data.transcription}`;
+                    transcriptionElement.className = 'result-transcription';
+                    contentContainer.appendChild(transcriptionElement);
 
                     // Add the new result to the container
                     resultsContainer.appendChild(resultElement);
