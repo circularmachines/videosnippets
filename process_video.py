@@ -1,6 +1,7 @@
 #import moviepy.editor as mp
 import cv2
 import base64
+from pydub import AudioSegment, silence  # Add these imports
 
 from audio_extract import extract_audio
 
@@ -19,6 +20,7 @@ load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 import imageio
+import ffmpeg  # Add this import
 
 def process_video(video_path):
     start_time = time.time()  # Start timing
@@ -52,41 +54,55 @@ def process_video(video_path):
 
     print(f"One frame extraction took {time.time() - start_time:.2f} seconds")
 
-    """
-    gif_start_time = time.time()  # Start timing for GIF creation
-    
-    while ret:
-        if frame_count % 10 == 0:  # Read every tenth frame
-            frames.append(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))  # Convert BGR to RGB
-        frame_count += 1
-        ret, frame = cap.read()
-    
-    cap.release()
-    
-    print(f"multiple Frame extraction took {time.time() - start_time:.2f} seconds")  # Log timing
-
-    if frames:
-        gif_start_time = time.time()  # Start timing for GIF creation
-        # Create an animated GIF
-        gif_path = f"./gifs/animation_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.gif"
-        imageio.mimsave(gif_path, frames, format='GIF', duration=0.1)
-        
-        # Encode the GIF to base64
-        with open(gif_path, "rb") as gif_file:
-            encoded_gif = base64.b64encode(gif_file.read()).decode('utf-8')
-        print(f"GIF creation and encoding took {time.time() - gif_start_time:.2f} seconds")  # Log timing
-    else:
-        print("Error: Could not read frames.")
-        encoded_gif = None
-    """
-
     audio_start_time = time.time()  # Start timing for audio extraction
     audio_path = f"./audio/temp_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.mp3"
     extract_audio(input_path=video_path, output_path=audio_path)
     print(f"Audio extraction took {time.time() - audio_start_time:.2f} seconds")  # Log timing
-    
-    transcription_start_time = time.time()  # Start timing for transcription
+
+    trim_start_time = time.time()
+
+    # Load the extracted audio
+    audio = AudioSegment.from_file(audio_path)
+
+    # Detect non-silent chunks
+    non_silent_chunks = silence.detect_nonsilent(audio, min_silence_len=100, silence_thresh=-40)
+
+    if non_silent_chunks:
+        # Get the start and end of the first and last non-silent chunks
+        start_trim = max(0, non_silent_chunks[0][0])
+        end_trim = min(len(audio), non_silent_chunks[-1][1])
+
+        original_audio_length = len(audio) / 1000
+        new_audio_length = (end_trim - start_trim) / 1000
+        print(f"trimmed audio from {original_audio_length} to {new_audio_length}")
+
+        # Trim the audio
+        trimmed_audio = audio[start_trim:end_trim]
+
+        # Save the trimmed audio
+        trimmed_audio_path = f"./audio/trimmed_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.mp3"
+        trimmed_audio.export(trimmed_audio_path, format="mp3")
+        audio_path = trimmed_audio_path  # Update the audio path to the trimmed audio
+
+        """# Trim the video using ffmpeg
+        video_trim_start_time = time.time()  # Start timing for video trimming
+        trimmed_video_path = f"./videos/trimmed_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.webm"
+        (
+            ffmpeg
+            .input(video_path, ss=start_trim / 1000, to=end_trim / 1000)
+            .output(trimmed_video_path)
+            .run()
+        )
+        print(f"Video trimming took {time.time() - video_trim_start_time:.2f} seconds")  # Log timing
+        video_path = trimmed_video_path  # Update the video path to the trimmed video"""
+
+    else:
+        print("Error: No non-silent chunks found in the audio.")
+
+    print(f"Audio trimming took {time.time() - trim_start_time:.2f} seconds")  # Log timing
+
     # Transcribe audio using OpenAI Whisper
+    transcription_start_time = time.time()  # Start timing for transcription
     with open(audio_path, "rb") as audio_file:
         response = client.audio.transcriptions.create(
             model="whisper-1",
