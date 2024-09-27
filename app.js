@@ -116,14 +116,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (response.ok) {
                     const data = await response.json();
                     console.log('Video uploaded successfully');
-                    console.log('Altered filename:', data.alteredFilename);
+                    console.log('Transcription:', data.transcription);
                     
-                    // Display the altered filename on the page
-                    const alteredFilenameElement = document.getElementById('alteredFilename');
-                    if (alteredFilenameElement) {
-                        alteredFilenameElement.textContent = `Altered filename: ${data.alteredFilename}`;
+                    // Display the transcription on the page
+                    const transcriptionElement = document.getElementById('transcription');
+                    if (transcriptionElement) {
+                        transcriptionElement.textContent = `Transcription: ${data.transcription}`;
                     } else {
-                        console.error('Element with id "alteredFilename" not found');
+                        console.error('Element with id "transcription" not found');
+                    }
+
+                    // Display the image on the page
+                    const frameImageElement = document.getElementById('frameImage');
+                    if (frameImageElement) {
+                        frameImageElement.src = `data:image/jpeg;base64,${data.image}`;
+                    } else {
+                        console.error('Element with id "frameImage" not found');
                     }
                 } else {
                     const errorData = await response.json();

@@ -4,6 +4,8 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import time
 
+import process_video
+
 app = Flask(__name__, static_folder='.')
 
 UPLOAD_FOLDER = 'uploads'
@@ -46,15 +48,17 @@ def upload_video():
         return jsonify({'error': 'No selected file'}), 400
     
     if video:
+        video_path = os.path.join(UPLOAD_FOLDER, filename)
         # Save the video with the provided filename
-        video.save(os.path.join(UPLOAD_FOLDER, filename))
+        video.save(video_path)
         
-        # Process the filename
-        altered_filename = alter_string(filename)
+        # Process the video
+        transcription, encoded_image = process_video.process_video(video_path)
         
         return jsonify({
             'message': 'File uploaded successfully',
-            'alteredFilename': altered_filename
+            'transcription': transcription,
+            'image': encoded_image
         }), 200
 
 if __name__ == '__main__':

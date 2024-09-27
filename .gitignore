@@ -4,3 +4,6 @@ node_modules
 uploads
 dist
 simple
+__pycache__
+audio
+frames

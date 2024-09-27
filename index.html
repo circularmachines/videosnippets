@@ -28,6 +28,11 @@
             margin-top: 20px;
             font-weight: bold;
         }
+        #frameImage {
+            margin-top: 20px;
+            max-width: 640px;
+            max-height: 360px;
+        }
     </style>
 </head>
 <body>
@@ -38,7 +43,8 @@
         <button id="stopButton" disabled>Stop Recording</button>
     </div>
     <div id="audioIndicator"></div>
-    <div id="alteredFilename"></div>
+    <div id="transcription"></div>
+    <img id="frameImage" src="" alt="Frame Image" />
 
     <script src="dist/bundle.js"></script>
 </body>
