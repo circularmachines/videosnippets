@@ -14,18 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const localVideo = document.getElementById('localVideo');
     const startButton = document.getElementById('startButton');
     const stopButton = document.getElementById('stopButton');
-
-    // Add a new element for audio indicator
-    const audioIndicator = document.createElement('div');
-    audioIndicator.id = 'audioIndicator';
-    audioIndicator.style.padding = '10px';
-    audioIndicator.style.marginTop = '10px';
-    audioIndicator.style.border = '1px solid black';
-    document.body.insertBefore(audioIndicator, startButton.parentNode);
+    const audioIndicator = document.getElementById('audioIndicator');
 
     console.log('localVideo element:', localVideo);
     console.log('startButton element:', startButton);
     console.log('stopButton element:', stopButton);
+    console.log('audioIndicator element:', audioIndicator);
 
     async function startWebcam() {
         try {
@@ -33,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
             console.log('Got media stream:', stream);
             localVideo.srcObject = stream;
+            localVideo.play(); // Explicitly play the video
             console.log('Webcam started successfully');
 
             // Set up audio analysis
@@ -127,21 +122,25 @@ document.addEventListener('DOMContentLoaded', () => {
                     console.log('Video uploaded successfully');
                     console.log('Transcription:', data.transcription);
                     
-                    // Display the transcription on the page
-                    const transcriptionElement = document.getElementById('transcription');
-                    if (transcriptionElement) {
-                        transcriptionElement.textContent = `Transcription: ${data.transcription}`;
-                    } else {
-                        console.error('Element with id "transcription" not found');
-                    }
+                    // Create a new result element
+                    const resultElement = document.createElement('div');
+                    resultElement.className = 'result-item';
+                    
+                    // Add transcription
+                    const transcriptionElement = document.createElement('p');
+                    transcriptionElement.textContent = `Transcription: ${data.transcription}`;
+                    resultElement.appendChild(transcriptionElement);
 
-                    // Display the image on the page
-                    const frameImageElement = document.getElementById('frameImage');
-                    if (frameImageElement) {
-                        frameImageElement.src = `data:image/jpeg;base64,${data.image}`;
-                    } else {
-                        console.error('Element with id "frameImage" not found');
-                    }
+                    // Add image
+                    const frameImageElement = document.createElement('img');
+                    frameImageElement.src = `data:image/jpeg;base64,${data.image}`;
+                    frameImageElement.alt = 'Frame Image';
+                    frameImageElement.style.maxWidth = '100%';
+                    resultElement.appendChild(frameImageElement);
+
+                    // Add the new result to the container
+                    const resultsContainer = document.getElementById('resultsContainer');
+                    resultsContainer.insertBefore(resultElement, resultsContainer.firstChild);
                 } else {
                     const errorData = await response.json();
                     console.error('Failed to upload video:', errorData.error);

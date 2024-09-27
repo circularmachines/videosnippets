@@ -7,44 +7,61 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             padding: 20px;
         }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .webcam-column {
+            flex: 1;
+        }
+        .results-column {
+            flex: 1;
+            max-height: 80vh;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
         video {
-            width: 640px;
-            height: 360px;
+            width: 100%;
+            max-width: 640px;
+            height: auto;
             background-color: #000;
             margin-bottom: 20px;
         }
         button {
             font-size: 16px;
             padding: 10px 20px;
-            margin: 0 10px;
+            margin: 0 10px 10px 0;
             cursor: pointer;
         }
-        #alteredFilename {
-            margin-top: 20px;
-            font-weight: bold;
+        #audioIndicator {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid black;
         }
         #frameImage {
-            margin-top: 20px;
-            max-width: 640px;
-            max-height: 360px;
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
 <body>
     <h1>Webcam Recorder</h1>
-    <video id="localVideo" autoplay muted playsinline></video>
-    <div>
-        <button id="startButton">Start Recording</button>
-        <button id="stopButton" disabled>Stop Recording</button>
+    <div class="container">
+        <div class="webcam-column">
+            <video id="localVideo" autoplay muted playsinline></video>
+            <div>
+                <button id="startButton">Start Recording</button>
+                <button id="stopButton" disabled>Stop Recording</button>
+            </div>
+            <div id="audioIndicator"></div>
+        </div>
+        <div class="results-column" id="resultsContainer">
+            <!-- Transcriptions and screenshots will be added here -->
+        </div>
     </div>
-    <div id="audioIndicator"></div>
-    <div id="transcription"></div>
-    <img id="frameImage" src="" alt="Frame Image" />
 
     <script src="dist/bundle.js"></script>
 </body>
