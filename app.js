@@ -21,6 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('stopButton element:', stopButton);
     console.log('audioIndicator element:', audioIndicator);
 
+    const resultsContainer = document.getElementById('resultsContainer');
+
+    function scrollToBottom() {
+        setTimeout(() => {
+            resultsContainer.scrollTop = resultsContainer.scrollHeight;
+        }, 500); // 500ms delay
+    }
+
     async function startWebcam() {
         try {
             console.log('Starting webcam...');
@@ -139,8 +147,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     resultElement.appendChild(frameImageElement);
 
                     // Add the new result to the container
-                    const resultsContainer = document.getElementById('resultsContainer');
-                    resultsContainer.insertBefore(resultElement, resultsContainer.firstChild);
+                    resultsContainer.appendChild(resultElement);
+
+                    // Scroll to the bottom of the results container after a delay
+                    scrollToBottom();
                 } else {
                     const errorData = await response.json();
                     console.error('Failed to upload video:', errorData.error);
@@ -182,4 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
             audioContext.close();
         }
     });
+
+    // Scroll to bottom on page load
+    scrollToBottom();
 });

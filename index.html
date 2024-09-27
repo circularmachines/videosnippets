@@ -19,9 +19,10 @@
         .results-column {
             flex: 1;
             max-height: 80vh;
-            overflow-y: auto;
+            overflow-y: scroll; /* Changed from auto to scroll */
             border: 1px solid #ccc;
             padding: 10px;
+            scroll-behavior: smooth; /* Add smooth scrolling */
         }
         video {
             width: 100%;
@@ -44,6 +45,13 @@
         #frameImage {
             max-width: 100%;
             height: auto;
+        }
+        @keyframes highlight {
+            0% { background-color: yellow; }
+            100% { background-color: transparent; }
+        }
+        .result-item {
+            animation: highlight 2s ease-out;
         }
     </style>
 </head>
