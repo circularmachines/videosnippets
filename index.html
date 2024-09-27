@@ -3,32 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webcam Recorder</title>
+    <title>VideoSnippets</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             padding: 20px;
+            background-color: #f4f4f9;
+            color: #333;
         }
         .container {
             display: flex;
             gap: 20px;
+            height: 60vh; /* Fixed height for the container */
+        }
+        .webcam-column, .results-column {
+            flex: 1;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            overflow-y: auto; /* Ensure content scrolls within the fixed height */
         }
         .webcam-column {
-            flex: 1;
-        }
-        .results-column {
-            flex: 1;
-            max-height: 80vh;
-            overflow-y: scroll; /* Changed from auto to scroll */
-            border: 1px solid #ccc;
-            padding: 10px;
-            scroll-behavior: smooth; /* Add smooth scrolling */
+            display: flex;
+            flex-direction: column;
         }
         video {
             width: 100%;
             max-width: 640px;
             height: auto;
             background-color: #000;
+            border-radius: 8px;
             margin-bottom: 20px;
         }
         button {
@@ -36,15 +41,26 @@
             padding: 10px 20px;
             margin: 0 10px 10px 0;
             cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
         }
         #audioIndicator {
             margin-top: 10px;
             padding: 10px;
-            border: 1px solid black;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f9fa;
         }
         #frameImage {
             max-width: 100%;
             height: auto;
+            border-radius: 4px;
         }
         @keyframes highlight {
             0% { background-color: yellow; }
@@ -53,27 +69,32 @@
         .result-item {
             animation: highlight 2s ease-out;
             margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-
         .content-container {
             display: flex;
             align-items: flex-start;
         }
-
         .result-image {
-            width: 100px; /* Adjust this value to change the image size */
+            width: 100px;
             height: auto;
             margin-right: 10px;
+            border-radius: 4px;
         }
-
         .result-transcription {
             flex: 1;
             margin: 0;
         }
+        h1 {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-    <h1>Webcam Recorder</h1>
+    <h1>VideoSnippets</h1>
     <div class="container">
         <div class="webcam-column">
             <video id="localVideo" autoplay muted playsinline></video>
