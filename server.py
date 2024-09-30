@@ -1,16 +1,17 @@
 from flask import Flask, request, send_from_directory, jsonify
 import os
-#from watchdog.observers import Observer
-#from watchdog.events import FileSystemEventHandler
-import time
-
+import threading
 import process_video
+import json
 
 app = Flask(__name__, static_folder='.')
 
 UPLOAD_FOLDER = 'uploads'
+RESULTS_FOLDER = 'results'
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
+if not os.path.exists(RESULTS_FOLDER):
+    os.makedirs(RESULTS_FOLDER)
 
 """def alter_string(filename):
     return filename[::-1]  # Reverse the filename
@@ -48,19 +49,47 @@ def upload_video():
         return jsonify({'error': 'No selected file'}), 400
     
     if video:
-        print("video", video)
         video_path = os.path.join(UPLOAD_FOLDER, filename)
         # Save the video with the provided filename
         video.save(video_path)
         
-        # Process the video
-        transcription, encoded_image = process_video.process_video(video_path)
+        # Start processing the video in a separate thread
+        thread = threading.Thread(target=process_video_async, args=(video_path,))
+        thread.start()
         
         return jsonify({
-            'message': 'File uploaded successfully',
+            'message': 'File uploaded successfully, processing started',
+            'filename': filename
+        }), 202  # 202 Accepted status code
+
+def process_video_async(video_path):
+    filename = os.path.basename(video_path)
+    result_path = os.path.join(RESULTS_FOLDER, f"{filename}.json")
+    
+    # Save initial status
+    with open(result_path, 'w') as f:
+        json.dump({'status': 'processing'}, f)
+    
+    transcription, encoded_image = process_video.process_video(video_path)
+    
+    # Save results
+    with open(result_path, 'w') as f:
+        json.dump({
+            'status': 'completed',
             'transcription': transcription,
             'image': encoded_image
-        }), 200
+        }, f)
+    
+    print(f"Processing completed for {video_path}")
+
+@app.route('/check_status/<filename>', methods=['GET'])
+def check_status(filename):
+    result_path = os.path.join(RESULTS_FOLDER, f"{filename}.json")
+    if os.path.exists(result_path):
+        with open(result_path, 'r') as f:
+            return jsonify(json.load(f))
+    else:
+        return jsonify({'status': 'not_found'}), 404
 
 if __name__ == '__main__':
     try:

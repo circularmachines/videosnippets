@@ -1,3 +1,10 @@
+function scrollToBottom() {
+    setTimeout(() => {
+        const resultsContainer = document.getElementById('resultsContainer');
+        resultsContainer.scrollTop = resultsContainer.scrollHeight;
+    }, 200);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM content loaded');
 
@@ -23,12 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('audioIndicator element:', audioIndicator);
 
     const resultsContainer = document.getElementById('resultsContainer');
-
-    function scrollToBottom() {
-        setTimeout(() => {
-            resultsContainer.scrollTop = resultsContainer.scrollHeight;
-        }, scrollDelay);
-    }
 
     async function startWebcam() {
         try {
@@ -128,36 +129,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (response.ok) {
                     const data = await response.json();
-                    console.log('Video uploaded successfully');
-                    console.log('Transcription:', data.transcription);
+                    console.log('Video uploaded successfully, processing started');
                     
-                    // Create a new result element
-                    const resultElement = document.createElement('div');
-                    resultElement.className = 'result-item';
-                    
-                    // Create a container for the image and transcription
-                    const contentContainer = document.createElement('div');
-                    contentContainer.className = 'content-container';
-                    resultElement.appendChild(contentContainer);
-
-                    // Add image
-                    const frameImageElement = document.createElement('img');
-                    frameImageElement.src = `data:image/jpeg;base64,${data.image}`;
-                    frameImageElement.alt = 'Frame Image';
-                    frameImageElement.className = 'result-image';
-                    contentContainer.appendChild(frameImageElement);
-
-                    // Add transcription
-                    const transcriptionElement = document.createElement('p');
-                    transcriptionElement.textContent = `${data.transcription}`;
-                    transcriptionElement.className = 'result-transcription';
-                    contentContainer.appendChild(transcriptionElement);
-
-                    // Add the new result to the container
+                    // Create a placeholder result element
+                    const resultElement = createPlaceholderResult(filename);
                     resultsContainer.appendChild(resultElement);
-
-                    // Scroll to the bottom of the results container after a delay
                     scrollToBottom();
+
+                    // Start polling for results
+                    pollForResults(filename, resultElement);
                 } else {
                     const errorData = await response.json();
                     console.error('Failed to upload video:', errorData.error);
@@ -167,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Start a new recording immediately
-            //startRecording();
+            startRecording();
         };
 
         mediaRecorder.start();
@@ -203,3 +183,52 @@ document.addEventListener('DOMContentLoaded', () => {
     // Scroll to bottom on page load
     scrollToBottom();
 });
+
+function createPlaceholderResult(filename) {
+    const resultElement = document.createElement('div');
+    resultElement.className = 'result-item';
+    resultElement.innerHTML = `
+        <div class="content-container">
+            <p>Processing ${filename}...</p>
+        </div>
+    `;
+    return resultElement;
+}
+
+async function pollForResults(filename, resultElement) {
+    try {
+        const response = await fetch(`/check_status/${filename}`);
+        if (response.ok) {
+            const data = await response.json();
+            if (data.status === 'completed') {
+                updateResultElement(resultElement, data);
+            } else {
+                // If not completed, poll again after a delay
+                setTimeout(() => pollForResults(filename, resultElement), 2000);
+            }
+        } else {
+            console.error('Failed to check status:', response.statusText);
+        }
+    } catch (error) {
+        console.error('Error checking status:', error);
+    }
+}
+
+function updateResultElement(resultElement, data) {
+    const contentContainer = resultElement.querySelector('.content-container');
+    contentContainer.innerHTML = `
+        <p class="result-transcription">${data.transcription}</p>
+    `;
+    if (data.image && data.image !== 'base64_encoded_image_data') {
+        const img = document.createElement('img');
+        img.src = `data:image/jpeg;base64,${data.image}`;
+        img.alt = "Frame Image";
+        img.className = "result-image";
+        img.onerror = () => {
+            console.error('Failed to load image');
+            img.style.display = 'none';
+        };
+        contentContainer.prepend(img);
+    }
+    scrollToBottom();
+}
