@@ -76,6 +76,9 @@ def process_video(video_path):
         new_audio_length = (end_trim - start_trim) / 1000
         print(f"trimmed audio from {original_audio_length} to {new_audio_length}")
 
+        if new_audio_length < 0.2:
+            print("Audio is too short, skipping")
+            return "", ""
         # Trim the audio
         trimmed_audio = audio[start_trim:end_trim]
 
@@ -101,20 +104,31 @@ def process_video(video_path):
 
     print(f"Audio trimming took {time.time() - trim_start_time:.2f} seconds")  # Log timing
 
+    
+
     # Transcribe audio using OpenAI Whisper
     transcription_start_time = time.time()  # Start timing for transcription
     with open(audio_path, "rb") as audio_file:
         response = client.audio.transcriptions.create(
             model="whisper-1",
             file=audio_file,
+            response_format="verbose_json"
         )
     print(f"Transcription took {time.time() - transcription_start_time:.2f} seconds")  # Log timing
-    print(response)
+    #print("RESPONSE!", response)
     
     total_time = time.time() - start_time
     print(f"Total processing time: {total_time:.2f} seconds")  # Log total timing
 
-    return response.text, encoded_image
+    response_text = ""
+
+    for s in response.segments:
+        if s['no_speech_prob'] < 0.7:
+            response_text += s['text']
+
+    print("RESPONSE TEXT", response_text)
+
+    return response_text, encoded_image
 
 # Example usage
 if __name__ == "__main__":

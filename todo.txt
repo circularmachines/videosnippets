@@ -1,0 +1,14 @@
+results.json to client
+
+merge short audio clips before transcription
+
+split transcription 
+
+LLM system prompt
+LLM user prompt make sure it doesn't violate conditions in system prompt
+
+
+
+
+methods:
+

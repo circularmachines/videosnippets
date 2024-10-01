@@ -128,16 +128,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 if (response.ok) {
-                    const data = await response.json();
                     console.log('Video uploaded successfully, processing started');
-                    
-                    // Create a placeholder result element
-                    const resultElement = createPlaceholderResult(filename);
-                    resultsContainer.appendChild(resultElement);
-                    scrollToBottom();
-
-                    // Start polling for results
-                    pollForResults(filename, resultElement);
+                    fetchAndDisplayEntries(); // Fetch and display updated entries
                 } else {
                     const errorData = await response.json();
                     console.error('Failed to upload video:', errorData.error);
@@ -182,53 +174,60 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Scroll to bottom on page load
     scrollToBottom();
-});
 
-function createPlaceholderResult(filename) {
-    const resultElement = document.createElement('div');
-    resultElement.className = 'result-item';
-    resultElement.innerHTML = `
-        <div class="content-container">
-            <p>Processing ${filename}...</p>
-        </div>
-    `;
-    return resultElement;
-}
-
-async function pollForResults(filename, resultElement) {
-    try {
-        const response = await fetch(`/check_status/${filename}`);
-        if (response.ok) {
-            const data = await response.json();
-            if (data.status === 'completed') {
-                updateResultElement(resultElement, data);
+    // Add this function to fetch and display all entries
+    async function fetchAndDisplayEntries() {
+        try {
+            const response = await fetch('/get_entries');
+            if (response.ok) {
+                const entries = await response.json();
+                console.log("Received entries:", entries);
+                resultsContainer.innerHTML = ''; // Clear existing results
+                entries.forEach(entry => {
+                    const resultElement = createResultElement(entry);
+                    resultsContainer.appendChild(resultElement);
+                });
+                scrollToBottom();
             } else {
-                // If not completed, poll again after a delay
-                setTimeout(() => pollForResults(filename, resultElement), 2000);
+                console.error('Failed to fetch entries:', response.statusText);
             }
-        } else {
-            console.error('Failed to check status:', response.statusText);
+        } catch (error) {
+            console.error('Error fetching entries:', error);
         }
-    } catch (error) {
-        console.error('Error checking status:', error);
     }
-}
 
-function updateResultElement(resultElement, data) {
-    const contentContainer = resultElement.querySelector('.content-container');
-    contentContainer.innerHTML = `
-        <p class="result-transcription">${data.transcription}</p>
-    `;
-    if (data.image && data.image !== 'base64_encoded_image_data') {
-        const img = document.createElement('img');
-        img.src = `data:image/jpeg;base64,${data.image}`;
-        img.alt = "Frame Image";
-        img.className = "result-image";
-        img.onerror = () => {
-            console.error('Failed to load image');
-            img.style.display = 'none';
-        };
-        contentContainer.prepend(img);
+    // Call this function when the page loads
+    fetchAndDisplayEntries();
+
+    // Update the createResultElement function
+    function createResultElement(entry) {
+        console.log("Creating result element for entry:", entry);
+        const resultElement = document.createElement('div');
+        resultElement.className = 'result-item';
+        const contentContainer = document.createElement('div');
+        contentContainer.className = 'content-container';
+
+        if (entry.transcription) {
+            contentContainer.innerHTML = `
+                <p class="result-transcription">${entry.transcription}</p>
+            `;
+        } else {
+            contentContainer.innerHTML = '<p>Processing...</p>';
+        }
+
+        if (entry.image && entry.image !== 'base64_encoded_image_data') {
+            const img = document.createElement('img');
+            img.src = `data:image/jpeg;base64,${entry.image}`;
+            img.alt = "Frame Image";
+            img.className = "result-image";
+            img.onerror = () => {
+                console.error('Failed to load image');
+                img.style.display = 'none';
+            };
+            contentContainer.prepend(img);
+        }
+
+        resultElement.appendChild(contentContainer);
+        return resultElement;
     }
-    scrollToBottom();
-}
+});
