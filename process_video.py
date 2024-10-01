@@ -22,6 +22,8 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 import imageio
 import ffmpeg  # Add this import
 
+IMAGES_FOLDER = 'images'
+
 def process_video(video_path):
     start_time = time.time()  # Start timing
 
@@ -31,24 +33,19 @@ def process_video(video_path):
 
     if not cap.isOpened():
         print("Error: Could not open video.")
-        return
-    
-    #frames = []
-    #frame_count = 0
+        return None, None  # Return None for both transcription and frame_path
+
     ret, frame = cap.read()
 
     if ret:
         # Save the first frame as an image
-        frame_path = f"./frames/frame_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.jpg"
+        os.makedirs(IMAGES_FOLDER, exist_ok=True)
+        frame_path = os.path.join(IMAGES_FOLDER, f"frame_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.jpg")
         cv2.imwrite(frame_path, frame)
         print(f"Frame saved at {frame_path}")
-        
-        # Encode the image to base64
-        with open(frame_path, "rb") as image_file:
-            encoded_image = base64.b64encode(image_file.read()).decode('utf-8')
     else:
         print("Error: Could not read frame.")
-        encoded_image = None
+        frame_path = None
     
     cap.release()
 
@@ -78,7 +75,7 @@ def process_video(video_path):
 
         if new_audio_length < 0.2:
             print("Audio is too short, skipping")
-            return "", ""
+            return "", frame_path  # Return empty string for transcription and frame_path
         # Trim the audio
         trimmed_audio = audio[start_trim:end_trim]
 
@@ -128,7 +125,7 @@ def process_video(video_path):
 
     print("RESPONSE TEXT", response_text)
 
-    return response_text, encoded_image
+    return response_text, frame_path
 
 # Example usage
 if __name__ == "__main__":

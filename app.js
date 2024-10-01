@@ -129,7 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (response.ok) {
                     console.log('Video uploaded successfully, processing started');
-                    fetchAndDisplayEntries(); // Fetch and display updated entries
+                    // Remove this line to prevent immediate update
+                    // fetchAndDisplayEntries();
                 } else {
                     const errorData = await response.json();
                     console.error('Failed to upload video:', errorData.error);
@@ -175,29 +176,36 @@ document.addEventListener('DOMContentLoaded', () => {
     // Scroll to bottom on page load
     scrollToBottom();
 
-    // Add this function to fetch and display all entries
-    async function fetchAndDisplayEntries() {
-        try {
-            const response = await fetch('/get_entries');
-            if (response.ok) {
-                const entries = await response.json();
-                console.log("Received entries:", entries);
-                resultsContainer.innerHTML = ''; // Clear existing results
-                entries.forEach(entry => {
-                    const resultElement = createResultElement(entry);
-                    resultsContainer.appendChild(resultElement);
-                });
-                scrollToBottom();
-            } else {
-                console.error('Failed to fetch entries:', response.statusText);
-            }
-        } catch (error) {
-            console.error('Error fetching entries:', error);
-        }
+    // Add this function to set up SSE
+    function setupSSE() {
+        const eventSource = new EventSource('/stream');
+        
+        eventSource.onmessage = function(event) {
+            const entries = JSON.parse(event.data);
+            console.log("Received entries:", entries);
+            updateResults(entries);
+        };
+
+        eventSource.onerror = function(error) {
+            console.error("EventSource failed:", error);
+            eventSource.close();
+        };
     }
 
-    // Call this function when the page loads
-    fetchAndDisplayEntries();
+    // Update the updateResults function
+    function updateResults(entries) {
+        resultsContainer.innerHTML = ''; // Clear existing results
+        entries.forEach(entry => {
+            const resultElement = createResultElement(entry);
+            resultsContainer.appendChild(resultElement);
+        });
+        scrollToBottom();
+    }
+
+    // Call setupSSE when the page loads
+    setupSSE();
+
+    // Remove the fetchAndDisplayEntries function and related code
 
     // Update the createResultElement function
     function createResultElement(entry) {
@@ -212,10 +220,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p class="result-transcription">${entry.transcription}</p>
             `;
         } else {
-            contentContainer.innerHTML = '<p>Processing...</p>';
+            contentContainer.innerHTML = '<p>No transcription available</p>';
         }
 
-        if (entry.image && entry.image !== 'base64_encoded_image_data') {
+        if (entry.image) {
             const img = document.createElement('img');
             img.src = `data:image/jpeg;base64,${entry.image}`;
             img.alt = "Frame Image";

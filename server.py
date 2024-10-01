@@ -1,9 +1,9 @@
-from flask import Flask, request, send_from_directory, jsonify
+from flask import Flask, request, send_from_directory, jsonify, Response
 import os
-import threading
-import process_video
 import entry_manager
 import logging
+import json
+import time
 
 app = Flask(__name__, static_folder='.')
 
@@ -34,34 +34,26 @@ def upload_video():
         video_path = os.path.join(UPLOAD_FOLDER, filename)
         video.save(video_path)
         
-        # Add a new entry without status
-        entry_manager.add_entry('', '')
-        
-        # Start processing the video in a separate thread
-        thread = threading.Thread(target=process_video_async, args=(video_path,))
-        thread.start()
+        # Add a new entry to incoming.json
+        entry_manager.add_incoming_entry(video_path)
         
         return jsonify({
-            'message': 'File uploaded successfully, processing started',
+            'message': 'File uploaded successfully, processing will start soon',
             'filename': filename
         }), 202
 
-def process_video_async(video_path):
-    transcription, encoded_image = process_video.process_video(video_path)
-    
-    # Update the last entry with the results
-    entries = entry_manager.get_all_entries()
-    entries[-1]['transcription'] = transcription
-    entries[-1]['image'] = encoded_image
-    entry_manager.save_entries(entries)
-    
-    print(f"Processing completed for {video_path}")
+@app.route('/stream')
+def stream():
+    def event_stream():
+        last_entry_count = 0
+        while True:
+            entries = entry_manager.get_outgoing_entries()
+            if len(entries) > last_entry_count:
+                last_entry_count = len(entries)
+                yield f"data: {json.dumps(entries)}\n\n"
+            time.sleep(1)  # Check for new entries every second
 
-@app.route('/get_entries', methods=['GET'])
-def get_entries():
-    entries = entry_manager.get_all_entries()
-    logging.debug(f"Sending entries: {entries}")
-    return jsonify(entries)
+    return Response(event_stream(), content_type='text/event-stream')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, threaded=True)
