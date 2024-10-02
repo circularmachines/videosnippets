@@ -81,9 +81,15 @@ def encode_image(image_path):
 
 def get_outgoing_entries():
     entries = load_entries(OUTGOING_FILE)
+
+
     for entry in entries:
+        description=entry.get('description','N/A')
+        comments=entry.get('comments','N/A')
+        location=entry.get('location','N/A')
         if 'image_path' in entry and os.path.exists(entry['image_path']):
             entry['image'] = encode_image(entry['image_path'])
+            entry['transcription'] = f"<p><b>Description:</b> {description}<br><b>Comments:</b> {comments}<br><b>Location:</b> {location}</p>"
             del entry['image_path']
     return entries
 

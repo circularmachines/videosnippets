@@ -203,9 +203,10 @@ document.addEventListener('DOMContentLoaded', () => {
         contentContainer.className = 'content-container';
 
         if (entry.transcription) {
-            contentContainer.innerHTML = `
-                <p class="result-transcription">${entry.transcription}</p>
-            `;
+            const transcriptionElement = document.createElement('div');
+            transcriptionElement.className = 'result-transcription';
+            transcriptionElement.innerHTML = entry.transcription;
+            contentContainer.appendChild(transcriptionElement);
         } else {
             contentContainer.innerHTML = '<p>No transcription available</p>';
         }

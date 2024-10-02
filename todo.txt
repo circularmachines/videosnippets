@@ -1,6 +1,7 @@
 results.json to client
 
 merge short audio clips before transcription
+multiple tries?
 
 split transcription 
 

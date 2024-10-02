@@ -95,5 +95,25 @@
     "comments": "The user is holding something small, indicating it's smaller than another object talked about earlier.",
     "location": null,
     "image_path": "images\\frame_2024-10-02_14-16-29.jpg"
+  },
+  {
+    "video_snippet_id": 1,
+    "indexes_in_merged_video": [
+      18
+    ],
+    "description": "a Screw with a T-slot nut",
+    "comments": "The user is showing a screw secured with a T-slot nut.",
+    "location": null,
+    "image_path": "images\\frame_2024-10-02_14-16-41.jpg"
+  },
+  {
+    "video_snippet_id": 1,
+    "indexes_in_merged_video": [
+      18
+    ],
+    "description": "a screw with a T-slot nut",
+    "comments": "The user is showing a screw that is held by a T-slot nut.",
+    "location": null,
+    "image_path": "images\\frame_2024-10-02_14-16-41.jpg"
   }
 ]
