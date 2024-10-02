@@ -1,94 +1,120 @@
 [
   {
-    "transcription": " Hello, hello.",
-    "image_path": "images\\frame_2024-10-01_14-19-28.jpg"
+    "indexes_in_merged_video": [
+      13,
+      14
+    ],
+    "image_path": "images\\frame_2024-10-02_10-29-26.jpg",
+    "transcription": "Presenting a light bulb and indicating that it may be broken."
   },
   {
-    "transcription": " How are you?",
-    "image_path": "images\\frame_2024-10-01_14-19-30.jpg"
+    "indexes_in_merged_video": [
+      15,
+      16
+    ],
+    "image_path": "images\\frame_2024-10-02_10-29-46.jpg",
+    "transcription": "Expressing thanks to supporters via Patreon."
   },
   {
-    "transcription": " This is great.",
-    "image_path": "images\\frame_2024-10-01_14-19-33.jpg"
+    "indexes_in_merged_video": [
+      17,
+      18
+    ],
+    "image_path": "images\\frame_2024-10-02_10-30-12.jpg",
+    "transcription": "Showing an external hard drive and explaining how to connect it with a cable."
   },
   {
-    "transcription": " How are you?",
-    "image_path": "images\\frame_2024-10-01_14-19-36.jpg"
+    "indexes_in_merged_video": [
+      17,
+      18
+    ],
+    "image_path": "images\\frame_2024-10-02_10-30-12.jpg",
+    "transcription": "Showing an external hard drive and discussing how it connects with a slave device."
   },
   {
-    "transcription": " This is great.",
-    "image_path": "images\\frame_2024-10-01_14-19-37.jpg"
+    "indexes_in_merged_video": [
+      21,
+      22
+    ],
+    "image_path": "images\\frame_2024-10-02_10-30-31.jpg",
+    "transcription": "Showing a guitar string and mentioning it as the brightest string on the guitar."
   },
   {
-    "transcription": " This is great.",
-    "image_path": "images\\frame_2024-10-01_14-19-39.jpg"
+    "indexes_in_merged_video": [
+      21,
+      22
+    ],
+    "image_path": "images\\frame_2024-10-02_10-30-31.jpg",
+    "transcription": "Showing a guitar string, likely the lightest one on the guitar."
   },
   {
-    "transcription": " Hello.",
-    "image_path": "images\\frame_2024-10-01_14-19-42.jpg"
+    "indexes_in_merged_video": [
+      23,
+      24,
+      25,
+      30
+    ],
+    "image_path": "images\\frame_2024-10-02_10-30-40.jpg",
+    "transcription": "Thanking viewers and supporters on Patreon, while showing off the speaker's face and mentioning some facial hair."
   },
   {
-    "transcription": " Hello.",
-    "image_path": "images\\frame_2024-10-01_14-19-47.jpg"
+    "indexes_in_merged_video": [
+      26,
+      27,
+      29
+    ],
+    "image_path": "images\\frame_2024-10-02_10-42-11.jpg",
+    "transcription": "The speaker showcases buttons and items from an old band, emphasizing the nice pins and reminiscing about the past."
   },
   {
-    "transcription": " four, five, six.",
-    "image_path": "images\\frame_2024-10-01_14-20-10.jpg"
+    "indexes_in_merged_video": [
+      32,
+      33
+    ],
+    "image_path": "images\\frame_2024-10-02_10-51-11.jpg",
+    "transcription": "Showing an old remote control and highlighting its beautiful buttons."
   },
   {
-    "transcription": " \ud83d\udce2 Share this video with your friends on social media. It's a big help to me.",
-    "image_path": "images\\frame_2024-10-01_14-20-41.jpg"
+    "indexes_in_merged_video": [
+      36,
+      39
+    ],
+    "image_path": "images\\frame_2024-10-02_10-51-26.jpg",
+    "transcription": "Showing an old remote control and discussing its use for controlling lighting."
   },
   {
-    "transcription": " Amazing.",
-    "image_path": "images\\frame_2024-10-01_14-20-44.jpg"
+    "indexes_in_merged_video": [
+      42,
+      45,
+      47,
+      48
+    ],
+    "image_path": "images\\frame_2024-10-02_10-53-05.jpg",
+    "transcription": "The video presents a series of brief statements, starting with a personal reflection ('D\u00e5 och'), followed by gratitude for the audience's attention ('Tack f\u00f6r att du har tittat p\u00e5 den h\u00e4r videon!'), a closing remark ('\u00d6ver'), and a morning greeting ('God morgon')."
   },
   {
-    "transcription": " Bye.",
-    "image_path": "images\\frame_2024-10-01_14-20-51.jpg"
+    "indexes_in_merged_video": [
+      53,
+      58
+    ],
+    "image_path": "images\\frame_2024-10-02_10-54-33.jpg",
+    "transcription": "The person is curious about the keys they have and wonders if they might be for a bicycle."
   },
   {
-    "transcription": " \ud83d\ude32\ud83d\ude32\ud83d\ude32\ud83d\ude32\ud83d\ude32\ud83d\ude32\ud83d\ude32\ud83d\ude32",
-    "image_path": "images\\frame_2024-10-01_14-20-58.jpg"
+    "indexes_in_merged_video": [
+      59,
+      60
+    ],
+    "image_path": "images\\frame_2024-10-02_10-55-11.jpg",
+    "transcription": "Talking about a cool cord, expressing excitement and fun about it."
   },
   {
-    "transcription": " Slippery.",
-    "image_path": "images\\frame_2024-10-01_14-21-21.jpg"
-  },
-  {
-    "transcription": " Ba-boo-doo-bee, ba-boo-doo-ba.",
-    "image_path": "images\\frame_2024-10-01_14-23-50.jpg"
-  },
-  {
-    "transcription": " Hello",
-    "image_path": "images\\frame_2024-10-01_14-27-25.jpg"
-  },
-  {
-    "transcription": " Hello.",
-    "image_path": "images\\frame_2024-10-01_14-27-42.jpg"
-  },
-  {
-    "transcription": " One.",
-    "image_path": "images\\frame_2024-10-01_14-32-29.jpg"
-  },
-  {
-    "transcription": " One.",
-    "image_path": "images\\frame_2024-10-01_14-32-28.jpg"
-  },
-  {
-    "transcription": " Hello.",
-    "image_path": "images\\frame_2024-10-01_14-35-37.jpg"
-  },
-  {
-    "transcription": " Hi there.",
-    "image_path": "images\\frame_2024-10-01_14-39-32.jpg"
-  },
-  {
-    "transcription": " Is this working now?",
-    "image_path": "images\\frame_2024-10-01_14-39-39.jpg"
-  },
-  {
-    "transcription": " \u0647\u0644\u0648 \u0647\u0644\u0648 \u0647\u0644\u0648",
-    "image_path": "images\\frame_2024-10-01_14-39-45.jpg"
+    "indexes_in_merged_video": [
+      61,
+      62,
+      67
+    ],
+    "image_path": "images\\frame_2024-10-02_10-55-28.jpg",
+    "transcription": "The speaker expresses gratitude for viewers watching the video and shares that it's enjoyable to keep the location with him."
   }
 ]

@@ -33,7 +33,7 @@ def process_video(video_path):
 
     if not cap.isOpened():
         print("Error: Could not open video.")
-        return None, None  # Return None for both transcription and frame_path
+        return None, None, 1.0   # Return None for both transcription and frame_path and 1.0 for no_speech_prob
 
     ret, frame = cap.read()
 
@@ -75,7 +75,7 @@ def process_video(video_path):
 
         if new_audio_length < 0.2:
             print("Audio is too short, skipping")
-            return "", frame_path  # Return empty string for transcription and frame_path
+            return "", frame_path, 1.0  # Return empty string for transcription and frame_path and 1.0 for no_speech_prob
         # Trim the audio
         trimmed_audio = audio[start_trim:end_trim]
 
@@ -109,23 +109,33 @@ def process_video(video_path):
         response = client.audio.transcriptions.create(
             model="whisper-1",
             file=audio_file,
+            language="sv",
             response_format="verbose_json"
         )
     print(f"Transcription took {time.time() - transcription_start_time:.2f} seconds")  # Log timing
-    #print("RESPONSE!", response)
     
     total_time = time.time() - start_time
     print(f"Total processing time: {total_time:.2f} seconds")  # Log total timing
 
     response_text = ""
+    avg_no_speech_prob = 0
+    segment_count = 0
 
     for s in response.segments:
         if s['no_speech_prob'] < 0.7:
             response_text += s['text']
+        avg_no_speech_prob += s['no_speech_prob']
+        segment_count += 1
+
+    if segment_count > 0:
+        avg_no_speech_prob /= segment_count
+    else:
+        avg_no_speech_prob = 1.0  # If no segments, assume it's all non-speech
 
     print("RESPONSE TEXT", response_text)
+    print("Average no_speech_prob:", avg_no_speech_prob)
 
-    return response_text, frame_path
+    return response_text, frame_path, avg_no_speech_prob
 
 # Example usage
 if __name__ == "__main__":

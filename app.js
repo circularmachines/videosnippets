@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM content loaded');
 
     // Parameters
-    const audioDetectionIntervalTime = 50; // Interval time in milliseconds
+    const audioDetectionIntervalTime = 100; // Interval time in milliseconds
     const audioThreshold = 5; // Audio detection threshold
     const scrollDelay = 200; // Delay before scrolling in milliseconds
 

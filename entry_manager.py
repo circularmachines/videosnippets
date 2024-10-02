@@ -3,16 +3,45 @@ import os
 import time
 import process_video
 import base64
+import asyncio
+
+import requests
+from openai import OpenAI
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+
+# Initialize OpenAI client
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 INCOMING_FILE = 'incoming.json'
 OUTGOING_FILE = 'outgoing.json'
 IMAGES_FOLDER = 'images'
 
+system_prompt = open("system_prompt.md", "r").read()
+
 def load_entries(file_path):
     if os.path.exists(file_path):
-        with open(file_path, 'r') as f:
-            return json.load(f)
-    return []
+        try:
+            with open(file_path, 'r') as f:
+                content = f.read()
+                if content.strip():  # Check if the file is not empty
+                    return json.loads(content)
+                else:
+                    print(f"Warning: {file_path} is empty. Returning an empty list.")
+                    return []
+        except json.JSONDecodeError as e:
+            print(f"Error decoding JSON in {file_path}: {e}")
+            print("Returning an empty list and backing up the corrupted file.")
+            # Backup the corrupted file
+            backup_path = f"{file_path}.bak"
+            os.rename(file_path, backup_path)
+            return []
+    else:
+        with open(file_path, 'w') as f:
+            json.dump([], f, indent=2)
+        return []
 
 def save_entries(entries, file_path):
     with open(file_path, 'w') as f:
@@ -20,68 +49,174 @@ def save_entries(entries, file_path):
 
 def add_incoming_entry(video_path):
     entries = load_entries(INCOMING_FILE)
-    entries.append({"video_path": video_path})
+    new_index = max([entry.get('index', -1) for entry in entries], default=-1) + 1
+    entries.append({
+        "index": new_index,
+        "video_path": video_path,
+        "processed": False,
+        "llm_processed": False
+    })
     save_entries(entries, INCOMING_FILE)
 
 def update_incoming_entry(index, **kwargs):
     entries = load_entries(INCOMING_FILE)
-    if 0 <= index < len(entries):
-        entries[index].update(kwargs)
-        save_entries(entries, INCOMING_FILE)
+    for entry in entries:
+        if entry['index'] == index:
+            entry.update(kwargs)
+            save_entries(entries, INCOMING_FILE)
+            break
+
+def remove_incoming_entry(index):
+    entries = load_entries(INCOMING_FILE)
+    entries = [entry for entry in entries if entry['index'] != index]
+    save_entries(entries, INCOMING_FILE)
+
+def get_incoming_entries():
+    return load_entries(INCOMING_FILE)
+
+# Function to encode the image
+def encode_image(image_path):
+    with open(image_path, "rb") as image_file:
+        return base64.b64encode(image_file.read()).decode('utf-8')
+
+def get_outgoing_entries():
+    entries = load_entries(OUTGOING_FILE)
+    for entry in entries:
+        if 'image_path' in entry and os.path.exists(entry['image_path']):
+            entry['image'] = encode_image(entry['image_path'])
+            del entry['image_path']
+    return entries
 
 def add_outgoing_entry(entry):
     entries = load_entries(OUTGOING_FILE)
     entries.append(entry)
     save_entries(entries, OUTGOING_FILE)
 
-def get_incoming_entries():
-    return load_entries(INCOMING_FILE)
-
-def get_outgoing_entries():
-    entries = load_entries(OUTGOING_FILE)
-    for entry in entries:
-        if 'image_path' in entry and os.path.exists(entry['image_path']):
-            with open(entry['image_path'], 'rb') as image_file:
-                encoded_image = base64.b64encode(image_file.read()).decode('utf-8')
-                entry['image'] = encoded_image
-            del entry['image_path']
-    return entries
-
-def remove_incoming_entry(index):
-    entries = load_entries(INCOMING_FILE)
-    if 0 <= index < len(entries):
-        del entries[index]
-        save_entries(entries, INCOMING_FILE)
-
-def process_videos():
+async def process_videos():
     while True:
         incoming_entries = get_incoming_entries()
-        for index, entry in enumerate(incoming_entries):
-            video_path = entry['video_path']
-            if 'transcription' not in entry:
+        for entry in incoming_entries:
+            if not entry.get('processed', False):
+                video_path = entry['video_path']
                 result = process_video.process_video(video_path)
                 if result is not None:
-                    transcription, image_path = result
-                    
-                    update_incoming_entry(index, 
-                                          image_path=image_path, 
-                                          transcription=transcription)
-                    
-                    if transcription:
-                        add_outgoing_entry({
-                            "transcription": transcription,
-                            "image_path": image_path
-                        })
-                        remove_incoming_entry(index)
+                    transcription, image_path, no_speech_prob = result
+
+                    if no_speech_prob < 0.7:
+                        update_incoming_entry(entry['index'], 
+                                              image_path=image_path, 
+                                              transcription=transcription,
+                                              no_speech_prob=no_speech_prob,
+                                              processed=True)
+                    else:
+                        remove_incoming_entry(entry['index'])
                     
                     print(f"Processing completed for {video_path}")
                 else:
                     print(f"Processing failed for {video_path}")
-                    remove_incoming_entry(index)
+                    update_incoming_entry(entry['index'], processed=True)
         
-        time.sleep(1)  # Wait for 1 second before checking again
+        await asyncio.sleep(1)  # Wait for 1 second before checking again
 
-# Start the video processing thread
-import threading
-processing_thread = threading.Thread(target=process_videos, daemon=True)
-processing_thread.start()
+async def process_LLM():
+    while True:
+        llm_call = False
+        incoming_entries = get_incoming_entries()
+        for entry in incoming_entries:
+            if not entry.get('llm_processed', False) and entry.get('transcription'):
+                llm_call = True
+                update_incoming_entry(entry['index'], llm_processed=True)
+
+        if llm_call:
+            # Prepare the payload for OpenAI API
+
+            print("llm_messages:")
+            
+            messages = [{"role": "system", "content": system_prompt}]
+            #i=1
+            for i, entry in enumerate(incoming_entries):
+                if entry.get('transcription') and entry.get('image_path') and not entry.get('locked_in',False):
+
+                    print(f"Transcription #{entry['index']}: {entry['transcription']}")
+                    #i+=1
+
+                    base64_image = encode_image(entry['image_path'])
+                    messages.append({
+                        "role": "user",
+                        "content": [
+                            {
+                                "type": "text",
+                                "text": f"Transcription #{entry['index']}: {entry['transcription']}"
+                            },
+                            {
+                                "type": "image_url",
+                                "image_url": {
+                                    "url": f"data:image/jpeg;base64,{base64_image}"
+                                }
+                            }
+                        ]
+                    })
+
+   
+            try:
+                response = requests.post(
+                    "https://api.openai.com/v1/chat/completions",
+                    headers={
+                        "Content-Type": "application/json",
+                        "Authorization": f"Bearer {os.getenv('OPENAI_API_KEY')}"
+                    },
+                    json={
+                        "model": "gpt-4o-mini",
+                        "messages": messages,
+                        "max_tokens": 2000,
+                        "response_format": { "type": "json_object" }
+                    }
+                )
+                print("RESPONSE:")
+                print(response.json()['choices'][0]['message']['content'])
+
+                # Parse the JSON response
+                response_data = json.loads(response.json()['choices'][0]['message']['content'])
+
+                #new_data=[]
+
+                for snippet in response_data['merged_video_snippets']:
+                    print("snippet:", snippet['video_snippet_id'])
+                    image_index = snippet['indexes_in_merged_video'][0]
+                    image_entry = next(entry for entry in incoming_entries if entry['index'] == image_index)
+                    image_path = image_entry['image_path']
+                    #new_data.append({
+                    if len(snippet['indexes_in_merged_video'])>1:
+                        if snippet['video_snippet_id']==1:
+                            add_outgoing_entry({
+                                "indexes_in_merged_video": snippet['indexes_in_merged_video'],
+                                "image_path": image_path,
+                                "transcription": snippet['summary']
+                                })
+                            for ix in snippet['indexes_in_merged_video']:
+                                update_incoming_entry(ix, locked_in=True)
+                        
+
+                # Add the response to the outgoing entries
+                #print("outgoing_data:")
+                #print(outgoing_data)
+               # save_entries(outgoing_data, OUTGOING_FILE)
+
+            except Exception as e:
+                print(f"Error in LLM processing: {str(e)}")
+        
+        await asyncio.sleep(1)  # Wait for 1 second before checking again
+
+async def main():
+    await asyncio.gather(
+        process_videos(),
+        process_LLM()
+    )
+
+# Remove the following lines:
+# if __name__ == "__main__":
+#     asyncio.run(main())
+
+# Instead, expose the main function so it can be called from server.py
+
+
