@@ -9,15 +9,17 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM content loaded');
 
     // Parameters
-    const audioDetectionIntervalTime = 100; // Interval time in milliseconds
-    const audioThreshold = 5; // Audio detection threshold
+    const audioDetectionIntervalTime = 250; // Increased from 100ms to 500ms
+    const audioThreshold = 15; // Audio detection threshold
     const scrollDelay = 200; // Delay before scrolling in milliseconds
+    const recordingMinDuration = 2500; // Minimum recording duration in milliseconds
 
     let mediaRecorder;
     let recordedChunks = [];
     let audioContext;
     let analyser;
     let audioDetectionInterval;
+    let lastRecordingStartTime = 0;
 
     const localVideo = document.getElementById('localVideo');
     const startButton = document.getElementById('startButton');
@@ -67,31 +69,15 @@ document.addEventListener('DOMContentLoaded', () => {
             if (average > audioThreshold) { // Use parameter for threshold
                 audioIndicator.textContent = 'Audio Detected';
                 audioIndicator.style.backgroundColor = 'green'; // Green for audio on
-                audioDetected = true; // Set audio detected state
-                
-                //if (wasRed) {startRecording();}
-                wasRed = false;
-
+                if (!mediaRecorder || mediaRecorder.state === 'inactive') {
+                    startRecording();
+                }
             } else {
-                if (audioDetected) {
-                    audioIndicator.textContent = 'Audio Detected (Delayed)';
-                    audioIndicator.style.backgroundColor = 'yellow'; // Yellow for audio within the last second
-                    wasYellow = true; // Set yellow state
-                    audioDetected = false; // Reset audio detected state
-                } else {
-                    if (wasYellow) {
-                        audioIndicator.textContent = 'No Audio';
-                        audioIndicator.style.backgroundColor = 'red'; // Red for no audio
-                        wasYellow = false; // Reset yellow state
-
-                        // Stop recording when audio goes from yellow to red
-                        stopRecording(); // Stop recording to save the video
-                        startRecording(); // Start new recording immediately after stopping
-                    } else {
-                        audioIndicator.textContent = 'No Audio';
-                        audioIndicator.style.backgroundColor = 'red'; // Red for no audio
-                        wasRed = true;
-                    }
+                audioIndicator.textContent = 'No Audio';
+                audioIndicator.style.backgroundColor = 'red'; // Red for no audio
+                if (mediaRecorder && mediaRecorder.state === 'recording' && 
+                    Date.now() - lastRecordingStartTime > recordingMinDuration) {
+                    stopRecording();
                 }
             }
         }, audioDetectionIntervalTime); // Use parameter for interval time
@@ -144,6 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         mediaRecorder.start();
+        lastRecordingStartTime = Date.now();
         startButton.disabled = true;
         stopButton.disabled = false;
         console.log('Recording started');

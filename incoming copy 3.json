@@ -3,205 +3,187 @@
     "index": 0,
     "video_path": "uploads\\recording-2024-10-02T12-13-26-934Z.webm",
     "processed": true,
-    "llm_processed": true,
+    "llm_processed": false,
     "image_path": "images\\frame_2024-10-02_14-13-27.jpg",
     "transcription": " Okej, d\u00e5 k\u00f6r vi ig\u00e5ng. Jag t\u00e4nkte k\u00f6ra en liten introduktion f\u00f6rst h\u00e4r n\u00e4r jag babblar lite. Tanken med detta \u00e4r att jag ska indexera lite olika grejer som jag har liggande s\u00e5 h\u00e4r.",
     "no_speech_prob": 0.0010803091572597623,
-    "new_audio_length": 13.585,
-    "locked_in": true
+    "new_audio_length": 13.585
   },
   {
     "index": 1,
     "video_path": "uploads\\recording-2024-10-02T12-13-30-679Z.webm",
     "processed": true,
-    "llm_processed": true,
+    "llm_processed": false,
     "image_path": "images\\frame_2024-10-02_14-13-32.jpg",
     "transcription": " Ja, n\u00e4men d\u00e5 k\u00f6r vi ig\u00e5ng.",
     "no_speech_prob": 0.36634570360183716,
-    "new_audio_length": 2.521,
-    "locked_in": true
+    "new_audio_length": 2.521
   },
   {
     "index": 2,
     "video_path": "uploads\\recording-2024-10-02T12-13-37-188Z.webm",
     "processed": true,
-    "llm_processed": true,
+    "llm_processed": false,
     "image_path": "images\\frame_2024-10-02_14-13-35.jpg",
     "transcription": " D\u00e5 k\u00f6r vi ig\u00e5ng d\u00e5.",
     "no_speech_prob": 0.11105948686599731,
-    "new_audio_length": 1.685,
-    "locked_in": true
+    "new_audio_length": 1.685
   },
   {
     "index": 3,
     "video_path": "uploads\\recording-2024-10-02T12-13-47-932Z.webm",
     "processed": true,
-    "llm_processed": true,
+    "llm_processed": false,
     "image_path": "images\\frame_2024-10-02_14-13-45.jpg",
     "transcription": " Ja, jag tror tyv\u00e4rr att den \u00e4r trasig.",
     "no_speech_prob": 0.0860280990600586,
-    "new_audio_length": 6.584,
-    "locked_in": true
+    "new_audio_length": 6.584
   },
   {
     "index": 4,
     "video_path": "uploads\\recording-2024-10-02T12-13-50-924Z.webm",
     "processed": true,
-    "llm_processed": true,
+    "llm_processed": false,
     "image_path": "images\\frame_2024-10-02_14-13-51.jpg",
     "transcription": " Det... Nej.",
     "no_speech_prob": 0.23115794360637665,
-    "new_audio_length": 2.647,
-    "locked_in": true
+    "new_audio_length": 2.647
   },
   {
     "index": 5,
     "video_path": "uploads\\recording-2024-10-02T12-14-03-180Z.webm",
     "processed": true,
-    "llm_processed": true,
+    "llm_processed": false,
     "image_path": "images\\frame_2024-10-02_14-14-04.jpg",
     "transcription": " Vi forts\u00e4tter med en kapo. Kapo har man ju p\u00e5 en gitarr f\u00f6r att...",
     "no_speech_prob": 0.00661922013387084,
-    "new_audio_length": 6.059,
-    "locked_in": true
+    "new_audio_length": 6.059
   },
   {
     "index": 6,
     "video_path": "uploads\\recording-2024-10-02T12-14-10-951Z.webm",
     "processed": true,
-    "llm_processed": true,
+    "llm_processed": false,
     "image_path": "images\\frame_2024-10-02_14-14-11.jpg",
     "transcription": " ...f\u00f6r att man ska kunna...",
     "no_speech_prob": 0.05486980080604553,
-    "new_audio_length": 5.768,
-    "locked_in": true
+    "new_audio_length": 5.768
   },
   {
     "index": 7,
     "video_path": "uploads\\recording-2024-10-02T12-14-49-186Z.webm",
     "processed": true,
-    "llm_processed": true,
+    "llm_processed": false,
     "image_path": "images\\frame_2024-10-02_14-14-49.jpg",
     "transcription": " Vi har \u00e4ven den h\u00e4r insexnyckeln som k\u00e4nns spontant ganska sp\u00e4nnande. Det \u00e4r en s\u00e5n som man skruvar upp en...",
     "no_speech_prob": 0.004132111091166735,
-    "new_audio_length": 11.954,
-    "locked_in": true
+    "new_audio_length": 11.954
   },
   {
     "index": 8,
     "video_path": "uploads\\recording-2024-10-02T12-15-03-192Z.webm",
     "processed": true,
-    "llm_processed": true,
+    "llm_processed": false,
     "image_path": "images\\frame_2024-10-02_14-15-03.jpg",
     "transcription": " ...en liten nyckel kan man ju ha. Jag tror faktiskt att detta \u00e4r en...",
     "no_speech_prob": 0.0005032224580645561,
-    "new_audio_length": 6.111,
-    "locked_in": true
+    "new_audio_length": 6.111
   },
   {
     "index": 9,
     "video_path": "uploads\\recording-2024-10-02T12-15-08-924Z.webm",
     "processed": true,
-    "llm_processed": true,
+    "llm_processed": false,
     "image_path": "images\\frame_2024-10-02_14-15-10.jpg",
     "transcription": " Jag tror att det \u00e4r en cykelnyckel detta.",
     "no_speech_prob": 4.399106546770781e-05,
-    "new_audio_length": 1.913,
-    "locked_in": true
+    "new_audio_length": 1.913
   },
   {
     "index": 10,
     "video_path": "uploads\\recording-2024-10-02T12-15-32-673Z.webm",
     "processed": true,
-    "llm_processed": true,
+    "llm_processed": false,
     "image_path": "images\\frame_2024-10-02_14-15-33.jpg",
     "transcription": " En p\u00e5se med... Ja...",
     "no_speech_prob": 0.02550138719379902,
-    "new_audio_length": 4.294,
-    "locked_in": true
+    "new_audio_length": 4.294
   },
   {
     "index": 11,
     "video_path": "uploads\\recording-2024-10-02T12-15-36-688Z.webm",
     "processed": true,
-    "llm_processed": true,
+    "llm_processed": false,
     "image_path": "images\\frame_2024-10-02_14-15-36.jpg",
     "transcription": " Det h\u00e4r \u00e4r n\u00e5gon slags pins.",
     "no_speech_prob": 0.00988287664949894,
-    "new_audio_length": 2.691,
-    "locked_in": true
+    "new_audio_length": 2.691
   },
   {
     "index": 12,
     "video_path": "uploads\\recording-2024-10-02T12-15-42-927Z.webm",
     "processed": true,
-    "llm_processed": true,
+    "llm_processed": false,
     "image_path": "images\\frame_2024-10-02_14-15-43.jpg",
     "transcription": " Fr\u00e5n ett gammalt band fr\u00e5n 90-talet.",
     "no_speech_prob": 0.04003358259797096,
-    "new_audio_length": 4.079,
-    "locked_in": true
+    "new_audio_length": 4.079
   },
   {
     "index": 13,
     "video_path": "uploads\\recording-2024-10-02T12-15-51-932Z.webm",
     "processed": true,
-    "llm_processed": true,
+    "llm_processed": false,
     "image_path": "images\\frame_2024-10-02_14-15-52.jpg",
     "transcription": " Ett batteri kan vara bra. Jag har faktiskt ingen aning om det h\u00e4r batteriet har n\u00e5gon laddning eller inte, det borde jag kolla n\u00e5gon g\u00e5ng om den h\u00e4r faktiskt.",
     "no_speech_prob": 0.014239657670259476,
-    "new_audio_length": 8.344,
-    "locked_in": true
+    "new_audio_length": 8.344
   },
   {
     "index": 14,
     "video_path": "uploads\\recording-2024-10-02T12-16-02-677Z.webm",
     "processed": true,
-    "llm_processed": true,
+    "llm_processed": false,
     "image_path": "images\\frame_2024-10-02_14-16-06.jpg",
     "transcription": " N\u00e5gon slags fj\u00e4rrkontroll.",
     "no_speech_prob": 0.00880568940192461,
-    "new_audio_length": 1.845,
-    "locked_in": true
+    "new_audio_length": 1.845
   },
   {
     "index": 15,
     "video_path": "uploads\\recording-2024-10-02T12-16-14-675Z.webm",
     "processed": true,
-    "llm_processed": true,
+    "llm_processed": false,
     "image_path": "images\\frame_2024-10-02_14-16-15.jpg",
     "transcription": " En l\u00e4dder...",
     "no_speech_prob": 0.172567218542099,
-    "new_audio_length": 3.507,
-    "locked_in": true
+    "new_audio_length": 3.507
   },
   {
     "index": 16,
     "video_path": "uploads\\recording-2024-10-02T12-16-25-186Z.webm",
     "processed": true,
-    "llm_processed": true,
+    "llm_processed": false,
     "image_path": "images\\frame_2024-10-02_14-16-25.jpg",
     "transcription": " ...som man kontrollerar med den h\u00e4r p\u00e5 n\u00e5got s\u00e4tt d\u00e5.",
     "no_speech_prob": 0.0014541312120854855,
-    "new_audio_length": 2.894,
-    "locked_in": true
+    "new_audio_length": 2.894
   },
   {
     "index": 17,
     "video_path": "uploads\\recording-2024-10-02T12-16-27-926Z.webm",
     "processed": true,
-    "llm_processed": true,
+    "llm_processed": false,
     "image_path": "images\\frame_2024-10-02_14-16-29.jpg",
     "transcription": " Och h\u00e4r har vi n\u00e5gonting lite mindre.",
     "no_speech_prob": 0.0007433927385136485,
-    "new_audio_length": 1.623,
-    "locked_in": true
+    "new_audio_length": 1.623
   },
   {
     "index": 18,
     "video_path": "uploads\\recording-2024-10-02T12-16-40-437Z.webm",
     "processed": true,
-    "llm_processed": true,
+    "llm_processed": false,
     "image_path": "images\\frame_2024-10-02_14-16-41.jpg",
     "transcription": " Det h\u00e4r \u00e4r en skruv som sitter upp med en T-sp\u00e5rsmutter. Jag tror detta \u00e4r fr\u00e5n en...",
     "no_speech_prob": 0.0002652615658007562,

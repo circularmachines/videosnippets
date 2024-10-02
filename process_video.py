@@ -24,16 +24,19 @@ import ffmpeg  # Add this import
 
 IMAGES_FOLDER = 'images'
 
-def process_video(video_path):
+def process_video(video_path, last_transcription):
     start_time = time.time()  # Start timing
+
 
     # Extract audio from video
     print(video_path)
     cap = cv2.VideoCapture(video_path)
 
+
+
     if not cap.isOpened():
         print("Error: Could not open video.")
-        return None, None, 1.0   # Return None for both transcription and frame_path and 1.0 for no_speech_prob
+        return None, None, 1.0, 0.0  # Return None for both transcription and frame_path and 1.0 for no_speech_prob and 0.0 for new_audio_length
 
     ret, frame = cap.read()
 
@@ -52,7 +55,10 @@ def process_video(video_path):
     print(f"One frame extraction took {time.time() - start_time:.2f} seconds")
 
     audio_start_time = time.time()  # Start timing for audio extraction
-    audio_path = f"./audio/temp_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.mp3"
+    audio_path = f"./audio/{os.path.basename(video_path)}.mp3"
+    if os.path.exists(audio_path):
+        print("Audio already exists, skipping extraction")
+        return None, None, 1.0, 0.0
     extract_audio(input_path=video_path, output_path=audio_path)
     print(f"Audio extraction took {time.time() - audio_start_time:.2f} seconds")  # Log timing
 
@@ -63,6 +69,7 @@ def process_video(video_path):
 
     # Detect non-silent chunks
     non_silent_chunks = silence.detect_nonsilent(audio, min_silence_len=100, silence_thresh=-40)
+    new_audio_length = 0
 
     if non_silent_chunks:
         # Get the start and end of the first and last non-silent chunks
@@ -75,7 +82,7 @@ def process_video(video_path):
 
         if new_audio_length < 0.2:
             print("Audio is too short, skipping")
-            return "", frame_path, 1.0  # Return empty string for transcription and frame_path and 1.0 for no_speech_prob
+            return "", frame_path, 1.0, 0.0  # Return empty string for transcription and frame_path and 1.0 for no_speech_prob and 0.0 for new_audio_length 
         # Trim the audio
         trimmed_audio = audio[start_trim:end_trim]
 
@@ -110,7 +117,8 @@ def process_video(video_path):
             model="whisper-1",
             file=audio_file,
             language="sv",
-            response_format="verbose_json"
+            response_format="verbose_json",
+            prompt=last_transcription
         )
     print(f"Transcription took {time.time() - transcription_start_time:.2f} seconds")  # Log timing
     
@@ -135,7 +143,7 @@ def process_video(video_path):
     print("RESPONSE TEXT", response_text)
     print("Average no_speech_prob:", avg_no_speech_prob)
 
-    return response_text, frame_path, avg_no_speech_prob
+    return response_text, frame_path, avg_no_speech_prob, new_audio_length
 
 # Example usage
 if __name__ == "__main__":
