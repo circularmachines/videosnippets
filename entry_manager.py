@@ -95,7 +95,7 @@ def get_outgoing_entries():
             
             entry['images'] = [encode_image(path) for path in entry['image_paths'] if os.path.exists(path)]
             del entry['image_paths']
-            
+
             if entry['processed']:
                 entry['transcription'] = f"<p><b>Description:</b> {description}<br><b>Comments:</b> {comments}<br><b>Location:</b> {location}</p>"
             else:
