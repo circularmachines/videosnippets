@@ -50,9 +50,10 @@ def stream():
         last_entry_count = 0
         while True:
             entries = entry_manager.get_outgoing_entries()
-            if len(entries) > last_entry_count:
-                last_entry_count = len(entries)
-                yield f"data: {json.dumps(entries)}\n\n"
+            if len(entries) > 0:
+                if len(str(entries)) != last_entry_count:
+                    last_entry_count = len(str(entries))
+                    yield f"data: {json.dumps(entries)}\n\n"
             time.sleep(1)  # Check for new entries every second
 
     return Response(event_stream(), content_type='text/event-stream')

@@ -4,10 +4,15 @@ import time
 import process_video
 import base64
 import asyncio
+import sys
 
 import requests
 from openai import OpenAI
 from dotenv import load_dotenv
+
+from datetime import datetime
+os.makedirs("messages", exist_ok=True)
+working_dir = os.getcwd()
 
 # Load environment variables
 load_dotenv()
@@ -81,36 +86,62 @@ def encode_image(image_path):
 
 def get_outgoing_entries():
     entries = load_entries(OUTGOING_FILE)
-
     for entry in entries:
+    
         description = entry.get('description', 'N/A')
         comments = entry.get('comments', 'N/A')
         location = entry.get('location', 'N/A')
         if 'image_paths' in entry:  # Change 'image_path' to 'image_paths'
+            
             entry['images'] = [encode_image(path) for path in entry['image_paths'] if os.path.exists(path)]
-            entry['transcription'] = f"<p><b>Description:</b> {description}<br><b>Comments:</b> {comments}<br><b>Location:</b> {location}</p>"
             del entry['image_paths']
+            
+            if entry['processed']:
+                entry['transcription'] = f"<p><b>Description:</b> {description}<br><b>Comments:</b> {comments}<br><b>Location:</b> {location}</p>"
+            else:
+                entry['transcription'] = "<p><b>PROCESSING...</b></p>"
+
+            
     return entries
+
+def update_outgoing_entries():
+    outgoing_entries = load_entries(OUTGOING_FILE)
+    outgoing_entries = [e for e in outgoing_entries if e.get('processed',False)]
+    indexes=[]
+    for e in outgoing_entries:
+            indexes.extend(e['indexes_in_merged_video'])
+    
+    incoming_entries = get_incoming_entries()
+    processing_images = []
+    for e in incoming_entries:
+        if e['index'] not in indexes and e.get('image_path',False):
+            processing_images.extend(e['image_path'])
+    
+
+    outgoing_entries.append({"image_paths": processing_images,
+                            "processed": False})
+    save_entries(outgoing_entries, OUTGOING_FILE)
 
 def add_outgoing_entry(entry):
     entries = load_entries(OUTGOING_FILE)
     entries.append(entry)
     save_entries(entries, OUTGOING_FILE)
+    update_outgoing_entries()
 
 def get_image_path(index, incoming_entries):
     
     image_entry = next(entry for entry in incoming_entries if entry['index'] == index)
     return image_entry['image_path']
 
-async def process_videos():
+async def process_videos(debug=False):
     while True:
         incoming_entries = get_incoming_entries()
         last_transcription = ""
         for entry in incoming_entries:
 
-            if entry.get('transcription') is not None:
+            #if entry.get('transcription') is not None:
                 
-                last_transcription = entry['transcription']
+            #    last_transcription = entry['transcription']
 
             if not entry.get('processed', False):
                 video_path = entry['video_path']
@@ -133,7 +164,7 @@ async def process_videos():
                                         
                 
                         
-                    
+                    update_outgoing_entries()
                     print(f"Processing completed for {video_path}")
                 else:
                     print(f"Processing failed for {video_path}")
@@ -141,10 +172,11 @@ async def process_videos():
         
         await asyncio.sleep(1)  # Wait for 1 second before checking again
 
-async def process_LLM():
+async def process_LLM(debug=False):
     while True:
         llm_call = False
-        incoming_entries = [entry for entry in get_incoming_entries() if entry.get('valid',False)]
+        #incoming_entries = [entry for entry in get_incoming_entries() if entry.get('valid',False)]
+        incoming_entries = get_incoming_entries()
         new_entries = 0
         for entry in incoming_entries:
             if not entry.get('llm_processed', False) and entry.get('transcription'):
@@ -156,21 +188,25 @@ async def process_LLM():
         if llm_call:
             # Prepare the payload for OpenAI API
 
-            print("llm_messages:")
             
-            messages = [{"role": "system", "content": system_prompt}]
+            
+            messages = [{"role": "system", "content": [{"type": "text", "text": system_prompt}]}]
+            obsidian = f"## System\n{system_prompt}\n\n"
             #i=1
-            for i, entry in enumerate(incoming_entries):
-                if entry.get('transcription') and entry.get('image_path') and not entry.get('locked_in',False) and new_entries < 2:
+            for entry in incoming_entries:
+                if not entry.get('locked_in',False) and entry.get('image_path',False) and new_entries < 2:
                     
                     if not entry.get('llm_processed',False):
                         new_entries += 1
                         update_incoming_entry(entry['index'], llm_processed=True)
 
-                    print(f"Transcription #{entry['index']}: {entry['transcription']}")
+                    #print(f"Transcription #{entry['index']}: {entry['transcription']}")
                     #i+=1
                     path_list = entry['image_path']
-                    base64_image = encode_image(path_list[len(path_list)//2])
+                    image_path = path_list[len(path_list)//2]
+                    
+                    base64_image = encode_image(image_path)
+                   
                     messages.append({
                         "role": "user",
                         "content": [
@@ -181,13 +217,24 @@ async def process_LLM():
                             {
                                 "type": "image_url",
                                 "image_url": {
-                                    "url": f"data:image/jpeg;base64,{base64_image}"
+                                    "url": f"data:image/jpeg;base64,{base64_image}",
+                                    "detail": "low"
                                 }
                             }
                         ]
                     })
+                    image_path = image_path.replace('\\', '/').split("/",1)[-1]
+                    obsidian+=f"## Transcription #{entry['index']}\n{entry['transcription']}\n\n![[{image_path}]]\n\n"
 
-   
+            
+            #save messages along with images to a .md file for vizualising using obsidian
+            with open(f"messages/messages_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.md", "w", encoding="utf-8") as f:
+                f.write(obsidian)
+            
+            if debug:
+                x=input("Press Enter to continue...")
+            
+            #send messages to openai and get response   
             try:
                 response = requests.post(
                     "https://api.openai.com/v1/chat/completions",
@@ -222,6 +269,8 @@ async def process_LLM():
                             for ix in snippet['indexes_in_merged_video']:
                                 snippet['image_paths'].extend(get_image_path(ix, incoming_entries))
                             
+                            snippet['processed'] = True
+                            
                             add_outgoing_entry(snippet)
                             
                             for ix in snippet['indexes_in_merged_video']:
@@ -235,21 +284,32 @@ async def process_LLM():
 
             except Exception as e:
                 print(f"Error in LLM processing: {str(e)}")
-        #x=input("Press Enter to continue...")
-        await asyncio.sleep(1)  # Wait for 1 second before checking again
+        if debug:
+            x=input("Press Enter to continue...")
+        else:
+            await asyncio.sleep(1)  # Wait for 1 second before checking again
 
 
 
 
-async def main():
+async def main(debug=False):
     await asyncio.gather(
-        process_videos(),
-     #   process_LLM()
+        process_videos(debug),
+        process_LLM(debug)
     )
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+
+    # get debug from args  
+    # python entry_manager.py debug
+
+    if len(sys.argv) > 1:   
+        debug = sys.argv[1] == "debug"
+    else:
+        debug = False
+
+    asyncio.run(main(debug))
 
 
 

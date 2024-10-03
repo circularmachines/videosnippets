@@ -22,8 +22,11 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 import imageio
 import ffmpeg  # Add this import
 
-IMAGES_FOLDER = 'images'
+MESSAGES_FOLDER = 'messages'
+IMAGES_FOLDER = 'messages/images'
 AUDIO_FOLDER = 'audio'
+
+os.makedirs(MESSAGES_FOLDER, exist_ok=True)
 os.makedirs(IMAGES_FOLDER, exist_ok=True)
 os.makedirs(AUDIO_FOLDER, exist_ok=True)
 
@@ -41,8 +44,6 @@ def process_video(video_path, last_transcription):
         return None, [], 1.0, 0.0  # Return empty list for frame_paths
 
     frame_paths = []
-    os.makedirs(IMAGES_FOLDER, exist_ok=True)
-    os.makedirs(AUDIO_FOLDER, exist_ok=True)
     frame_count = 0
     while True:
         ret, frame = cap.read()

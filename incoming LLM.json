@@ -1,0 +1,706 @@
+[
+  {
+    "index": 0,
+    "video_path": "uploads\\recording-2024-10-02T15-29-28-290Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-45-02_0.jpg",
+      "messages/images\\frame_2024-10-03_09-45-02_20.jpg",
+      "messages/images\\frame_2024-10-03_09-45-02_40.jpg",
+      "messages/images\\frame_2024-10-03_09-45-02_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 1.0,
+    "new_audio_length": 0.306,
+    "valid": false
+  },
+  {
+    "index": 1,
+    "video_path": "uploads\\recording-2024-10-02T15-29-32-048Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-45-06_0.jpg",
+      "messages/images\\frame_2024-10-03_09-45-06_20.jpg",
+      "messages/images\\frame_2024-10-03_09-45-06_40.jpg",
+      "messages/images\\frame_2024-10-03_09-45-06_60.jpg",
+      "messages/images\\frame_2024-10-03_09-45-06_80.jpg",
+      "messages/images\\frame_2024-10-03_09-45-06_100.jpg"
+    ],
+    "transcription": " Hall\u00e5 hall\u00e5, vi testar lite h\u00e4r.",
+    "no_speech_prob": 0.005182178691029549,
+    "new_audio_length": 3.66,
+    "valid": true
+  },
+  {
+    "index": 2,
+    "video_path": "uploads\\recording-2024-10-02T15-29-37-032Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-45-07_0.jpg",
+      "messages/images\\frame_2024-10-03_09-45-07_20.jpg",
+      "messages/images\\frame_2024-10-03_09-45-07_40.jpg",
+      "messages/images\\frame_2024-10-03_09-45-07_60.jpg",
+      "messages/images\\frame_2024-10-03_09-45-07_80.jpg",
+      "messages/images\\frame_2024-10-03_09-45-07_100.jpg",
+      "messages/images\\frame_2024-10-03_09-45-07_120.jpg"
+    ],
+    "transcription": " testar, testar, testar.",
+    "no_speech_prob": 0.39845114946365356,
+    "new_audio_length": 3.492,
+    "valid": true
+  },
+  {
+    "index": 3,
+    "video_path": "uploads\\recording-2024-10-02T15-29-39-787Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-45-09_0.jpg",
+      "messages/images\\frame_2024-10-03_09-45-09_20.jpg",
+      "messages/images\\frame_2024-10-03_09-45-09_40.jpg",
+      "messages/images\\frame_2024-10-03_09-45-09_60.jpg"
+    ],
+    "transcription": " Och nu skulle jag vilja testa det h\u00e4r med att jag...",
+    "no_speech_prob": 0.10184326022863388,
+    "new_audio_length": 2.314,
+    "valid": true
+  },
+  {
+    "index": 4,
+    "video_path": "uploads\\recording-2024-10-02T15-29-42-537Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-45-10_0.jpg",
+      "messages/images\\frame_2024-10-03_09-45-10_20.jpg",
+      "messages/images\\frame_2024-10-03_09-45-10_40.jpg",
+      "messages/images\\frame_2024-10-03_09-45-10_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.7780399322509766,
+    "new_audio_length": 2.183,
+    "valid": false
+  },
+  {
+    "index": 5,
+    "video_path": "uploads\\recording-2024-10-02T15-29-45-289Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-45-12_0.jpg",
+      "messages/images\\frame_2024-10-03_09-45-12_20.jpg",
+      "messages/images\\frame_2024-10-03_09-45-12_40.jpg",
+      "messages/images\\frame_2024-10-03_09-45-12_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 1.0,
+    "new_audio_length": 0.429,
+    "valid": false
+  },
+  {
+    "index": 6,
+    "video_path": "uploads\\recording-2024-10-02T15-29-48-539Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-45-16_0.jpg",
+      "messages/images\\frame_2024-10-03_09-45-16_20.jpg",
+      "messages/images\\frame_2024-10-03_09-45-16_40.jpg",
+      "messages/images\\frame_2024-10-03_09-45-16_60.jpg",
+      "messages/images\\frame_2024-10-03_09-45-16_80.jpg"
+    ],
+    "transcription": " Ett bra tecken.",
+    "no_speech_prob": 0.3633898198604584,
+    "new_audio_length": 2.193,
+    "valid": true
+  },
+  {
+    "index": 7,
+    "video_path": "uploads\\recording-2024-10-02T15-29-51-543Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-45-17_0.jpg",
+      "messages/images\\frame_2024-10-03_09-45-17_20.jpg",
+      "messages/images\\frame_2024-10-03_09-45-17_40.jpg",
+      "messages/images\\frame_2024-10-03_09-45-17_60.jpg",
+      "messages/images\\frame_2024-10-03_09-45-17_80.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.7115828990936279,
+    "new_audio_length": 0.749,
+    "valid": false
+  },
+  {
+    "index": 8,
+    "video_path": "uploads\\recording-2024-10-02T15-29-54-293Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-45-18_0.jpg",
+      "messages/images\\frame_2024-10-03_09-45-18_20.jpg",
+      "messages/images\\frame_2024-10-03_09-45-18_40.jpg",
+      "messages/images\\frame_2024-10-03_09-45-18_60.jpg"
+    ],
+    "transcription": " Tjena. Tv\u00e5 fingrar.",
+    "no_speech_prob": 0.2277115136384964,
+    "new_audio_length": 2.297,
+    "valid": true
+  },
+  {
+    "index": 9,
+    "video_path": "uploads\\recording-2024-10-02T15-29-57-036Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-45-20_0.jpg",
+      "messages/images\\frame_2024-10-03_09-45-20_20.jpg",
+      "messages/images\\frame_2024-10-03_09-45-20_40.jpg",
+      "messages/images\\frame_2024-10-03_09-45-20_60.jpg"
+    ],
+    "transcription": " Lugn man och pekfint.",
+    "no_speech_prob": 0.3138601779937744,
+    "new_audio_length": 1.627,
+    "valid": true
+  },
+  {
+    "index": 10,
+    "video_path": "uploads\\recording-2024-10-02T15-30-01-287Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-45-21_0.jpg",
+      "messages/images\\frame_2024-10-03_09-45-21_20.jpg",
+      "messages/images\\frame_2024-10-03_09-45-21_40.jpg",
+      "messages/images\\frame_2024-10-03_09-45-21_60.jpg",
+      "messages/images\\frame_2024-10-03_09-45-21_80.jpg",
+      "messages/images\\frame_2024-10-03_09-45-21_100.jpg"
+    ],
+    "transcription": " Nu visar jag tre filer.",
+    "no_speech_prob": 0.020190585404634476,
+    "new_audio_length": 1.668,
+    "valid": true
+  },
+  {
+    "index": 11,
+    "video_path": "uploads\\recording-2024-10-02T15-30-04-039Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-45-22_0.jpg",
+      "messages/images\\frame_2024-10-03_09-45-22_20.jpg",
+      "messages/images\\frame_2024-10-03_09-45-22_40.jpg",
+      "messages/images\\frame_2024-10-03_09-45-22_60.jpg"
+    ],
+    "transcription": " Det var \u00e4ven l\u00e5ngfilet f\u00f6r en m\u00e4nniska.",
+    "no_speech_prob": 0.6333802938461304,
+    "new_audio_length": 1.094,
+    "valid": true
+  },
+  {
+    "index": 12,
+    "video_path": "uploads\\recording-2024-10-02T15-30-08-788Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-45-25_0.jpg",
+      "messages/images\\frame_2024-10-03_09-45-25_20.jpg",
+      "messages/images\\frame_2024-10-03_09-45-25_40.jpg",
+      "messages/images\\frame_2024-10-03_09-45-25_60.jpg",
+      "messages/images\\frame_2024-10-03_09-45-25_80.jpg",
+      "messages/images\\frame_2024-10-03_09-45-25_100.jpg",
+      "messages/images\\frame_2024-10-03_09-45-25_120.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.8959972262382507,
+    "new_audio_length": 0.806,
+    "valid": false
+  },
+  {
+    "index": 13,
+    "video_path": "uploads\\recording-2024-10-02T15-30-13-045Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-45-55_0.jpg",
+      "messages/images\\frame_2024-10-03_09-45-55_20.jpg",
+      "messages/images\\frame_2024-10-03_09-45-55_40.jpg",
+      "messages/images\\frame_2024-10-03_09-45-55_60.jpg",
+      "messages/images\\frame_2024-10-03_09-45-55_80.jpg",
+      "messages/images\\frame_2024-10-03_09-45-55_100.jpg"
+    ],
+    "transcription": " Puss och kram, hejd\u00e5!",
+    "no_speech_prob": 0.6746723651885986,
+    "new_audio_length": 2.483,
+    "valid": true
+  },
+  {
+    "index": 14,
+    "video_path": "uploads\\recording-2024-10-02T15-30-15-786Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-45-56_0.jpg",
+      "messages/images\\frame_2024-10-03_09-45-56_20.jpg",
+      "messages/images\\frame_2024-10-03_09-45-56_40.jpg",
+      "messages/images\\frame_2024-10-03_09-45-56_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.965124785900116,
+    "new_audio_length": 0.797,
+    "valid": false
+  },
+  {
+    "index": 15,
+    "video_path": "uploads\\recording-2024-10-02T15-30-19-040Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-45-57_0.jpg",
+      "messages/images\\frame_2024-10-03_09-45-57_20.jpg",
+      "messages/images\\frame_2024-10-03_09-45-57_40.jpg",
+      "messages/images\\frame_2024-10-03_09-45-58_60.jpg",
+      "messages/images\\frame_2024-10-03_09-45-58_80.jpg"
+    ],
+    "transcription": " Ringfingret var med lite h\u00e4r.",
+    "no_speech_prob": 0.26860707998275757,
+    "new_audio_length": 2.909,
+    "valid": true
+  },
+  {
+    "index": 16,
+    "video_path": "uploads\\recording-2024-10-02T15-30-21-786Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-45-59_0.jpg",
+      "messages/images\\frame_2024-10-03_09-45-59_20.jpg",
+      "messages/images\\frame_2024-10-03_09-45-59_40.jpg",
+      "messages/images\\frame_2024-10-03_09-45-59_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.8961471915245056,
+    "new_audio_length": 0,
+    "valid": false
+  },
+  {
+    "index": 17,
+    "video_path": "uploads\\recording-2024-10-02T15-30-24-537Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-46-00_0.jpg",
+      "messages/images\\frame_2024-10-03_09-46-00_20.jpg",
+      "messages/images\\frame_2024-10-03_09-46-00_40.jpg",
+      "messages/images\\frame_2024-10-03_09-46-00_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.8113341927528381,
+    "new_audio_length": 0,
+    "valid": false
+  },
+  {
+    "index": 18,
+    "video_path": "uploads\\recording-2024-10-02T15-30-30-800Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-46-01_0.jpg",
+      "messages/images\\frame_2024-10-03_09-46-01_20.jpg",
+      "messages/images\\frame_2024-10-03_09-46-01_40.jpg",
+      "messages/images\\frame_2024-10-03_09-46-01_60.jpg",
+      "messages/images\\frame_2024-10-03_09-46-01_80.jpg",
+      "messages/images\\frame_2024-10-03_09-46-01_100.jpg",
+      "messages/images\\frame_2024-10-03_09-46-01_120.jpg",
+      "messages/images\\frame_2024-10-03_09-46-01_140.jpg",
+      "messages/images\\frame_2024-10-03_09-46-01_160.jpg",
+      "messages/images\\frame_2024-10-03_09-46-01_180.jpg"
+    ],
+    "transcription": " Det \u00e4r f\u00f6rst nu som jag visar alla fem fingrar.",
+    "no_speech_prob": 0.0007090782164596021,
+    "new_audio_length": 4.589,
+    "valid": true
+  },
+  {
+    "index": 19,
+    "video_path": "uploads\\recording-2024-10-02T15-30-33-539Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-46-03_0.jpg",
+      "messages/images\\frame_2024-10-03_09-46-03_20.jpg",
+      "messages/images\\frame_2024-10-03_09-46-03_40.jpg",
+      "messages/images\\frame_2024-10-03_09-46-03_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.8202213644981384,
+    "new_audio_length": 0,
+    "valid": false
+  },
+  {
+    "index": 20,
+    "video_path": "uploads\\recording-2024-10-02T15-30-36-287Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-46-04_0.jpg",
+      "messages/images\\frame_2024-10-03_09-46-04_20.jpg",
+      "messages/images\\frame_2024-10-03_09-46-04_40.jpg",
+      "messages/images\\frame_2024-10-03_09-46-04_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.778306245803833,
+    "new_audio_length": 0,
+    "valid": false
+  },
+  {
+    "index": 21,
+    "video_path": "uploads\\recording-2024-10-02T15-30-43-541Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-46-05_0.jpg",
+      "messages/images\\frame_2024-10-03_09-46-05_20.jpg",
+      "messages/images\\frame_2024-10-03_09-46-05_40.jpg",
+      "messages/images\\frame_2024-10-03_09-46-05_60.jpg",
+      "messages/images\\frame_2024-10-03_09-46-05_80.jpg",
+      "messages/images\\frame_2024-10-03_09-46-05_100.jpg",
+      "messages/images\\frame_2024-10-03_09-46-05_120.jpg",
+      "messages/images\\frame_2024-10-03_09-46-05_140.jpg",
+      "messages/images\\frame_2024-10-03_09-46-05_160.jpg",
+      "messages/images\\frame_2024-10-03_09-46-05_180.jpg",
+      "messages/images\\frame_2024-10-03_09-46-05_200.jpg"
+    ],
+    "transcription": " Och sen lutar jag mig tillbaka lite. Dra mig bort ifr\u00e5n kameran!",
+    "no_speech_prob": 0.0010147425346076488,
+    "new_audio_length": 6.041,
+    "valid": true
+  },
+  {
+    "index": 22,
+    "video_path": "uploads\\recording-2024-10-02T15-30-51-791Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-46-07_0.jpg",
+      "messages/images\\frame_2024-10-03_09-46-07_20.jpg",
+      "messages/images\\frame_2024-10-03_09-46-07_40.jpg",
+      "messages/images\\frame_2024-10-03_09-46-07_60.jpg",
+      "messages/images\\frame_2024-10-03_09-46-07_80.jpg",
+      "messages/images\\frame_2024-10-03_09-46-07_100.jpg",
+      "messages/images\\frame_2024-10-03_09-46-07_120.jpg",
+      "messages/images\\frame_2024-10-03_09-46-07_140.jpg",
+      "messages/images\\frame_2024-10-03_09-46-07_160.jpg",
+      "messages/images\\frame_2024-10-03_09-46-07_180.jpg",
+      "messages/images\\frame_2024-10-03_09-46-07_200.jpg",
+      "messages/images\\frame_2024-10-03_09-46-07_220.jpg"
+    ],
+    "transcription": " Och s\u00e5 tittar jag j\u00e4tten\u00e4ra kameran. J\u00e4tten\u00e4ra kameran!",
+    "no_speech_prob": 0.0066900188103318214,
+    "new_audio_length": 4.954,
+    "valid": true
+  },
+  {
+    "index": 23,
+    "video_path": "uploads\\recording-2024-10-02T15-30-54-536Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-46-09_0.jpg",
+      "messages/images\\frame_2024-10-03_09-46-09_20.jpg",
+      "messages/images\\frame_2024-10-03_09-46-09_40.jpg",
+      "messages/images\\frame_2024-10-03_09-46-09_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.7716026902198792,
+    "new_audio_length": 0,
+    "valid": false
+  },
+  {
+    "index": 24,
+    "video_path": "uploads\\recording-2024-10-02T15-30-57-322Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-46-10_0.jpg",
+      "messages/images\\frame_2024-10-03_09-46-10_20.jpg",
+      "messages/images\\frame_2024-10-03_09-46-10_40.jpg",
+      "messages/images\\frame_2024-10-03_09-46-10_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 1.0,
+    "new_audio_length": 1.241,
+    "valid": false
+  },
+  {
+    "index": 25,
+    "video_path": "uploads\\recording-2024-10-02T15-31-00-037Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-46-12_0.jpg",
+      "messages/images\\frame_2024-10-03_09-46-12_20.jpg",
+      "messages/images\\frame_2024-10-03_09-46-12_40.jpg",
+      "messages/images\\frame_2024-10-03_09-46-12_60.jpg"
+    ],
+    "transcription": " R\u00e4tt.",
+    "no_speech_prob": 0.5370405912399292,
+    "new_audio_length": 0,
+    "valid": false
+  },
+  {
+    "index": 26,
+    "video_path": "uploads\\recording-2024-10-02T15-31-02-792Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-46-13_0.jpg",
+      "messages/images\\frame_2024-10-03_09-46-13_20.jpg",
+      "messages/images\\frame_2024-10-03_09-46-13_40.jpg",
+      "messages/images\\frame_2024-10-03_09-46-13_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.8389924168586731,
+    "new_audio_length": 0,
+    "valid": false
+  },
+  {
+    "index": 27,
+    "video_path": "uploads\\recording-2024-10-02T15-31-05-542Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-46-14_0.jpg",
+      "messages/images\\frame_2024-10-03_09-46-14_20.jpg",
+      "messages/images\\frame_2024-10-03_09-46-14_40.jpg",
+      "messages/images\\frame_2024-10-03_09-46-14_60.jpg"
+    ],
+    "transcription": " \u00d6ver.",
+    "no_speech_prob": 0.5870469808578491,
+    "new_audio_length": 0,
+    "valid": false
+  },
+  {
+    "index": 28,
+    "video_path": "uploads\\recording-2024-10-02T15-31-08-292Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-46-16_0.jpg",
+      "messages/images\\frame_2024-10-03_09-46-16_20.jpg",
+      "messages/images\\frame_2024-10-03_09-46-16_40.jpg",
+      "messages/images\\frame_2024-10-03_09-46-16_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.7628858089447021,
+    "new_audio_length": 0,
+    "valid": false
+  },
+  {
+    "index": 29,
+    "video_path": "uploads\\recording-2024-10-02T15-31-11-045Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-46-17_0.jpg",
+      "messages/images\\frame_2024-10-03_09-46-17_20.jpg",
+      "messages/images\\frame_2024-10-03_09-46-17_40.jpg",
+      "messages/images\\frame_2024-10-03_09-46-17_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 1.0,
+    "new_audio_length": 0.0,
+    "valid": false
+  },
+  {
+    "index": 30,
+    "video_path": "uploads\\recording-2024-10-02T15-31-13-787Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-46-17_0.jpg",
+      "messages/images\\frame_2024-10-03_09-46-17_20.jpg",
+      "messages/images\\frame_2024-10-03_09-46-17_40.jpg",
+      "messages/images\\frame_2024-10-03_09-46-17_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.7429283857345581,
+    "new_audio_length": 0,
+    "valid": false
+  },
+  {
+    "index": 31,
+    "video_path": "uploads\\recording-2024-10-02T15-31-16-550Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-46-20_0.jpg",
+      "messages/images\\frame_2024-10-03_09-46-20_20.jpg",
+      "messages/images\\frame_2024-10-03_09-46-20_40.jpg",
+      "messages/images\\frame_2024-10-03_09-46-20_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 1.0,
+    "new_audio_length": 0.0,
+    "valid": false
+  },
+  {
+    "index": 32,
+    "video_path": "uploads\\recording-2024-10-02T15-31-19-284Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-46-21_0.jpg",
+      "messages/images\\frame_2024-10-03_09-46-21_20.jpg",
+      "messages/images\\frame_2024-10-03_09-46-21_40.jpg",
+      "messages/images\\frame_2024-10-03_09-46-21_60.jpg"
+    ],
+    "transcription": " Snyggt!",
+    "no_speech_prob": 0.5944597125053406,
+    "new_audio_length": 0,
+    "valid": false
+  },
+  {
+    "index": 33,
+    "video_path": "uploads\\recording-2024-10-02T15-31-22-038Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-46-22_0.jpg",
+      "messages/images\\frame_2024-10-03_09-46-22_20.jpg",
+      "messages/images\\frame_2024-10-03_09-46-22_40.jpg",
+      "messages/images\\frame_2024-10-03_09-46-22_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 1.0,
+    "new_audio_length": 0.0,
+    "valid": false
+  },
+  {
+    "index": 34,
+    "video_path": "uploads\\recording-2024-10-02T15-31-24-794Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-46-22_0.jpg",
+      "messages/images\\frame_2024-10-03_09-46-22_20.jpg",
+      "messages/images\\frame_2024-10-03_09-46-22_40.jpg",
+      "messages/images\\frame_2024-10-03_09-46-22_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 1.0,
+    "new_audio_length": 0.0,
+    "valid": false
+  },
+  {
+    "index": 35,
+    "video_path": "uploads\\recording-2024-10-02T15-31-32-544Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-46-23_0.jpg",
+      "messages/images\\frame_2024-10-03_09-46-23_20.jpg",
+      "messages/images\\frame_2024-10-03_09-46-23_40.jpg",
+      "messages/images\\frame_2024-10-03_09-46-23_60.jpg",
+      "messages/images\\frame_2024-10-03_09-46-23_80.jpg",
+      "messages/images\\frame_2024-10-03_09-46-23_100.jpg",
+      "messages/images\\frame_2024-10-03_09-46-23_120.jpg",
+      "messages/images\\frame_2024-10-03_09-46-23_140.jpg",
+      "messages/images\\frame_2024-10-03_09-46-23_160.jpg",
+      "messages/images\\frame_2024-10-03_09-46-23_180.jpg",
+      "messages/images\\frame_2024-10-03_09-46-23_200.jpg",
+      "messages/images\\frame_2024-10-03_09-46-23_220.jpg"
+    ],
+    "transcription": " Okej, d\u00e5 kanske det \u00e4r dags att avsluta det h\u00e4r d\u00e5.",
+    "no_speech_prob": 0.03877784684300423,
+    "new_audio_length": 5.282,
+    "valid": true
+  },
+  {
+    "index": 36,
+    "video_path": "uploads\\recording-2024-10-02T15-31-35-285Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-46-24_0.jpg",
+      "messages/images\\frame_2024-10-03_09-46-24_20.jpg",
+      "messages/images\\frame_2024-10-03_09-46-24_40.jpg",
+      "messages/images\\frame_2024-10-03_09-46-24_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.7019133567810059,
+    "new_audio_length": 0,
+    "valid": false
+  },
+  {
+    "index": 37,
+    "video_path": "uploads\\recording-2024-10-02T15-31-38-294Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-46-25_0.jpg",
+      "messages/images\\frame_2024-10-03_09-46-26_20.jpg",
+      "messages/images\\frame_2024-10-03_09-46-26_40.jpg",
+      "messages/images\\frame_2024-10-03_09-46-26_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 1.0,
+    "new_audio_length": 0.0,
+    "valid": false
+  },
+  {
+    "index": 38,
+    "video_path": "uploads\\recording-2024-10-02T15-31-41-034Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-46-26_0.jpg",
+      "messages/images\\frame_2024-10-03_09-46-26_20.jpg",
+      "messages/images\\frame_2024-10-03_09-46-26_40.jpg",
+      "messages/images\\frame_2024-10-03_09-46-26_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 1.0,
+    "new_audio_length": 0.0,
+    "valid": false
+  },
+  {
+    "index": 39,
+    "video_path": "uploads\\recording-2024-10-02T15-31-43-786Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-46-26_0.jpg",
+      "messages/images\\frame_2024-10-03_09-46-26_20.jpg",
+      "messages/images\\frame_2024-10-03_09-46-26_40.jpg",
+      "messages/images\\frame_2024-10-03_09-46-26_60.jpg"
+    ],
+    "transcription": " Ha det bra, hej d\u00e5!",
+    "no_speech_prob": 0.6129798293113708,
+    "new_audio_length": 2.173,
+    "valid": true
+  },
+  {
+    "index": 40,
+    "video_path": "uploads\\recording-2024-10-02T15-31-46-537Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-46-28_0.jpg",
+      "messages/images\\frame_2024-10-03_09-46-28_20.jpg",
+      "messages/images\\frame_2024-10-03_09-46-28_40.jpg",
+      "messages/images\\frame_2024-10-03_09-46-28_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.8231920003890991,
+    "new_audio_length": 2.233,
+    "valid": false
+  },
+  {
+    "index": 41,
+    "video_path": "uploads\\recording-2024-10-02T15-31-49-285Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-46-29_0.jpg",
+      "messages/images\\frame_2024-10-03_09-46-29_20.jpg",
+      "messages/images\\frame_2024-10-03_09-46-29_40.jpg",
+      "messages/images\\frame_2024-10-03_09-46-29_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 1.0,
+    "new_audio_length": 0.0,
+    "valid": false
+  },
+  {
+    "index": 42,
+    "video_path": "uploads\\recording-2024-10-02T15-31-52-042Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-46-30_0.jpg",
+      "messages/images\\frame_2024-10-03_09-46-30_20.jpg",
+      "messages/images\\frame_2024-10-03_09-46-30_40.jpg",
+      "messages/images\\frame_2024-10-03_09-46-30_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.7827585935592651,
+    "new_audio_length": 1.951,
+    "valid": false
+  },
+  {
+    "index": 43,
+    "video_path": "uploads\\recording-2024-10-02T15-31-54-792Z.webm",
+    "processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_09-46-31_0.jpg",
+      "messages/images\\frame_2024-10-03_09-46-31_20.jpg",
+      "messages/images\\frame_2024-10-03_09-46-31_40.jpg",
+      "messages/images\\frame_2024-10-03_09-46-31_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 1.0,
+    "new_audio_length": 0.25,
+    "valid": false
+  }
+]
