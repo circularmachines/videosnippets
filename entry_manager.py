@@ -206,6 +206,8 @@ async def process_LLM(debug=False):
                     image_path = path_list[len(path_list)//2]
                     
                     base64_image = encode_image(image_path)
+                    if entry['transcription'] is None:
+                        entry['transcription'] = ""
                    
                     messages.append({
                         "role": "user",
@@ -294,8 +296,9 @@ async def process_LLM(debug=False):
 
 async def main(debug=False):
     await asyncio.gather(
-        process_videos(debug),
-        process_LLM(debug)
+        process_LLM(debug),
+        process_videos(debug)
+
     )
 
 

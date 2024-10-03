@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const audioThreshold = 20; // Audio detection threshold
     const scrollDelay = 200; // Delay before scrolling in milliseconds
     const recordingMinDuration = 2500; // Minimum recording duration in milliseconds
+    const maxRecordingDuration = 5000; // Maximum recording duration in milliseconds
 
     let mediaRecorder;
     let recordedChunks = [];
@@ -38,14 +39,69 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('Starting webcam...');
             const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
             console.log('Got media stream:', stream);
-            localVideo.srcObject = stream;
-            localVideo.play(); // Explicitly play the video
+
+            // Create a video element to get the original video dimensions
+            const videoElement = document.createElement('video');
+            videoElement.srcObject = stream;
+            await new Promise(resolve => videoElement.onloadedmetadata = resolve);
+
+            // Calculate the crop dimensions
+            const originalWidth = videoElement.videoWidth;
+            const originalHeight = videoElement.videoHeight;
+            const aspectRatio = originalWidth / originalHeight;
+            let cropWidth, cropHeight;
+
+            if (aspectRatio > 1) {
+                cropHeight = originalHeight;
+                cropWidth = cropHeight;
+            } else {
+                cropWidth = originalWidth;
+                cropHeight = cropWidth;
+            }
+
+            // Create a canvas to crop and scale the video
+            const canvas = document.createElement('canvas');
+            canvas.width = 480;
+            canvas.height = 480;
+            const ctx = canvas.getContext('2d');
+
+            // Update the video feed
+            function updateCanvas() {
+                ctx.drawImage(
+                    videoElement,
+                    (originalWidth - cropWidth) / 2,
+                    (originalHeight - cropHeight) / 2,
+                    cropWidth,
+                    cropHeight,
+                    0,
+                    0,
+                    512,
+                    512
+                );
+                requestAnimationFrame(updateCanvas);
+            }
+
+            // Start playing the video element
+            await videoElement.play();
+
+            // Start updating the canvas
+            updateCanvas();
+
+            // Create a new stream from the canvas
+            const croppedStream = canvas.captureStream();
+
+            // Add the audio track to the cropped stream
+            const audioTrack = stream.getAudioTracks()[0];
+            croppedStream.addTrack(audioTrack);
+
+            localVideo.srcObject = croppedStream;
+            await localVideo.play(); // Explicitly play the video and wait for it to start
             console.log('Webcam started successfully');
 
             // Set up audio analysis
             audioContext = new (window.AudioContext || window.webkitAudioContext)();
             analyser = audioContext.createAnalyser();
-            const source = audioContext.createMediaStreamSource(stream);
+            const source = audioContext.createMediaStreamSource(croppedStream);
             source.connect(analyser);
             analyser.fftSize = 2048;
 
@@ -78,7 +134,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (mediaRecorder && mediaRecorder.state === 'recording' && 
                     Date.now() - lastRecordingStartTime > recordingMinDuration) {
                     stopRecording();
+                    
                 }
+            }
+
+            // Add a check for maximum recording duration
+            if (mediaRecorder && mediaRecorder.state === 'recording' && 
+                Date.now() - lastRecordingStartTime > maxRecordingDuration) {
+                stopRecording();
             }
         }, audioDetectionIntervalTime); // Use parameter for interval time
     }
@@ -134,6 +197,14 @@ document.addEventListener('DOMContentLoaded', () => {
         startButton.disabled = true;
         stopButton.disabled = false;
         console.log('Recording started');
+
+        // Add a timeout to automatically stop the recording after maxRecordingDuration
+        setTimeout(() => {
+            if (mediaRecorder && mediaRecorder.state === 'recording') {
+                console.log('Max recording duration reached, stopping recording');
+                stopRecording();
+            }
+        }, maxRecordingDuration);
     }
 
     function stopRecording() {

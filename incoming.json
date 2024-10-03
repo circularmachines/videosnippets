@@ -1,1 +1,714 @@
-[]
+[
+  {
+    "index": 0,
+    "video_path": "uploads\\recording-2024-10-03T12-56-09-647Z.webm",
+    "processed": true,
+    "llm_processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-56-10_0.jpg",
+      "messages/images\\frame_2024-10-03_14-56-10_20.jpg",
+      "messages/images\\frame_2024-10-03_14-56-10_40.jpg",
+      "messages/images\\frame_2024-10-03_14-56-10_60.jpg",
+      "messages/images\\frame_2024-10-03_14-56-10_80.jpg",
+      "messages/images\\frame_2024-10-03_14-56-10_100.jpg",
+      "messages/images\\frame_2024-10-03_14-56-10_120.jpg",
+      "messages/images\\frame_2024-10-03_14-56-10_140.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 1.0,
+    "new_audio_length": 2.541,
+    "valid": false,
+    "locked_in": true
+  },
+  {
+    "index": 1,
+    "video_path": "uploads\\recording-2024-10-03T12-56-11-897Z.webm",
+    "processed": true,
+    "llm_processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-56-13_0.jpg",
+      "messages/images\\frame_2024-10-03_14-56-13_20.jpg",
+      "messages/images\\frame_2024-10-03_14-56-13_40.jpg",
+      "messages/images\\frame_2024-10-03_14-56-13_60.jpg",
+      "messages/images\\frame_2024-10-03_14-56-13_80.jpg",
+      "messages/images\\frame_2024-10-03_14-56-13_100.jpg",
+      "messages/images\\frame_2024-10-03_14-56-13_120.jpg"
+    ],
+    "transcription": " Jag provade lite kort.",
+    "no_speech_prob": 0.5648490786552429,
+    "new_audio_length": 2.16,
+    "valid": true,
+    "locked_in": true
+  },
+  {
+    "index": 2,
+    "video_path": "uploads\\recording-2024-10-03T12-56-14-644Z.webm",
+    "processed": true,
+    "llm_processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-56-15_0.jpg",
+      "messages/images\\frame_2024-10-03_14-56-15_20.jpg",
+      "messages/images\\frame_2024-10-03_14-56-15_40.jpg",
+      "messages/images\\frame_2024-10-03_14-56-15_60.jpg",
+      "messages/images\\frame_2024-10-03_14-56-15_80.jpg",
+      "messages/images\\frame_2024-10-03_14-56-15_100.jpg",
+      "messages/images\\frame_2024-10-03_14-56-15_120.jpg",
+      "messages/images\\frame_2024-10-03_14-56-15_140.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.9120418429374695,
+    "new_audio_length": 0.406,
+    "valid": false,
+    "locked_in": true
+  },
+  {
+    "index": 3,
+    "video_path": "uploads\\recording-2024-10-03T12-56-14-708Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [],
+    "transcription": null,
+    "no_speech_prob": 1.0,
+    "new_audio_length": 0.0,
+    "valid": false
+  },
+  {
+    "index": 4,
+    "video_path": "uploads\\recording-2024-10-03T12-56-16-949Z.webm",
+    "processed": true,
+    "llm_processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-56-17_0.jpg",
+      "messages/images\\frame_2024-10-03_14-56-17_20.jpg",
+      "messages/images\\frame_2024-10-03_14-56-18_40.jpg",
+      "messages/images\\frame_2024-10-03_14-56-18_60.jpg",
+      "messages/images\\frame_2024-10-03_14-56-18_80.jpg",
+      "messages/images\\frame_2024-10-03_14-56-18_100.jpg",
+      "messages/images\\frame_2024-10-03_14-56-18_120.jpg"
+    ],
+    "transcription": " Bort.",
+    "no_speech_prob": 0.34209010004997253,
+    "new_audio_length": 1.454,
+    "valid": true,
+    "locked_in": true
+  },
+  {
+    "index": 5,
+    "video_path": "uploads\\recording-2024-10-03T12-56-19-644Z.webm",
+    "processed": true,
+    "llm_processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-56-20_0.jpg",
+      "messages/images\\frame_2024-10-03_14-56-20_20.jpg",
+      "messages/images\\frame_2024-10-03_14-56-20_40.jpg",
+      "messages/images\\frame_2024-10-03_14-56-20_60.jpg",
+      "messages/images\\frame_2024-10-03_14-56-20_80.jpg",
+      "messages/images\\frame_2024-10-03_14-56-20_100.jpg",
+      "messages/images\\frame_2024-10-03_14-56-20_120.jpg",
+      "messages/images\\frame_2024-10-03_14-56-20_140.jpg"
+    ],
+    "transcription": " Telefon. Vad \u00e4r det f\u00f6r telefon?",
+    "no_speech_prob": 0.6040053367614746,
+    "new_audio_length": 2.482,
+    "valid": true,
+    "locked_in": true
+  },
+  {
+    "index": 6,
+    "video_path": "uploads\\recording-2024-10-03T12-56-19-688Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [],
+    "transcription": null,
+    "no_speech_prob": 1.0,
+    "new_audio_length": 0.0,
+    "valid": false
+  },
+  {
+    "index": 7,
+    "video_path": "uploads\\recording-2024-10-03T12-56-19-727Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [],
+    "transcription": null,
+    "no_speech_prob": 1.0,
+    "new_audio_length": 0.0,
+    "valid": false
+  },
+  {
+    "index": 8,
+    "video_path": "uploads\\recording-2024-10-03T12-56-21-994Z.webm",
+    "processed": true,
+    "llm_processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-56-25_0.jpg",
+      "messages/images\\frame_2024-10-03_14-56-25_20.jpg",
+      "messages/images\\frame_2024-10-03_14-56-25_40.jpg",
+      "messages/images\\frame_2024-10-03_14-56-25_60.jpg",
+      "messages/images\\frame_2024-10-03_14-56-25_80.jpg",
+      "messages/images\\frame_2024-10-03_14-56-25_100.jpg",
+      "messages/images\\frame_2024-10-03_14-56-25_120.jpg"
+    ],
+    "transcription": " Tackar f\u00f6r mig.",
+    "no_speech_prob": 0.48517051339149475,
+    "new_audio_length": 1.994,
+    "valid": true,
+    "locked_in": true
+  },
+  {
+    "index": 9,
+    "video_path": "uploads\\recording-2024-10-03T12-56-24-645Z.webm",
+    "processed": true,
+    "llm_processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-56-27_0.jpg",
+      "messages/images\\frame_2024-10-03_14-56-27_20.jpg",
+      "messages/images\\frame_2024-10-03_14-56-27_40.jpg",
+      "messages/images\\frame_2024-10-03_14-56-27_60.jpg",
+      "messages/images\\frame_2024-10-03_14-56-27_80.jpg",
+      "messages/images\\frame_2024-10-03_14-56-27_100.jpg",
+      "messages/images\\frame_2024-10-03_14-56-27_120.jpg",
+      "messages/images\\frame_2024-10-03_14-56-27_140.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 1.0,
+    "new_audio_length": 1.488,
+    "valid": false,
+    "locked_in": true
+  },
+  {
+    "index": 10,
+    "video_path": "uploads\\recording-2024-10-03T12-56-24-704Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [],
+    "transcription": null,
+    "no_speech_prob": 1.0,
+    "new_audio_length": 0.0,
+    "valid": false
+  },
+  {
+    "index": 11,
+    "video_path": "uploads\\recording-2024-10-03T12-56-24-860Z.webm",
+    "processed": true,
+    "llm_processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-56-29_0.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.9645925164222717,
+    "new_audio_length": 0,
+    "valid": false,
+    "locked_in": true
+  },
+  {
+    "index": 12,
+    "video_path": "uploads\\recording-2024-10-03T12-56-27-027Z.webm",
+    "processed": true,
+    "llm_processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-56-31_0.jpg",
+      "messages/images\\frame_2024-10-03_14-56-31_20.jpg",
+      "messages/images\\frame_2024-10-03_14-56-31_40.jpg",
+      "messages/images\\frame_2024-10-03_14-56-31_60.jpg",
+      "messages/images\\frame_2024-10-03_14-56-31_80.jpg",
+      "messages/images\\frame_2024-10-03_14-56-31_100.jpg",
+      "messages/images\\frame_2024-10-03_14-56-31_120.jpg"
+    ],
+    "transcription": " Vi \u00f6vrig.",
+    "no_speech_prob": 0.537462055683136,
+    "new_audio_length": 1.796,
+    "valid": true,
+    "locked_in": true
+  },
+  {
+    "index": 13,
+    "video_path": "uploads\\recording-2024-10-03T12-56-29-645Z.webm",
+    "processed": true,
+    "llm_processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-56-34_0.jpg",
+      "messages/images\\frame_2024-10-03_14-56-34_20.jpg",
+      "messages/images\\frame_2024-10-03_14-56-34_40.jpg",
+      "messages/images\\frame_2024-10-03_14-56-34_60.jpg",
+      "messages/images\\frame_2024-10-03_14-56-34_80.jpg",
+      "messages/images\\frame_2024-10-03_14-56-34_100.jpg",
+      "messages/images\\frame_2024-10-03_14-56-34_120.jpg",
+      "messages/images\\frame_2024-10-03_14-56-34_140.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.831338107585907,
+    "new_audio_length": 2.374,
+    "valid": false,
+    "locked_in": true
+  },
+  {
+    "index": 14,
+    "video_path": "uploads\\recording-2024-10-03T12-56-29-698Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [],
+    "transcription": null,
+    "no_speech_prob": 1.0,
+    "new_audio_length": 0.0,
+    "valid": false
+  },
+  {
+    "index": 15,
+    "video_path": "uploads\\recording-2024-10-03T12-56-29-741Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [],
+    "transcription": null,
+    "no_speech_prob": 1.0,
+    "new_audio_length": 0.0,
+    "valid": false
+  },
+  {
+    "index": 16,
+    "video_path": "uploads\\recording-2024-10-03T12-56-29-892Z.webm",
+    "processed": true,
+    "llm_processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-56-36_0.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.9648661613464355,
+    "new_audio_length": 0,
+    "valid": false,
+    "locked_in": true
+  },
+  {
+    "index": 17,
+    "video_path": "uploads\\recording-2024-10-03T12-56-32-074Z.webm",
+    "processed": true,
+    "llm_processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-56-37_0.jpg",
+      "messages/images\\frame_2024-10-03_14-56-37_20.jpg",
+      "messages/images\\frame_2024-10-03_14-56-37_40.jpg",
+      "messages/images\\frame_2024-10-03_14-56-37_60.jpg",
+      "messages/images\\frame_2024-10-03_14-56-37_80.jpg",
+      "messages/images\\frame_2024-10-03_14-56-37_100.jpg",
+      "messages/images\\frame_2024-10-03_14-56-37_120.jpg"
+    ],
+    "transcription": " Gud.",
+    "no_speech_prob": 0.47942638397216797,
+    "new_audio_length": 0.273,
+    "valid": false,
+    "locked_in": true
+  },
+  {
+    "index": 18,
+    "video_path": "uploads\\recording-2024-10-03T12-56-34-647Z.webm",
+    "processed": true,
+    "llm_processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-56-40_0.jpg",
+      "messages/images\\frame_2024-10-03_14-56-40_20.jpg",
+      "messages/images\\frame_2024-10-03_14-56-40_40.jpg",
+      "messages/images\\frame_2024-10-03_14-56-40_60.jpg",
+      "messages/images\\frame_2024-10-03_14-56-40_80.jpg",
+      "messages/images\\frame_2024-10-03_14-56-40_100.jpg",
+      "messages/images\\frame_2024-10-03_14-56-40_120.jpg",
+      "messages/images\\frame_2024-10-03_14-56-40_140.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.7118017077445984,
+    "new_audio_length": 0,
+    "valid": false,
+    "locked_in": true
+  },
+  {
+    "index": 19,
+    "video_path": "uploads\\recording-2024-10-03T12-56-34-715Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [],
+    "transcription": null,
+    "no_speech_prob": 1.0,
+    "new_audio_length": 0.0,
+    "valid": false
+  },
+  {
+    "index": 20,
+    "video_path": "uploads\\recording-2024-10-03T12-56-34-757Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [],
+    "transcription": null,
+    "no_speech_prob": 1.0,
+    "new_audio_length": 0.0,
+    "valid": false
+  },
+  {
+    "index": 21,
+    "video_path": "uploads\\recording-2024-10-03T12-56-34-922Z.webm",
+    "processed": true,
+    "llm_processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-56-42_0.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 1.0,
+    "new_audio_length": 0.0,
+    "valid": false
+  },
+  {
+    "index": 22,
+    "video_path": "uploads\\recording-2024-10-03T12-56-37-110Z.webm",
+    "processed": true,
+    "llm_processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-56-42_0.jpg",
+      "messages/images\\frame_2024-10-03_14-56-42_20.jpg",
+      "messages/images\\frame_2024-10-03_14-56-42_40.jpg",
+      "messages/images\\frame_2024-10-03_14-56-42_60.jpg",
+      "messages/images\\frame_2024-10-03_14-56-42_80.jpg",
+      "messages/images\\frame_2024-10-03_14-56-43_100.jpg",
+      "messages/images\\frame_2024-10-03_14-56-43_120.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 1.0,
+    "new_audio_length": 1.518,
+    "valid": false
+  },
+  {
+    "index": 23,
+    "video_path": "uploads\\recording-2024-10-03T12-56-39-706Z.webm",
+    "processed": true,
+    "llm_processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-56-44_0.jpg",
+      "messages/images\\frame_2024-10-03_14-56-45_20.jpg",
+      "messages/images\\frame_2024-10-03_14-56-45_40.jpg",
+      "messages/images\\frame_2024-10-03_14-56-45_60.jpg",
+      "messages/images\\frame_2024-10-03_14-56-45_80.jpg",
+      "messages/images\\frame_2024-10-03_14-56-45_100.jpg",
+      "messages/images\\frame_2024-10-03_14-56-45_120.jpg",
+      "messages/images\\frame_2024-10-03_14-56-45_140.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.7920078635215759,
+    "new_audio_length": 1.96,
+    "valid": false
+  },
+  {
+    "index": 24,
+    "video_path": "uploads\\recording-2024-10-03T12-56-39-774Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [],
+    "transcription": null,
+    "no_speech_prob": 1.0,
+    "new_audio_length": 0.0,
+    "valid": false
+  },
+  {
+    "index": 25,
+    "video_path": "uploads\\recording-2024-10-03T12-56-39-959Z.webm",
+    "processed": true,
+    "llm_processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-56-47_0.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.9607144594192505,
+    "new_audio_length": 0,
+    "valid": false
+  },
+  {
+    "index": 26,
+    "video_path": "uploads\\recording-2024-10-03T12-56-42-168Z.webm",
+    "processed": true,
+    "llm_processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-56-48_0.jpg",
+      "messages/images\\frame_2024-10-03_14-56-48_20.jpg",
+      "messages/images\\frame_2024-10-03_14-56-48_40.jpg",
+      "messages/images\\frame_2024-10-03_14-56-48_60.jpg",
+      "messages/images\\frame_2024-10-03_14-56-48_80.jpg",
+      "messages/images\\frame_2024-10-03_14-56-48_100.jpg",
+      "messages/images\\frame_2024-10-03_14-56-48_120.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.794173538684845,
+    "new_audio_length": 0.24,
+    "valid": false
+  },
+  {
+    "index": 27,
+    "video_path": "uploads\\recording-2024-10-03T12-56-44-750Z.webm",
+    "processed": true,
+    "llm_processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-56-49_0.jpg",
+      "messages/images\\frame_2024-10-03_14-56-49_20.jpg",
+      "messages/images\\frame_2024-10-03_14-56-49_40.jpg",
+      "messages/images\\frame_2024-10-03_14-56-49_60.jpg",
+      "messages/images\\frame_2024-10-03_14-56-49_80.jpg",
+      "messages/images\\frame_2024-10-03_14-56-49_100.jpg",
+      "messages/images\\frame_2024-10-03_14-56-49_120.jpg",
+      "messages/images\\frame_2024-10-03_14-56-49_140.jpg"
+    ],
+    "transcription": " \u00d6ver.",
+    "no_speech_prob": 0.48929667472839355,
+    "new_audio_length": 0.513,
+    "valid": true
+  },
+  {
+    "index": 28,
+    "video_path": "uploads\\recording-2024-10-03T12-56-45-078Z.webm",
+    "processed": true,
+    "llm_processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-56-50_0.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.9553369283676147,
+    "new_audio_length": 0,
+    "valid": false
+  },
+  {
+    "index": 29,
+    "video_path": "uploads\\recording-2024-10-03T12-56-47-227Z.webm",
+    "processed": true,
+    "llm_processed": true,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-56-56_0.jpg",
+      "messages/images\\frame_2024-10-03_14-56-56_20.jpg",
+      "messages/images\\frame_2024-10-03_14-56-56_40.jpg",
+      "messages/images\\frame_2024-10-03_14-56-56_60.jpg",
+      "messages/images\\frame_2024-10-03_14-56-56_80.jpg",
+      "messages/images\\frame_2024-10-03_14-56-57_100.jpg",
+      "messages/images\\frame_2024-10-03_14-56-57_120.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.8914161324501038,
+    "new_audio_length": 1.118,
+    "valid": false
+  },
+  {
+    "index": 30,
+    "video_path": "uploads\\recording-2024-10-03T12-56-49-808Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-56-58_0.jpg",
+      "messages/images\\frame_2024-10-03_14-56-58_20.jpg",
+      "messages/images\\frame_2024-10-03_14-56-58_40.jpg",
+      "messages/images\\frame_2024-10-03_14-56-58_60.jpg",
+      "messages/images\\frame_2024-10-03_14-56-58_80.jpg",
+      "messages/images\\frame_2024-10-03_14-56-58_100.jpg",
+      "messages/images\\frame_2024-10-03_14-56-58_120.jpg",
+      "messages/images\\frame_2024-10-03_14-56-58_140.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.8918147087097168,
+    "new_audio_length": 0.43,
+    "valid": false
+  },
+  {
+    "index": 31,
+    "video_path": "uploads\\recording-2024-10-03T12-56-50-114Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-57-00_0.jpg"
+    ],
+    "transcription": null,
+    "no_speech_prob": 1.0,
+    "new_audio_length": 0.0,
+    "valid": false
+  },
+  {
+    "index": 32,
+    "video_path": "uploads\\recording-2024-10-03T12-56-52-265Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-57-00_0.jpg",
+      "messages/images\\frame_2024-10-03_14-57-00_20.jpg",
+      "messages/images\\frame_2024-10-03_14-57-00_40.jpg",
+      "messages/images\\frame_2024-10-03_14-57-00_60.jpg",
+      "messages/images\\frame_2024-10-03_14-57-00_80.jpg",
+      "messages/images\\frame_2024-10-03_14-57-00_100.jpg",
+      "messages/images\\frame_2024-10-03_14-57-00_120.jpg"
+    ],
+    "transcription": " Vad \u00e4r det h\u00e4r igen?",
+    "no_speech_prob": 0.35912448167800903,
+    "new_audio_length": 1.911,
+    "valid": true
+  },
+  {
+    "index": 33,
+    "video_path": "uploads\\recording-2024-10-03T12-56-54-845Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-57-00_0.jpg",
+      "messages/images\\frame_2024-10-03_14-57-00_20.jpg",
+      "messages/images\\frame_2024-10-03_14-57-00_40.jpg",
+      "messages/images\\frame_2024-10-03_14-57-00_60.jpg",
+      "messages/images\\frame_2024-10-03_14-57-00_80.jpg",
+      "messages/images\\frame_2024-10-03_14-57-00_100.jpg",
+      "messages/images\\frame_2024-10-03_14-57-00_120.jpg",
+      "messages/images\\frame_2024-10-03_14-57-00_140.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.909507155418396,
+    "new_audio_length": 0.201,
+    "valid": false
+  },
+  {
+    "index": 34,
+    "video_path": "uploads\\recording-2024-10-03T12-56-55-145Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-57-02_0.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 1.0,
+    "new_audio_length": 0.0,
+    "valid": false
+  },
+  {
+    "index": 35,
+    "video_path": "uploads\\recording-2024-10-03T12-56-57-299Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-57-02_0.jpg",
+      "messages/images\\frame_2024-10-03_14-57-02_20.jpg",
+      "messages/images\\frame_2024-10-03_14-57-02_40.jpg",
+      "messages/images\\frame_2024-10-03_14-57-02_60.jpg",
+      "messages/images\\frame_2024-10-03_14-57-02_80.jpg",
+      "messages/images\\frame_2024-10-03_14-57-02_100.jpg",
+      "messages/images\\frame_2024-10-03_14-57-02_120.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 1.0,
+    "new_audio_length": 0.0,
+    "valid": false
+  },
+  {
+    "index": 36,
+    "video_path": "uploads\\recording-2024-10-03T12-56-59-892Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-57-10_0.jpg",
+      "messages/images\\frame_2024-10-03_14-57-10_20.jpg",
+      "messages/images\\frame_2024-10-03_14-57-11_40.jpg",
+      "messages/images\\frame_2024-10-03_14-57-11_60.jpg",
+      "messages/images\\frame_2024-10-03_14-57-11_80.jpg",
+      "messages/images\\frame_2024-10-03_14-57-11_100.jpg",
+      "messages/images\\frame_2024-10-03_14-57-11_120.jpg",
+      "messages/images\\frame_2024-10-03_14-57-11_140.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.836502194404602,
+    "new_audio_length": 0,
+    "valid": false
+  },
+  {
+    "index": 37,
+    "video_path": "uploads\\recording-2024-10-03T12-57-00-191Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [],
+    "transcription": null,
+    "no_speech_prob": 1.0,
+    "new_audio_length": 0.0,
+    "valid": false
+  },
+  {
+    "index": 38,
+    "video_path": "uploads\\recording-2024-10-03T12-57-02-330Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-57-11_0.jpg",
+      "messages/images\\frame_2024-10-03_14-57-11_20.jpg",
+      "messages/images\\frame_2024-10-03_14-57-12_40.jpg",
+      "messages/images\\frame_2024-10-03_14-57-12_60.jpg",
+      "messages/images\\frame_2024-10-03_14-57-12_80.jpg",
+      "messages/images\\frame_2024-10-03_14-57-12_100.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.9243144989013672,
+    "new_audio_length": 0,
+    "valid": false
+  },
+  {
+    "index": 39,
+    "video_path": "uploads\\recording-2024-10-03T12-57-04-896Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-57-14_0.jpg",
+      "messages/images\\frame_2024-10-03_14-57-14_20.jpg",
+      "messages/images\\frame_2024-10-03_14-57-14_40.jpg",
+      "messages/images\\frame_2024-10-03_14-57-14_60.jpg",
+      "messages/images\\frame_2024-10-03_14-57-14_80.jpg",
+      "messages/images\\frame_2024-10-03_14-57-14_100.jpg",
+      "messages/images\\frame_2024-10-03_14-57-14_120.jpg",
+      "messages/images\\frame_2024-10-03_14-57-14_140.jpg"
+    ],
+    "transcription": null,
+    "no_speech_prob": 1.0,
+    "new_audio_length": 0.0,
+    "valid": false
+  },
+  {
+    "index": 40,
+    "video_path": "uploads\\recording-2024-10-03T12-57-05-175Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-57-14_0.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.9604909420013428,
+    "new_audio_length": 0,
+    "valid": false
+  },
+  {
+    "index": 41,
+    "video_path": "uploads\\recording-2024-10-03T12-57-05-313Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "messages/images\\frame_2024-10-03_14-57-15_0.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 1.0,
+    "new_audio_length": 0.0,
+    "valid": false
+  },
+  {
+    "index": 42,
+    "video_path": "uploads\\recording-2024-10-03T12-57-07-363Z.webm",
+    "processed": false,
+    "llm_processed": false
+  },
+  {
+    "index": 43,
+    "video_path": "uploads\\recording-2024-10-03T12-57-10-056Z.webm",
+    "processed": false,
+    "llm_processed": false
+  },
+  {
+    "index": 44,
+    "video_path": "uploads\\recording-2024-10-03T12-57-10-199Z.webm",
+    "processed": false,
+    "llm_processed": false
+  },
+  {
+    "index": 45,
+    "video_path": "uploads\\recording-2024-10-03T12-57-10-349Z.webm",
+    "processed": false,
+    "llm_processed": false
+  }
+]
