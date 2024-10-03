@@ -82,21 +82,25 @@ def encode_image(image_path):
 def get_outgoing_entries():
     entries = load_entries(OUTGOING_FILE)
 
-
     for entry in entries:
-        description=entry.get('description','N/A')
-        comments=entry.get('comments','N/A')
-        location=entry.get('location','N/A')
-        if 'image_path' in entry and os.path.exists(entry['image_path']):
-            entry['image'] = encode_image(entry['image_path'])
+        description = entry.get('description', 'N/A')
+        comments = entry.get('comments', 'N/A')
+        location = entry.get('location', 'N/A')
+        if 'image_paths' in entry:  # Change 'image_path' to 'image_paths'
+            entry['images'] = [encode_image(path) for path in entry['image_paths'] if os.path.exists(path)]
             entry['transcription'] = f"<p><b>Description:</b> {description}<br><b>Comments:</b> {comments}<br><b>Location:</b> {location}</p>"
-            del entry['image_path']
+            del entry['image_paths']
     return entries
 
 def add_outgoing_entry(entry):
     entries = load_entries(OUTGOING_FILE)
     entries.append(entry)
     save_entries(entries, OUTGOING_FILE)
+
+def get_image_path(index, incoming_entries):
+    
+    image_entry = next(entry for entry in incoming_entries if entry['index'] == index)
+    return image_entry['image_path']
 
 async def process_videos():
     while True:
@@ -111,18 +115,24 @@ async def process_videos():
             if not entry.get('processed', False):
                 video_path = entry['video_path']
                 result = process_video.process_video(video_path,last_transcription)
+                print("result:", result)
                 if result is not None:
                     transcription, image_path, no_speech_prob, new_audio_length = result
 
-                    if no_speech_prob < 0.7 and new_audio_length > 0.5:
-                        update_incoming_entry(entry['index'], 
-                                              image_path=image_path, 
-                                              transcription=transcription,
-                                              no_speech_prob=no_speech_prob,
-                                              new_audio_length=new_audio_length,
-                                              processed=True)
-                    else:
-                        remove_incoming_entry(entry['index'])
+                    valid = no_speech_prob < 0.7 and new_audio_length > 0.5
+                    
+                    
+
+                    update_incoming_entry(entry['index'], 
+                                            image_path=image_path, 
+                                            transcription=transcription,
+                                            no_speech_prob=no_speech_prob,
+                                            new_audio_length=new_audio_length,
+                                            processed=True,
+                                            valid=valid)
+                                        
+                
+                        
                     
                     print(f"Processing completed for {video_path}")
                 else:
@@ -134,7 +144,7 @@ async def process_videos():
 async def process_LLM():
     while True:
         llm_call = False
-        incoming_entries = get_incoming_entries()
+        incoming_entries = [entry for entry in get_incoming_entries() if entry.get('valid',False)]
         new_entries = 0
         for entry in incoming_entries:
             if not entry.get('llm_processed', False) and entry.get('transcription'):
@@ -159,8 +169,8 @@ async def process_LLM():
 
                     print(f"Transcription #{entry['index']}: {entry['transcription']}")
                     #i+=1
-
-                    base64_image = encode_image(entry['image_path'])
+                    path_list = entry['image_path']
+                    base64_image = encode_image(path_list[len(path_list)//2])
                     messages.append({
                         "role": "user",
                         "content": [
@@ -202,14 +212,15 @@ async def process_LLM():
 
                 for snippet in response_data['merged_video_snippets']:
                     #print("snippet:", snippet['video_snippet_id'])
-                    image_index = snippet['indexes_in_merged_video'][0]
-                    image_entry = next(entry for entry in incoming_entries if entry['index'] == image_index)
-                    image_path = image_entry['image_path']
+
+                    
+                   
                     #new_data.append({
-                    if len(response_data['merged_video_snippets'])>1:
-                        if snippet['video_snippet_id']==1:
-                            outgoing_entry = snippet
-                            snippet['image_path'] = image_path
+                    if len(response_data['merged_video_snippets']) > 1:
+                        if snippet['video_snippet_id'] == 1:
+                            snippet['image_paths'] = []
+                            for ix in snippet['indexes_in_merged_video']:
+                                snippet['image_paths'].extend(get_image_path(ix, incoming_entries))
                             
                             add_outgoing_entry(snippet)
                             
@@ -224,18 +235,21 @@ async def process_LLM():
 
             except Exception as e:
                 print(f"Error in LLM processing: {str(e)}")
-        x=input("Press Enter to continue...")
-        #await asyncio.sleep(1)  # Wait for 1 second before checking again
+        #x=input("Press Enter to continue...")
+        await asyncio.sleep(1)  # Wait for 1 second before checking again
+
+
+
 
 async def main():
     await asyncio.gather(
         process_videos(),
-        process_LLM()
+     #   process_LLM()
     )
 
 
 if __name__ == "__main__":
-    asyncio.run(process_LLM())
+    asyncio.run(main())
 
 
 

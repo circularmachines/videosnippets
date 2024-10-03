@@ -2,118 +2,129 @@
   {
     "video_snippet_id": 1,
     "indexes_in_merged_video": [
-      0,
-      1,
+      5
+    ],
+    "description": "Showing two fingers",
+    "comments": "The user is displaying a peace sign.",
+    "location": null,
+    "image_paths": [
+      "images\\frame_2024-10-02_17-25-14_0.jpg",
+      "images\\frame_2024-10-02_17-25-14_20.jpg",
+      "images\\frame_2024-10-02_17-25-15_40.jpg",
+      "images\\frame_2024-10-02_17-25-15_60.jpg"
+    ]
+  },
+  {
+    "video_snippet_id": 1,
+    "indexes_in_merged_video": [
       2
     ],
-    "description": "Introduction Segment",
-    "comments": "The speaker is starting the session, preparing to index various items.",
-    "location": "home setting",
-    "image_path": "images\\frame_2024-10-02_14-13-27.jpg"
-  },
-  {
-    "video_snippet_id": 1,
-    "indexes_in_merged_video": [
-      3,
-      4
-    ],
-    "description": "a Light Bulb",
-    "comments": "The user expresses concern, thinking the light bulb is broken.",
+    "description": "Testing",
+    "comments": "The person is expressing uncertainty or checking something.",
     "location": null,
-    "image_path": "images\\frame_2024-10-02_14-13-45.jpg"
+    "image_paths": [
+      "images\\frame_2024-10-02_17-29-37_0.jpg",
+      "images\\frame_2024-10-02_17-29-37_20.jpg",
+      "images\\frame_2024-10-02_17-29-37_40.jpg",
+      "images\\frame_2024-10-02_17-29-37_60.jpg",
+      "images\\frame_2024-10-02_17-29-37_80.jpg",
+      "images\\frame_2024-10-02_17-29-37_100.jpg",
+      "images\\frame_2024-10-02_17-29-37_120.jpg"
+    ]
   },
   {
     "video_snippet_id": 1,
     "indexes_in_merged_video": [
-      5,
-      6
-    ],
-    "description": "Kapo for guitar",
-    "comments": "The user is demonstrating a capodaster (capo) that is used on a guitar.",
-    "location": null,
-    "image_path": "images\\frame_2024-10-02_14-14-04.jpg"
-  },
-  {
-    "video_snippet_id": 1,
-    "indexes_in_merged_video": [
-      7
-    ],
-    "description": "an Allen wrench",
-    "comments": "The presenter describes the Allen wrench, noting it feels quite exciting.",
-    "image_path": "images\\frame_2024-10-02_14-14-49.jpg"
-  },
-  {
-    "video_snippet_id": 1,
-    "indexes_in_merged_video": [
-      8,
       9
     ],
-    "description": "a Key",
-    "comments": "The user believes this is a bicycle key.",
-    "image_path": "images\\frame_2024-10-02_14-15-03.jpg"
+    "description": "Showing a single finger",
+    "comments": "The speaker mentions 'lugn man och pekfint'.",
+    "image_paths": [
+      "images\\frame_2024-10-02_17-29-57_0.jpg",
+      "images\\frame_2024-10-02_17-29-57_20.jpg",
+      "images\\frame_2024-10-02_17-29-57_40.jpg",
+      "images\\frame_2024-10-02_17-29-57_60.jpg"
+    ]
   },
   {
     "video_snippet_id": 1,
     "indexes_in_merged_video": [
-      10,
-      11,
-      12
+      10
     ],
-    "description": "Pins from a 90s band",
-    "comments": "The user is showing a bag of pins that belonged to a band from the 90s.",
+    "description": "Showing three fingers",
+    "comments": "The speaker is indicating three files.",
     "location": null,
-    "image_path": "images\\frame_2024-10-02_14-15-33.jpg"
+    "image_paths": [
+      "images\\frame_2024-10-02_17-30-02_0.jpg",
+      "images\\frame_2024-10-02_17-30-02_20.jpg",
+      "images\\frame_2024-10-02_17-30-02_40.jpg",
+      "images\\frame_2024-10-02_17-30-02_60.jpg",
+      "images\\frame_2024-10-02_17-30-02_80.jpg",
+      "images\\frame_2024-10-02_17-30-02_100.jpg"
+    ]
   },
   {
     "video_snippet_id": 1,
     "indexes_in_merged_video": [
-      13
-    ],
-    "description": "a Battery",
-    "comments": "The user is unsure if the battery has charge.",
-    "location": null,
-    "image_path": "images\\frame_2024-10-02_14-15-52.jpg"
-  },
-  {
-    "video_snippet_id": 1,
-    "indexes_in_merged_video": [
-      14,
-      15,
-      16
-    ],
-    "description": "a remote control",
-    "comments": "The user is showing a remote control, explaining its use for controlling something.",
-    "location": null,
-    "image_path": "images\\frame_2024-10-02_14-16-06.jpg"
-  },
-  {
-    "video_snippet_id": 1,
-    "indexes_in_merged_video": [
-      17
-    ],
-    "description": "a small item",
-    "comments": "The user is holding something small, indicating it's smaller than another object talked about earlier.",
-    "location": null,
-    "image_path": "images\\frame_2024-10-02_14-16-29.jpg"
-  },
-  {
-    "video_snippet_id": 1,
-    "indexes_in_merged_video": [
+      13,
       18
     ],
-    "description": "a Screw with a T-slot nut",
-    "comments": "The user is showing a screw secured with a T-slot nut.",
+    "description": "Showing fingers",
+    "comments": "The person shows three fingers and then all five fingers.",
     "location": null,
-    "image_path": "images\\frame_2024-10-02_14-16-41.jpg"
+    "image_paths": [
+      "images\\frame_2024-10-02_17-30-14_0.jpg",
+      "images\\frame_2024-10-02_17-30-14_20.jpg",
+      "images\\frame_2024-10-02_17-30-14_40.jpg",
+      "images\\frame_2024-10-02_17-30-14_60.jpg",
+      "images\\frame_2024-10-02_17-30-14_80.jpg",
+      "images\\frame_2024-10-02_17-30-14_100.jpg",
+      "images\\frame_2024-10-02_17-30-31_0.jpg",
+      "images\\frame_2024-10-02_17-30-31_20.jpg",
+      "images\\frame_2024-10-02_17-30-31_40.jpg",
+      "images\\frame_2024-10-02_17-30-31_60.jpg",
+      "images\\frame_2024-10-02_17-30-31_80.jpg",
+      "images\\frame_2024-10-02_17-30-31_100.jpg",
+      "images\\frame_2024-10-02_17-30-31_120.jpg",
+      "images\\frame_2024-10-02_17-30-31_140.jpg",
+      "images\\frame_2024-10-02_17-30-31_160.jpg",
+      "images\\frame_2024-10-02_17-30-31_180.jpg"
+    ]
   },
   {
     "video_snippet_id": 1,
     "indexes_in_merged_video": [
-      18
+      21
     ],
-    "description": "a screw with a T-slot nut",
-    "comments": "The user is showing a screw that is held by a T-slot nut.",
+    "description": "A person leaning back away from the camera",
+    "comments": "The person appears to be adjusting their position.",
     "location": null,
-    "image_path": "images\\frame_2024-10-02_14-16-41.jpg"
+    "image_paths": [
+      "images\\frame_2024-10-02_17-30-44_0.jpg",
+      "images\\frame_2024-10-02_17-30-44_20.jpg",
+      "images\\frame_2024-10-02_17-30-44_40.jpg",
+      "images\\frame_2024-10-02_17-30-44_60.jpg",
+      "images\\frame_2024-10-02_17-30-44_80.jpg",
+      "images\\frame_2024-10-02_17-30-44_100.jpg",
+      "images\\frame_2024-10-02_17-30-44_120.jpg",
+      "images\\frame_2024-10-02_17-30-44_140.jpg",
+      "images\\frame_2024-10-02_17-30-44_160.jpg",
+      "images\\frame_2024-10-02_17-30-45_180.jpg",
+      "images\\frame_2024-10-02_17-30-45_200.jpg"
+    ]
+  },
+  {
+    "video_snippet_id": 1,
+    "indexes_in_merged_video": [
+      4
+    ],
+    "description": "Expression of satisfaction",
+    "comments": "The individual expresses a positive sentiment with 'Snyggt!'",
+    "image_paths": [
+      "images\\frame_2024-10-02_17-31-20_0.jpg",
+      "images\\frame_2024-10-02_17-31-20_20.jpg",
+      "images\\frame_2024-10-02_17-31-20_40.jpg",
+      "images\\frame_2024-10-02_17-31-20_60.jpg"
+    ]
   }
 ]

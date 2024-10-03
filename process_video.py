@@ -23,42 +23,51 @@ import imageio
 import ffmpeg  # Add this import
 
 IMAGES_FOLDER = 'images'
+AUDIO_FOLDER = 'audio'
+os.makedirs(IMAGES_FOLDER, exist_ok=True)
+os.makedirs(AUDIO_FOLDER, exist_ok=True)
 
 def process_video(video_path, last_transcription):
     start_time = time.time()  # Start timing
+    print("NEW VIDEO")
+    print(video_path)
 
-
-    # Extract audio from video
+    # Extract frames from video
     print(video_path)
     cap = cv2.VideoCapture(video_path)
 
-
-
     if not cap.isOpened():
         print("Error: Could not open video.")
-        return None, None, 1.0, 0.0  # Return None for both transcription and frame_path and 1.0 for no_speech_prob and 0.0 for new_audio_length
+        return None, [], 1.0, 0.0  # Return empty list for frame_paths
 
-    ret, frame = cap.read()
+    frame_paths = []
+    os.makedirs(IMAGES_FOLDER, exist_ok=True)
+    os.makedirs(AUDIO_FOLDER, exist_ok=True)
+    frame_count = 0
+    while True:
+        ret, frame = cap.read()
+        if not ret:
+            break
 
-    if ret:
-        # Save the first frame as an image
-        os.makedirs(IMAGES_FOLDER, exist_ok=True)
-        frame_path = os.path.join(IMAGES_FOLDER, f"frame_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.jpg")
-        cv2.imwrite(frame_path, frame)
-        print(f"Frame saved at {frame_path}")
-    else:
-        print("Error: Could not read frame.")
-        frame_path = None
-    
+        if frame_count % 20 == 0:  # Save every 20th frame
+            frame_path = os.path.join(IMAGES_FOLDER, f"frame_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}_{frame_count}.jpg")
+            cv2.imwrite(frame_path, frame)
+            frame_paths.append(frame_path)
+            print(f"Frame saved at {frame_path}")
+
+        frame_count += 1
+
     cap.release()
 
-    print(f"One frame extraction took {time.time() - start_time:.2f} seconds")
+    print(f"Frame extraction took {time.time() - start_time:.2f} seconds")
+    print(f"Total frames processed: {frame_count}")
+    print(f"Frames saved: {len(frame_paths)}")
 
     audio_start_time = time.time()  # Start timing for audio extraction
     audio_path = f"./audio/{os.path.basename(video_path)}.mp3"
     if os.path.exists(audio_path):
         print("Audio already exists, skipping extraction")
-        return None, None, 1.0, 0.0
+        return None, frame_paths, 1.0, 0.0
     extract_audio(input_path=video_path, output_path=audio_path)
     print(f"Audio extraction took {time.time() - audio_start_time:.2f} seconds")  # Log timing
 
@@ -82,7 +91,7 @@ def process_video(video_path, last_transcription):
 
         if new_audio_length < 0.2:
             print("Audio is too short, skipping")
-            return "", frame_path, 1.0, 0.0  # Return empty string for transcription and frame_path and 1.0 for no_speech_prob and 0.0 for new_audio_length 
+            return "", frame_paths, 1.0, 0.0  # Return empty string for transcription and frame_paths and 1.0 for no_speech_prob and 0.0 for new_audio_length 
         # Trim the audio
         trimmed_audio = audio[start_trim:end_trim]
 
@@ -117,8 +126,7 @@ def process_video(video_path, last_transcription):
             model="whisper-1",
             file=audio_file,
             language="sv",
-            response_format="verbose_json",
-            prompt=last_transcription
+            response_format="verbose_json"
         )
     print(f"Transcription took {time.time() - transcription_start_time:.2f} seconds")  # Log timing
     
@@ -143,14 +151,17 @@ def process_video(video_path, last_transcription):
     print("RESPONSE TEXT", response_text)
     print("Average no_speech_prob:", avg_no_speech_prob)
 
-    return response_text, frame_path, avg_no_speech_prob, new_audio_length
+    return response_text, frame_paths, avg_no_speech_prob, new_audio_length
 
 # Example usage
 if __name__ == "__main__":
     # Example usage
-    video_path = "uploads/recording-2024-09-27T05-52-34-051Z.webm"
-    transcription = process_video(video_path)
-    print(transcription)
+    video_path = "uploads\\recording-2024-10-02T14-24-08-065Z.webm"
+    transcription, frame_paths, no_speech_prob, audio_length = process_video(video_path, "")
+    print("Transcription:", transcription)
+    print("Frame paths:", frame_paths)
+    print("No speech probability:", no_speech_prob)
+    print("Audio length:", audio_length)
 
 
 

@@ -1,0 +1,470 @@
+[
+  {
+    "index": 0,
+    "video_path": "uploads\\recording-2024-10-02T15-29-28-290Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "images\\frame_2024-10-02_17-29-28_0.jpg",
+      "images\\frame_2024-10-02_17-29-28_20.jpg",
+      "images\\frame_2024-10-02_17-29-28_40.jpg",
+      "images\\frame_2024-10-02_17-29-28_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.9312590956687927,
+    "new_audio_length": 0.306,
+    "valid": true
+  },
+  {
+    "index": 1,
+    "video_path": "uploads\\recording-2024-10-02T15-29-32-048Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "images\\frame_2024-10-02_17-29-32_0.jpg",
+      "images\\frame_2024-10-02_17-29-32_20.jpg",
+      "images\\frame_2024-10-02_17-29-32_40.jpg",
+      "images\\frame_2024-10-02_17-29-32_60.jpg",
+      "images\\frame_2024-10-02_17-29-32_80.jpg",
+      "images\\frame_2024-10-02_17-29-32_100.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.005182178691029549,
+    "new_audio_length": 3.66
+  },
+  {
+    "index": 2,
+    "video_path": "uploads\\recording-2024-10-02T15-29-37-032Z.webm",
+    "processed": true,
+    "llm_processed": true,
+    "image_path": [
+      "images\\frame_2024-10-02_17-29-37_0.jpg",
+      "images\\frame_2024-10-02_17-29-37_20.jpg",
+      "images\\frame_2024-10-02_17-29-37_40.jpg",
+      "images\\frame_2024-10-02_17-29-37_60.jpg",
+      "images\\frame_2024-10-02_17-29-37_80.jpg",
+      "images\\frame_2024-10-02_17-29-37_100.jpg",
+      "images\\frame_2024-10-02_17-29-37_120.jpg"
+    ],
+    "transcription": " testar, testar, testar.",
+    "no_speech_prob": 0.39845114946365356,
+    "new_audio_length": 3.492,
+    "valid": false,
+    "locked_in": true
+  },
+  {
+    "index": 3,
+    "video_path": "uploads\\recording-2024-10-02T15-29-39-787Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "images\\frame_2024-10-02_17-29-40_0.jpg",
+      "images\\frame_2024-10-02_17-29-40_20.jpg",
+      "images\\frame_2024-10-02_17-29-40_40.jpg",
+      "images\\frame_2024-10-02_17-29-40_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.10184326022863388,
+    "new_audio_length": 2.314,
+    "valid": true
+  },
+  {
+    "index": 4,
+    "video_path": "uploads\\recording-2024-10-02T15-29-42-537Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "images\\frame_2024-10-02_17-29-42_0.jpg",
+      "images\\frame_2024-10-02_17-29-43_20.jpg",
+      "images\\frame_2024-10-02_17-29-43_40.jpg",
+      "images\\frame_2024-10-02_17-29-43_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.7780399322509766,
+    "new_audio_length": 2.183,
+    "valid": false
+  },
+  {
+    "index": 5,
+    "video_path": "uploads\\recording-2024-10-02T15-29-45-289Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "images\\frame_2024-10-02_17-29-46_0.jpg",
+      "images\\frame_2024-10-02_17-29-46_20.jpg",
+      "images\\frame_2024-10-02_17-29-46_40.jpg",
+      "images\\frame_2024-10-02_17-29-46_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 1.0,
+    "new_audio_length": 0.429,
+    "valid": true
+  },
+  {
+    "index": 6,
+    "video_path": "uploads\\recording-2024-10-02T15-29-48-539Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "images\\frame_2024-10-02_17-29-49_0.jpg",
+      "images\\frame_2024-10-02_17-29-49_20.jpg",
+      "images\\frame_2024-10-02_17-29-49_40.jpg",
+      "images\\frame_2024-10-02_17-29-49_60.jpg",
+      "images\\frame_2024-10-02_17-29-49_80.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.3633898198604584,
+    "new_audio_length": 2.193,
+    "valid": true
+  },
+  {
+    "index": 7,
+    "video_path": "uploads\\recording-2024-10-02T15-29-51-543Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "images\\frame_2024-10-02_17-29-52_0.jpg",
+      "images\\frame_2024-10-02_17-29-52_20.jpg",
+      "images\\frame_2024-10-02_17-29-52_40.jpg",
+      "images\\frame_2024-10-02_17-29-52_60.jpg",
+      "images\\frame_2024-10-02_17-29-52_80.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.7115828990936279,
+    "new_audio_length": 0.749,
+    "valid": false
+  },
+  {
+    "index": 8,
+    "video_path": "uploads\\recording-2024-10-02T15-29-54-293Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "images\\frame_2024-10-02_17-29-54_0.jpg",
+      "images\\frame_2024-10-02_17-29-54_20.jpg",
+      "images\\frame_2024-10-02_17-29-54_40.jpg",
+      "images\\frame_2024-10-02_17-29-54_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.2277115136384964,
+    "new_audio_length": 2.297,
+    "valid": true
+  },
+  {
+    "index": 9,
+    "video_path": "uploads\\recording-2024-10-02T15-29-57-036Z.webm",
+    "processed": true,
+    "llm_processed": true,
+    "image_path": [
+      "images\\frame_2024-10-02_17-29-57_0.jpg",
+      "images\\frame_2024-10-02_17-29-57_20.jpg",
+      "images\\frame_2024-10-02_17-29-57_40.jpg",
+      "images\\frame_2024-10-02_17-29-57_60.jpg"
+    ],
+    "transcription": " Lugn man och pekfint.",
+    "no_speech_prob": 0.3138601779937744,
+    "new_audio_length": 1.627,
+    "valid": false,
+    "locked_in": true
+  },
+  {
+    "index": 10,
+    "video_path": "uploads\\recording-2024-10-02T15-30-01-287Z.webm",
+    "processed": true,
+    "llm_processed": true,
+    "image_path": [
+      "images\\frame_2024-10-02_17-30-02_0.jpg",
+      "images\\frame_2024-10-02_17-30-02_20.jpg",
+      "images\\frame_2024-10-02_17-30-02_40.jpg",
+      "images\\frame_2024-10-02_17-30-02_60.jpg",
+      "images\\frame_2024-10-02_17-30-02_80.jpg",
+      "images\\frame_2024-10-02_17-30-02_100.jpg"
+    ],
+    "transcription": " Nu visar jag tre filer.",
+    "no_speech_prob": 0.001292571658268571,
+    "new_audio_length": 1.668,
+    "valid": false,
+    "locked_in": true
+  },
+  {
+    "index": 11,
+    "video_path": "uploads\\recording-2024-10-02T15-30-04-039Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "images\\frame_2024-10-02_17-30-05_0.jpg",
+      "images\\frame_2024-10-02_17-30-05_20.jpg",
+      "images\\frame_2024-10-02_17-30-06_40.jpg",
+      "images\\frame_2024-10-02_17-30-06_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.6261007189750671,
+    "new_audio_length": 1.094,
+    "valid": true
+  },
+  {
+    "index": 12,
+    "video_path": "uploads\\recording-2024-10-02T15-30-08-788Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "images\\frame_2024-10-02_17-30-09_0.jpg",
+      "images\\frame_2024-10-02_17-30-09_20.jpg",
+      "images\\frame_2024-10-02_17-30-09_40.jpg",
+      "images\\frame_2024-10-02_17-30-09_60.jpg",
+      "images\\frame_2024-10-02_17-30-09_80.jpg",
+      "images\\frame_2024-10-02_17-30-09_100.jpg",
+      "images\\frame_2024-10-02_17-30-10_120.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.8959972262382507,
+    "new_audio_length": 0.806,
+    "valid": false
+  },
+  {
+    "index": 13,
+    "video_path": "uploads\\recording-2024-10-02T15-30-13-045Z.webm",
+    "processed": true,
+    "llm_processed": true,
+    "image_path": [
+      "images\\frame_2024-10-02_17-30-14_0.jpg",
+      "images\\frame_2024-10-02_17-30-14_20.jpg",
+      "images\\frame_2024-10-02_17-30-14_40.jpg",
+      "images\\frame_2024-10-02_17-30-14_60.jpg",
+      "images\\frame_2024-10-02_17-30-14_80.jpg",
+      "images\\frame_2024-10-02_17-30-14_100.jpg"
+    ],
+    "transcription": " Puss och kram, hejd\u00e5!",
+    "no_speech_prob": 0.6746723651885986,
+    "new_audio_length": 2.483,
+    "valid": false,
+    "locked_in": true
+  },
+  {
+    "index": 14,
+    "video_path": "uploads\\recording-2024-10-02T15-30-15-786Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "images\\frame_2024-10-02_17-30-18_0.jpg",
+      "images\\frame_2024-10-02_17-30-18_20.jpg",
+      "images\\frame_2024-10-02_17-30-18_40.jpg",
+      "images\\frame_2024-10-02_17-30-18_60.jpg"
+    ],
+    "transcription": null,
+    "no_speech_prob": 1.0,
+    "new_audio_length": 0.0,
+    "valid": true
+  },
+  {
+    "index": 15,
+    "video_path": "uploads\\recording-2024-10-02T15-30-19-040Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "images\\frame_2024-10-02_17-30-19_0.jpg",
+      "images\\frame_2024-10-02_17-30-19_20.jpg",
+      "images\\frame_2024-10-02_17-30-19_40.jpg",
+      "images\\frame_2024-10-02_17-30-19_60.jpg",
+      "images\\frame_2024-10-02_17-30-19_80.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.7857910394668579,
+    "new_audio_length": 2.909,
+    "valid": false
+  },
+  {
+    "index": 16,
+    "video_path": "uploads\\recording-2024-10-02T15-30-21-786Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "images\\frame_2024-10-02_17-30-22_0.jpg",
+      "images\\frame_2024-10-02_17-30-22_20.jpg",
+      "images\\frame_2024-10-02_17-30-22_40.jpg",
+      "images\\frame_2024-10-02_17-30-22_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.8961471915245056,
+    "new_audio_length": 0,
+    "valid": true
+  },
+  {
+    "index": 17,
+    "video_path": "uploads\\recording-2024-10-02T15-30-24-537Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "images\\frame_2024-10-02_17-30-25_0.jpg",
+      "images\\frame_2024-10-02_17-30-25_20.jpg",
+      "images\\frame_2024-10-02_17-30-25_40.jpg",
+      "images\\frame_2024-10-02_17-30-25_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.8113341927528381,
+    "new_audio_length": 0,
+    "valid": true
+  },
+  {
+    "index": 18,
+    "video_path": "uploads\\recording-2024-10-02T15-30-30-800Z.webm",
+    "processed": true,
+    "llm_processed": true,
+    "image_path": [
+      "images\\frame_2024-10-02_17-30-31_0.jpg",
+      "images\\frame_2024-10-02_17-30-31_20.jpg",
+      "images\\frame_2024-10-02_17-30-31_40.jpg",
+      "images\\frame_2024-10-02_17-30-31_60.jpg",
+      "images\\frame_2024-10-02_17-30-31_80.jpg",
+      "images\\frame_2024-10-02_17-30-31_100.jpg",
+      "images\\frame_2024-10-02_17-30-31_120.jpg",
+      "images\\frame_2024-10-02_17-30-31_140.jpg",
+      "images\\frame_2024-10-02_17-30-31_160.jpg",
+      "images\\frame_2024-10-02_17-30-31_180.jpg"
+    ],
+    "transcription": " Det \u00e4r f\u00f6rst nu som jag visar alla fem fingrar.",
+    "no_speech_prob": 0.0007090782164596021,
+    "new_audio_length": 4.589,
+    "valid": false,
+    "locked_in": true
+  },
+  {
+    "index": 19,
+    "video_path": "uploads\\recording-2024-10-02T15-30-33-539Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "images\\frame_2024-10-02_17-30-35_0.jpg",
+      "images\\frame_2024-10-02_17-30-35_20.jpg",
+      "images\\frame_2024-10-02_17-30-35_40.jpg",
+      "images\\frame_2024-10-02_17-30-35_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.7440854907035828,
+    "new_audio_length": 0,
+    "valid": true
+  },
+  {
+    "index": 20,
+    "video_path": "uploads\\recording-2024-10-02T15-30-36-287Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "images\\frame_2024-10-02_17-30-38_0.jpg",
+      "images\\frame_2024-10-02_17-30-38_20.jpg",
+      "images\\frame_2024-10-02_17-30-38_40.jpg",
+      "images\\frame_2024-10-02_17-30-38_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 0.778306245803833,
+    "new_audio_length": 0,
+    "valid": true
+  },
+  {
+    "index": 21,
+    "video_path": "uploads\\recording-2024-10-02T15-30-43-541Z.webm",
+    "processed": true,
+    "llm_processed": true,
+    "image_path": [
+      "images\\frame_2024-10-02_17-30-44_0.jpg",
+      "images\\frame_2024-10-02_17-30-44_20.jpg",
+      "images\\frame_2024-10-02_17-30-44_40.jpg",
+      "images\\frame_2024-10-02_17-30-44_60.jpg",
+      "images\\frame_2024-10-02_17-30-44_80.jpg",
+      "images\\frame_2024-10-02_17-30-44_100.jpg",
+      "images\\frame_2024-10-02_17-30-44_120.jpg",
+      "images\\frame_2024-10-02_17-30-44_140.jpg",
+      "images\\frame_2024-10-02_17-30-44_160.jpg",
+      "images\\frame_2024-10-02_17-30-45_180.jpg",
+      "images\\frame_2024-10-02_17-30-45_200.jpg"
+    ],
+    "transcription": " Och sen lutar jag mig tillbaka lite. Dra mig bort ifr\u00e5n kameran!",
+    "no_speech_prob": 0.0010147425346076488,
+    "new_audio_length": 6.041,
+    "valid": false
+  },
+  {
+    "index": 22,
+    "video_path": "uploads\\recording-2024-10-02T15-30-51-791Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "images\\frame_2024-10-02_17-30-55_0.jpg",
+      "images\\frame_2024-10-02_17-30-55_20.jpg",
+      "images\\frame_2024-10-02_17-30-56_40.jpg",
+      "images\\frame_2024-10-02_17-30-56_60.jpg",
+      "images\\frame_2024-10-02_17-30-56_80.jpg",
+      "images\\frame_2024-10-02_17-30-56_100.jpg",
+      "images\\frame_2024-10-02_17-30-56_120.jpg",
+      "images\\frame_2024-10-02_17-30-56_140.jpg",
+      "images\\frame_2024-10-02_17-30-56_160.jpg",
+      "images\\frame_2024-10-02_17-30-56_180.jpg",
+      "images\\frame_2024-10-02_17-30-56_200.jpg",
+      "images\\frame_2024-10-02_17-30-56_220.jpg"
+    ],
+    "transcription": null,
+    "no_speech_prob": 1.0,
+    "new_audio_length": 0.0,
+    "valid": false
+  },
+  {
+    "index": 23,
+    "video_path": "uploads\\recording-2024-10-02T15-30-54-536Z.webm",
+    "processed": true,
+    "llm_processed": true,
+    "image_path": [
+      "images\\frame_2024-10-02_17-30-57_0.jpg",
+      "images\\frame_2024-10-02_17-30-57_20.jpg",
+      "images\\frame_2024-10-02_17-30-57_40.jpg",
+      "images\\frame_2024-10-02_17-30-57_60.jpg"
+    ],
+    "transcription": " Bra.",
+    "no_speech_prob": 0.46108564734458923,
+    "new_audio_length": 0,
+    "valid": true
+  },
+  {
+    "index": 24,
+    "video_path": "uploads\\recording-2024-10-02T15-30-57-322Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "images\\frame_2024-10-02_17-30-58_0.jpg",
+      "images\\frame_2024-10-02_17-30-58_20.jpg",
+      "images\\frame_2024-10-02_17-30-58_40.jpg",
+      "images\\frame_2024-10-02_17-30-58_60.jpg"
+    ],
+    "transcription": "",
+    "no_speech_prob": 1.0,
+    "new_audio_length": 1.241,
+    "valid": false
+  },
+  {
+    "index": 25,
+    "video_path": "uploads\\recording-2024-10-02T15-31-00-037Z.webm",
+    "processed": true,
+    "llm_processed": false,
+    "image_path": [
+      "images\\frame_2024-10-02_17-31-05_0.jpg",
+      "images\\frame_2024-10-02_17-31-05_20.jpg",
+      "images\\frame_2024-10-02_17-31-05_40.jpg",
+      "images\\frame_2024-10-02_17-31-05_60.jpg"
+    ],
+    "transcription": " R\u00e4tt.",
+    "no_speech_prob": 0.5370405912399292,
+    "new_audio_length": 0,
+    "valid": false
+  },
+  {
+    "index": 26,
+    "video_path": "uploads\\recording-2024-10-02T15-31-02-792Z.webm",
+    "processed": false,
+    "llm_processed": false
+  },
+  {
+    "index": 27,
+    "video_path": "uploads\\recording-2024-10-02T15-31-05-542Z.webm",
+    "processed": false,
+    "llm_processed": false
+  }
+]

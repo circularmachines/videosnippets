@@ -211,9 +211,8 @@ document.addEventListener('DOMContentLoaded', () => {
             contentContainer.innerHTML = '<p>No transcription available</p>';
         }
 
-        if (entry.image) {
+        if (entry.images && entry.images.length > 0) {
             const img = document.createElement('img');
-            img.src = `data:image/jpeg;base64,${entry.image}`;
             img.alt = "Frame Image";
             img.className = "result-image";
             img.onerror = () => {
@@ -221,6 +220,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 img.style.display = 'none';
             };
             contentContainer.prepend(img);
+
+            // Set up animation
+            let currentImageIndex = 0;
+            function updateImage() {
+                img.src = `data:image/jpeg;base64,${entry.images[currentImageIndex]}`;
+                currentImageIndex = (currentImageIndex + 1) % entry.images.length;
+            }
+            updateImage(); // Show the first image immediately
+            setInterval(updateImage, 1000); // Change image every 1 second
         }
 
         resultElement.appendChild(contentContainer);
