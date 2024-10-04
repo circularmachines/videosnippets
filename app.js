@@ -8,36 +8,18 @@ function scrollToBottom() {
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM content loaded');
 
-    // Parameters
-    const audioDetectionIntervalTime = 250; // Increased from 100ms to 500ms
-    const audioThreshold = 20; // Audio detection threshold
-    const scrollDelay = 200; // Delay before scrolling in milliseconds
-    const recordingMinDuration = 2500; // Minimum recording duration in milliseconds
-    const maxRecordingDuration = 5000; // Maximum recording duration in milliseconds
-
-    let mediaRecorder;
-    let recordedChunks = [];
-    let audioContext;
-    let analyser;
-    let audioDetectionInterval;
-    let lastRecordingStartTime = 0;
-
     const localVideo = document.getElementById('localVideo');
-    const startButton = document.getElementById('startButton');
-    const stopButton = document.getElementById('stopButton');
-    const audioIndicator = document.getElementById('audioIndicator');
-
-    console.log('localVideo element:', localVideo);
-    console.log('startButton element:', startButton);
-    console.log('stopButton element:', stopButton);
-    console.log('audioIndicator element:', audioIndicator);
-
     const resultsContainer = document.getElementById('resultsContainer');
+    const recordButton = document.getElementById('recordButton');
+
+    let captureInterval;
+    let isRecording = false;
+    let canvas;
 
     async function startWebcam() {
         try {
             console.log('Starting webcam...');
-            const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
             console.log('Got media stream:', stream);
 
             // Create a video element to get the original video dimensions
@@ -60,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Create a canvas to crop and scale the video
-            const canvas = document.createElement('canvas');
+            canvas = document.createElement('canvas');
             canvas.width = 480;
             canvas.height = 480;
             const ctx = canvas.getContext('2d');
@@ -75,8 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     cropHeight,
                     0,
                     0,
-                    512,
-                    512
+                    480,
+                    480
                 );
                 requestAnimationFrame(updateCanvas);
             }
@@ -90,151 +72,88 @@ document.addEventListener('DOMContentLoaded', () => {
             // Create a new stream from the canvas
             const croppedStream = canvas.captureStream();
 
-            // Add the audio track to the cropped stream
-            const audioTrack = stream.getAudioTracks()[0];
-            croppedStream.addTrack(audioTrack);
-
             localVideo.srcObject = croppedStream;
-            await localVideo.play(); // Explicitly play the video and wait for it to start
+            await localVideo.play();
             console.log('Webcam started successfully');
-
-            // Set up audio analysis
-            audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            analyser = audioContext.createAnalyser();
-            const source = audioContext.createMediaStreamSource(croppedStream);
-            source.connect(analyser);
-            analyser.fftSize = 2048;
-
-            startAudioDetection();
+            recordButton.disabled = false;  // Enable the record button
+            updateRecordButtonState();  // Update the button state
         } catch (error) {
             console.error('Error starting webcam:', error);
         }
     }
 
-    function startAudioDetection() {
-        const bufferLength = analyser.frequencyBinCount;
-        const dataArray = new Uint8Array(bufferLength);
-        let audioDetected = false; // Track if audio was detected
-        let wasRed = true; // Track if the last state was red
-        let wasYellow = false; // Track if the last state was yellow
+    function toggleRecording() {
+        if (isRecording) {
+            stopCapturing();
+        } else {
+            startCapturing();
+        }
+    }
 
-        audioDetectionInterval = setInterval(() => {
-            analyser.getByteFrequencyData(dataArray);
-            const average = dataArray.reduce((sum, value) => sum + value, 0) / bufferLength;
-
-            if (average > audioThreshold) { // Use parameter for threshold
-                audioIndicator.textContent = 'Audio Detected';
-                audioIndicator.style.backgroundColor = 'green'; // Green for audio on
-                if (!mediaRecorder || mediaRecorder.state === 'inactive') {
-                    startRecording();
-                }
+    function startCapturing() {
+        if (isRecording) return;
+        isRecording = true;
+        console.log('Starting capture...');
+        captureInterval = setInterval(() => {
+            console.log('Capturing image...');
+            if (canvas) {
+                const imageDataUrl = canvas.toDataURL('image/jpeg');
+                console.log('Image captured, sending to server...');
+                sendImageToServer(imageDataUrl);
             } else {
-                audioIndicator.textContent = 'No Audio';
-                audioIndicator.style.backgroundColor = 'red'; // Red for no audio
-                if (mediaRecorder && mediaRecorder.state === 'recording' && 
-                    Date.now() - lastRecordingStartTime > recordingMinDuration) {
-                    stopRecording();
-                    
-                }
+                console.error('Canvas is not available');
             }
-
-            // Add a check for maximum recording duration
-            if (mediaRecorder && mediaRecorder.state === 'recording' && 
-                Date.now() - lastRecordingStartTime > maxRecordingDuration) {
-                stopRecording();
-            }
-        }, audioDetectionIntervalTime); // Use parameter for interval time
+        }, 1000); // Capture every second
+        updateRecordButtonState();
     }
 
-    function startRecording() {
-        console.log('Start recording function called');
-        recordedChunks = [];
-        const stream = localVideo.srcObject;
-        mediaRecorder = new MediaRecorder(stream);
-
-        mediaRecorder.ondataavailable = (event) => {
-            if (event.data.size > 0) {
-                recordedChunks.push(event.data);
-            }
-        };
-
-        mediaRecorder.onstop = async () => {
-            const blob = new Blob(recordedChunks, { type: 'video/webm' });
-            
-            const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-            const filename = `recording-${timestamp}.webm`;
-            
-            console.log('Saving video as:', filename);
-
-            const formData = new FormData();
-            formData.append('video', blob, filename);
-            formData.append('filename', filename);
-
-            try {
-                const response = await fetch('/upload', {
-                    method: 'POST',
-                    body: formData
-                });
-
-                if (response.ok) {
-                    console.log('Video uploaded successfully, processing started');
-                    // Remove this line to prevent immediate update
-                    // fetchAndDisplayEntries();
-                } else {
-                    const errorData = await response.json();
-                    console.error('Failed to upload video:', errorData.error);
-                }
-            } catch (error) {
-                console.error('Error uploading video:', error);
-            }
-
-            // Start a new recording immediately
-            startRecording();
-        };
-
-        mediaRecorder.start();
-        lastRecordingStartTime = Date.now();
-        startButton.disabled = true;
-        stopButton.disabled = false;
-        console.log('Recording started');
-
-        // Add a timeout to automatically stop the recording after maxRecordingDuration
-        setTimeout(() => {
-            if (mediaRecorder && mediaRecorder.state === 'recording') {
-                console.log('Max recording duration reached, stopping recording');
-                stopRecording();
-            }
-        }, maxRecordingDuration);
+    function stopCapturing() {
+        if (!isRecording) return;
+        isRecording = false;
+        clearInterval(captureInterval);
+        updateRecordButtonState();
     }
 
-    function stopRecording() {
-        console.log('Stop recording function called');
-        mediaRecorder.stop();
-        startButton.disabled = false;
-        stopButton.disabled = true;
+    function updateRecordButtonState() {
+        recordButton.textContent = isRecording ? 'Stop Recording' : 'Start Recording';
+        recordButton.style.backgroundColor = isRecording ? 'red' : 'grey';
     }
 
-    console.log('Adding event listeners to buttons');
-    startButton.addEventListener('click', startRecording);
-    stopButton.addEventListener('click', stopRecording);
+    async function sendImageToServer(imageDataUrl) {
+        console.log('Preparing to send image to server...');
+        const blob = await (await fetch(imageDataUrl)).blob();
+        const formData = new FormData();
+        formData.append('image', blob, 'capture.jpg');
+
+        try {
+            console.log('Sending image to server...');
+            const response = await fetch('/upload-image', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) {
+                const responseText = await response.text();
+                console.log('Image uploaded successfully. Server response:', responseText);
+            } else {
+                console.error('Failed to upload image:', response.status, response.statusText);
+                const errorText = await response.text();
+                console.error('Server error response:', errorText);
+            }
+        } catch (error) {
+            console.error('Error uploading image:', error);
+        }
+    }
 
     console.log('Starting webcam');
-    startWebcam();
+    startWebcam();  // No need for .then() here
 
-    // Clean up on page unload
-    window.addEventListener('beforeunload', () => {
-        if (audioDetectionInterval) {
-            clearInterval(audioDetectionInterval);
-        }
-        if (audioContext) {
-            audioContext.close();
-        }
-    });
+    // Set up button event listener
+    recordButton.addEventListener('click', toggleRecording);
 
     // Scroll to bottom on page load
     scrollToBottom();
 
-    // Add this function to set up SSE
     function setupSSE() {
         const eventSource = new EventSource('/stream');
         
@@ -250,7 +169,6 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
-    // Update the updateResults function
     function updateResults(entries) {
         resultsContainer.innerHTML = ''; // Clear existing results
         entries.forEach(entry => {
@@ -260,12 +178,8 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollToBottom();
     }
 
-    // Call setupSSE when the page loads
     setupSSE();
 
-    // Remove the fetchAndDisplayEntries function and related code
-
-    // Update the createResultElement function
     function createResultElement(entry) {
         console.log("Creating result element for entry:", entry);
         const resultElement = document.createElement('div');
@@ -283,6 +197,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (entry.images && entry.images.length > 0) {
+            const imageContainer = document.createElement('div');
+            imageContainer.className = 'image-container';
+
             const img = document.createElement('img');
             img.alt = "Frame Image";
             img.className = "result-image";
@@ -290,7 +207,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error('Failed to load image');
                 img.style.display = 'none';
             };
-            contentContainer.prepend(img);
+
+            imageContainer.appendChild(img);
+            contentContainer.prepend(imageContainer);
 
             // Set up animation
             let currentImageIndex = 0;

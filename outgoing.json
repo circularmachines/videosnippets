@@ -1,385 +1,495 @@
 [
   {
     "video_snippet_id": 1,
+    "valid": false,
     "indexes_in_merged_video": [
       0,
-      1,
-      2
+      1
     ],
-    "description": "a Blue Object (possibly a washer or donut)",
-    "comments": "The user is holding the blue object in front of the camera, seemingly evaluating it briefly.",
-    "location": null,
+    "description": "No item",
+    "comments": "Nothing to index",
     "image_paths": [
-      "messages/images\\frame_2024-10-03_14-56-10_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-10_20.jpg",
-      "messages/images\\frame_2024-10-03_14-56-10_40.jpg",
-      "messages/images\\frame_2024-10-03_14-56-10_60.jpg",
-      "messages/images\\frame_2024-10-03_14-56-10_80.jpg",
-      "messages/images\\frame_2024-10-03_14-56-10_100.jpg",
-      "messages/images\\frame_2024-10-03_14-56-10_120.jpg",
-      "messages/images\\frame_2024-10-03_14-56-10_140.jpg",
-      "messages/images\\frame_2024-10-03_14-56-13_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-13_20.jpg",
-      "messages/images\\frame_2024-10-03_14-56-13_40.jpg",
-      "messages/images\\frame_2024-10-03_14-56-13_60.jpg",
-      "messages/images\\frame_2024-10-03_14-56-13_80.jpg",
-      "messages/images\\frame_2024-10-03_14-56-13_100.jpg",
-      "messages/images\\frame_2024-10-03_14-56-13_120.jpg",
-      "messages/images\\frame_2024-10-03_14-56-15_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-15_20.jpg",
-      "messages/images\\frame_2024-10-03_14-56-15_40.jpg",
-      "messages/images\\frame_2024-10-03_14-56-15_60.jpg",
-      "messages/images\\frame_2024-10-03_14-56-15_80.jpg",
-      "messages/images\\frame_2024-10-03_14-56-15_100.jpg",
-      "messages/images\\frame_2024-10-03_14-56-15_120.jpg",
-      "messages/images\\frame_2024-10-03_14-56-15_140.jpg"
+      "uploads\\1728027510.jpg",
+      "uploads\\1728027510.jpg"
     ],
     "processed": true
   },
   {
     "video_snippet_id": 1,
+    "valid": false,
     "indexes_in_merged_video": [
       0,
-      1,
-      2
+      1
     ],
-    "description": "a Blue Object",
-    "comments": "The user is holding a small blue object with a hole in the middle.",
-    "location": null,
+    "description": "No item",
+    "comments": "Nothing to index",
     "image_paths": [
-      "messages/images\\frame_2024-10-03_14-56-10_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-10_20.jpg",
-      "messages/images\\frame_2024-10-03_14-56-10_40.jpg",
-      "messages/images\\frame_2024-10-03_14-56-10_60.jpg",
-      "messages/images\\frame_2024-10-03_14-56-10_80.jpg",
-      "messages/images\\frame_2024-10-03_14-56-10_100.jpg",
-      "messages/images\\frame_2024-10-03_14-56-10_120.jpg",
-      "messages/images\\frame_2024-10-03_14-56-10_140.jpg",
-      "messages/images\\frame_2024-10-03_14-56-13_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-13_20.jpg",
-      "messages/images\\frame_2024-10-03_14-56-13_40.jpg",
-      "messages/images\\frame_2024-10-03_14-56-13_60.jpg",
-      "messages/images\\frame_2024-10-03_14-56-13_80.jpg",
-      "messages/images\\frame_2024-10-03_14-56-13_100.jpg",
-      "messages/images\\frame_2024-10-03_14-56-13_120.jpg",
-      "messages/images\\frame_2024-10-03_14-56-15_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-15_20.jpg",
-      "messages/images\\frame_2024-10-03_14-56-15_40.jpg",
-      "messages/images\\frame_2024-10-03_14-56-15_60.jpg",
-      "messages/images\\frame_2024-10-03_14-56-15_80.jpg",
-      "messages/images\\frame_2024-10-03_14-56-15_100.jpg",
-      "messages/images\\frame_2024-10-03_14-56-15_120.jpg",
-      "messages/images\\frame_2024-10-03_14-56-15_140.jpg"
+      "uploads\\1728027510.jpg",
+      "uploads\\1728027510.jpg"
     ],
     "processed": true
   },
   {
     "video_snippet_id": 1,
+    "valid": false,
     "indexes_in_merged_video": [
+      2
+    ],
+    "description": "No item",
+    "comments": "Nothing to index",
+    "image_paths": [
+      "uploads\\1728027511.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 2,
+    "valid": true,
+    "indexes_in_merged_video": [
+      3,
       4,
       5
     ],
-    "description": "A mobile phone",
-    "comments": "The user is holding up a phone and questioning what type it is.",
+    "description": "Baby shoe",
+    "comments": "Black leather with white laces",
     "image_paths": [
-      "messages/images\\frame_2024-10-03_14-56-17_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-17_20.jpg",
-      "messages/images\\frame_2024-10-03_14-56-18_40.jpg",
-      "messages/images\\frame_2024-10-03_14-56-18_60.jpg",
-      "messages/images\\frame_2024-10-03_14-56-18_80.jpg",
-      "messages/images\\frame_2024-10-03_14-56-18_100.jpg",
-      "messages/images\\frame_2024-10-03_14-56-18_120.jpg",
-      "messages/images\\frame_2024-10-03_14-56-20_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-20_20.jpg",
-      "messages/images\\frame_2024-10-03_14-56-20_40.jpg",
-      "messages/images\\frame_2024-10-03_14-56-20_60.jpg",
-      "messages/images\\frame_2024-10-03_14-56-20_80.jpg",
-      "messages/images\\frame_2024-10-03_14-56-20_100.jpg",
-      "messages/images\\frame_2024-10-03_14-56-20_120.jpg",
-      "messages/images\\frame_2024-10-03_14-56-20_140.jpg"
+      "uploads\\1728027512.jpg",
+      "uploads\\1728027513.jpg",
+      "uploads\\1728027514.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 3,
+    "valid": false,
+    "indexes_in_merged_video": [
+      6,
+      7,
+      8
+    ],
+    "description": "No item",
+    "comments": "Nothing to index",
+    "image_paths": [
+      "uploads\\1728027515.jpg",
+      "uploads\\1728027516.jpg",
+      "uploads\\1728027517.jpg"
     ],
     "processed": true
   },
   {
     "video_snippet_id": 1,
+    "valid": false,
     "indexes_in_merged_video": [
+      2
+    ],
+    "description": "No item",
+    "comments": "The image does not contain any items to index.",
+    "image_paths": [
+      "uploads\\1728027511.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 2,
+    "valid": true,
+    "indexes_in_merged_video": [
+      3,
       4,
       5
     ],
-    "description": "a Phone",
-    "comments": "The user is showing a phone and asking what type it is.",
-    "location": null,
+    "description": "A child's shoe",
+    "comments": "The shoe is dark with white laces and stitching.",
     "image_paths": [
-      "messages/images\\frame_2024-10-03_14-56-17_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-17_20.jpg",
-      "messages/images\\frame_2024-10-03_14-56-18_40.jpg",
-      "messages/images\\frame_2024-10-03_14-56-18_60.jpg",
-      "messages/images\\frame_2024-10-03_14-56-18_80.jpg",
-      "messages/images\\frame_2024-10-03_14-56-18_100.jpg",
-      "messages/images\\frame_2024-10-03_14-56-18_120.jpg",
-      "messages/images\\frame_2024-10-03_14-56-20_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-20_20.jpg",
-      "messages/images\\frame_2024-10-03_14-56-20_40.jpg",
-      "messages/images\\frame_2024-10-03_14-56-20_60.jpg",
-      "messages/images\\frame_2024-10-03_14-56-20_80.jpg",
-      "messages/images\\frame_2024-10-03_14-56-20_100.jpg",
-      "messages/images\\frame_2024-10-03_14-56-20_120.jpg",
-      "messages/images\\frame_2024-10-03_14-56-20_140.jpg"
+      "uploads\\1728027512.jpg",
+      "uploads\\1728027513.jpg",
+      "uploads\\1728027514.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 3,
+    "valid": false,
+    "indexes_in_merged_video": [
+      6,
+      7,
+      8
+    ],
+    "description": "No item",
+    "comments": "These images do not contain any items to index.",
+    "image_paths": [
+      "uploads\\1728027515.jpg",
+      "uploads\\1728027516.jpg",
+      "uploads\\1728027517.jpg"
     ],
     "processed": true
   },
   {
     "video_snippet_id": 1,
+    "valid": true,
     "indexes_in_merged_video": [
-      8,
-      9
+      9,
+      10,
+      11
     ],
-    "description": "a person speaking",
-    "comments": "The individual is expressing gratitude.",
-    "location": null,
+    "description": "an Adjustable Wrench",
+    "comments": "metallic, used for gripping and turning",
     "image_paths": [
-      "messages/images\\frame_2024-10-03_14-56-25_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-25_20.jpg",
-      "messages/images\\frame_2024-10-03_14-56-25_40.jpg",
-      "messages/images\\frame_2024-10-03_14-56-25_60.jpg",
-      "messages/images\\frame_2024-10-03_14-56-25_80.jpg",
-      "messages/images\\frame_2024-10-03_14-56-25_100.jpg",
-      "messages/images\\frame_2024-10-03_14-56-25_120.jpg",
-      "messages/images\\frame_2024-10-03_14-56-27_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-27_20.jpg",
-      "messages/images\\frame_2024-10-03_14-56-27_40.jpg",
-      "messages/images\\frame_2024-10-03_14-56-27_60.jpg",
-      "messages/images\\frame_2024-10-03_14-56-27_80.jpg",
-      "messages/images\\frame_2024-10-03_14-56-27_100.jpg",
-      "messages/images\\frame_2024-10-03_14-56-27_120.jpg",
-      "messages/images\\frame_2024-10-03_14-56-27_140.jpg"
+      "uploads\\1728027518.jpg",
+      "uploads\\1728027519.jpg",
+      "uploads\\1728027520.jpg"
     ],
     "processed": true
   },
   {
-    "video_snippet_id": 1,
+    "video_snippet_id": 2,
+    "valid": false,
     "indexes_in_merged_video": [
-      8,
-      9
-    ],
-    "description": "a person speaking",
-    "comments": "The person thanks and appears surprised.",
-    "location": null,
-    "image_paths": [
-      "messages/images\\frame_2024-10-03_14-56-25_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-25_20.jpg",
-      "messages/images\\frame_2024-10-03_14-56-25_40.jpg",
-      "messages/images\\frame_2024-10-03_14-56-25_60.jpg",
-      "messages/images\\frame_2024-10-03_14-56-25_80.jpg",
-      "messages/images\\frame_2024-10-03_14-56-25_100.jpg",
-      "messages/images\\frame_2024-10-03_14-56-25_120.jpg",
-      "messages/images\\frame_2024-10-03_14-56-27_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-27_20.jpg",
-      "messages/images\\frame_2024-10-03_14-56-27_40.jpg",
-      "messages/images\\frame_2024-10-03_14-56-27_60.jpg",
-      "messages/images\\frame_2024-10-03_14-56-27_80.jpg",
-      "messages/images\\frame_2024-10-03_14-56-27_100.jpg",
-      "messages/images\\frame_2024-10-03_14-56-27_120.jpg",
-      "messages/images\\frame_2024-10-03_14-56-27_140.jpg"
-    ],
-    "processed": true
-  },
-  {
-    "video_snippet_id": 1,
-    "indexes_in_merged_video": [
-      11,
       12,
       13,
-      16,
-      17,
-      18
+      14
     ],
-    "description": "Remote Control",
-    "comments": "The user is holding a remote control, showcasing its buttons and colors.",
-    "location": null,
+    "description": "No item",
+    "comments": "Nothing to index",
     "image_paths": [
-      "messages/images\\frame_2024-10-03_14-56-29_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-31_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-31_20.jpg",
-      "messages/images\\frame_2024-10-03_14-56-31_40.jpg",
-      "messages/images\\frame_2024-10-03_14-56-31_60.jpg",
-      "messages/images\\frame_2024-10-03_14-56-31_80.jpg",
-      "messages/images\\frame_2024-10-03_14-56-31_100.jpg",
-      "messages/images\\frame_2024-10-03_14-56-31_120.jpg",
-      "messages/images\\frame_2024-10-03_14-56-34_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-34_20.jpg",
-      "messages/images\\frame_2024-10-03_14-56-34_40.jpg",
-      "messages/images\\frame_2024-10-03_14-56-34_60.jpg",
-      "messages/images\\frame_2024-10-03_14-56-34_80.jpg",
-      "messages/images\\frame_2024-10-03_14-56-34_100.jpg",
-      "messages/images\\frame_2024-10-03_14-56-34_120.jpg",
-      "messages/images\\frame_2024-10-03_14-56-34_140.jpg",
-      "messages/images\\frame_2024-10-03_14-56-36_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-37_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-37_20.jpg",
-      "messages/images\\frame_2024-10-03_14-56-37_40.jpg",
-      "messages/images\\frame_2024-10-03_14-56-37_60.jpg",
-      "messages/images\\frame_2024-10-03_14-56-37_80.jpg",
-      "messages/images\\frame_2024-10-03_14-56-37_100.jpg",
-      "messages/images\\frame_2024-10-03_14-56-37_120.jpg",
-      "messages/images\\frame_2024-10-03_14-56-40_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-40_20.jpg",
-      "messages/images\\frame_2024-10-03_14-56-40_40.jpg",
-      "messages/images\\frame_2024-10-03_14-56-40_60.jpg",
-      "messages/images\\frame_2024-10-03_14-56-40_80.jpg",
-      "messages/images\\frame_2024-10-03_14-56-40_100.jpg",
-      "messages/images\\frame_2024-10-03_14-56-40_120.jpg",
-      "messages/images\\frame_2024-10-03_14-56-40_140.jpg"
+      "uploads\\1728027521.jpg",
+      "uploads\\1728027522.jpg",
+      "uploads\\1728027523.jpg"
     ],
     "processed": true
   },
   {
     "video_snippet_id": 1,
+    "valid": true,
     "indexes_in_merged_video": [
-      11,
-      12,
-      13,
-      16,
-      17,
-      18
+      9,
+      10,
+      11
     ],
-    "description": "a remote control",
-    "comments": "The user is showing a remote control with various buttons.",
-    "location": null,
+    "description": "an Adjustable Wrench",
+    "comments": "metallic with visible brand marking",
     "image_paths": [
-      "messages/images\\frame_2024-10-03_14-56-29_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-31_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-31_20.jpg",
-      "messages/images\\frame_2024-10-03_14-56-31_40.jpg",
-      "messages/images\\frame_2024-10-03_14-56-31_60.jpg",
-      "messages/images\\frame_2024-10-03_14-56-31_80.jpg",
-      "messages/images\\frame_2024-10-03_14-56-31_100.jpg",
-      "messages/images\\frame_2024-10-03_14-56-31_120.jpg",
-      "messages/images\\frame_2024-10-03_14-56-34_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-34_20.jpg",
-      "messages/images\\frame_2024-10-03_14-56-34_40.jpg",
-      "messages/images\\frame_2024-10-03_14-56-34_60.jpg",
-      "messages/images\\frame_2024-10-03_14-56-34_80.jpg",
-      "messages/images\\frame_2024-10-03_14-56-34_100.jpg",
-      "messages/images\\frame_2024-10-03_14-56-34_120.jpg",
-      "messages/images\\frame_2024-10-03_14-56-34_140.jpg",
-      "messages/images\\frame_2024-10-03_14-56-36_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-37_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-37_20.jpg",
-      "messages/images\\frame_2024-10-03_14-56-37_40.jpg",
-      "messages/images\\frame_2024-10-03_14-56-37_60.jpg",
-      "messages/images\\frame_2024-10-03_14-56-37_80.jpg",
-      "messages/images\\frame_2024-10-03_14-56-37_100.jpg",
-      "messages/images\\frame_2024-10-03_14-56-37_120.jpg",
-      "messages/images\\frame_2024-10-03_14-56-40_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-40_20.jpg",
-      "messages/images\\frame_2024-10-03_14-56-40_40.jpg",
-      "messages/images\\frame_2024-10-03_14-56-40_60.jpg",
-      "messages/images\\frame_2024-10-03_14-56-40_80.jpg",
-      "messages/images\\frame_2024-10-03_14-56-40_100.jpg",
-      "messages/images\\frame_2024-10-03_14-56-40_120.jpg",
-      "messages/images\\frame_2024-10-03_14-56-40_140.jpg"
+      "uploads\\1728027518.jpg",
+      "uploads\\1728027519.jpg",
+      "uploads\\1728027520.jpg"
     ],
     "processed": true
   },
   {
+    "video_snippet_id": 2,
+    "valid": false,
+    "indexes_in_merged_video": [
+      12,
+      13,
+      14
+    ],
+    "description": "No item",
+    "comments": "empty frame with hand gesture",
     "image_paths": [
-      "messages/images\\frame_2024-10-03_14-56-42_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-42_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-42_20.jpg",
-      "messages/images\\frame_2024-10-03_14-56-42_40.jpg",
-      "messages/images\\frame_2024-10-03_14-56-42_60.jpg",
-      "messages/images\\frame_2024-10-03_14-56-42_80.jpg",
-      "messages/images\\frame_2024-10-03_14-56-43_100.jpg",
-      "messages/images\\frame_2024-10-03_14-56-43_120.jpg",
-      "messages/images\\frame_2024-10-03_14-56-44_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-45_20.jpg",
-      "messages/images\\frame_2024-10-03_14-56-45_40.jpg",
-      "messages/images\\frame_2024-10-03_14-56-45_60.jpg",
-      "messages/images\\frame_2024-10-03_14-56-45_80.jpg",
-      "messages/images\\frame_2024-10-03_14-56-45_100.jpg",
-      "messages/images\\frame_2024-10-03_14-56-45_120.jpg",
-      "messages/images\\frame_2024-10-03_14-56-45_140.jpg",
-      "messages/images\\frame_2024-10-03_14-56-47_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-48_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-48_20.jpg",
-      "messages/images\\frame_2024-10-03_14-56-48_40.jpg",
-      "messages/images\\frame_2024-10-03_14-56-48_60.jpg",
-      "messages/images\\frame_2024-10-03_14-56-48_80.jpg",
-      "messages/images\\frame_2024-10-03_14-56-48_100.jpg",
-      "messages/images\\frame_2024-10-03_14-56-48_120.jpg",
-      "messages/images\\frame_2024-10-03_14-56-49_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-49_20.jpg",
-      "messages/images\\frame_2024-10-03_14-56-49_40.jpg",
-      "messages/images\\frame_2024-10-03_14-56-49_60.jpg",
-      "messages/images\\frame_2024-10-03_14-56-49_80.jpg",
-      "messages/images\\frame_2024-10-03_14-56-49_100.jpg",
-      "messages/images\\frame_2024-10-03_14-56-49_120.jpg",
-      "messages/images\\frame_2024-10-03_14-56-49_140.jpg",
-      "messages/images\\frame_2024-10-03_14-56-50_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-56_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-56_20.jpg",
-      "messages/images\\frame_2024-10-03_14-56-56_40.jpg",
-      "messages/images\\frame_2024-10-03_14-56-56_60.jpg",
-      "messages/images\\frame_2024-10-03_14-56-56_80.jpg",
-      "messages/images\\frame_2024-10-03_14-56-57_100.jpg",
-      "messages/images\\frame_2024-10-03_14-56-57_120.jpg",
-      "messages/images\\frame_2024-10-03_14-56-58_0.jpg",
-      "messages/images\\frame_2024-10-03_14-56-58_20.jpg",
-      "messages/images\\frame_2024-10-03_14-56-58_40.jpg",
-      "messages/images\\frame_2024-10-03_14-56-58_60.jpg",
-      "messages/images\\frame_2024-10-03_14-56-58_80.jpg",
-      "messages/images\\frame_2024-10-03_14-56-58_100.jpg",
-      "messages/images\\frame_2024-10-03_14-56-58_120.jpg",
-      "messages/images\\frame_2024-10-03_14-56-58_140.jpg",
-      "messages/images\\frame_2024-10-03_14-57-00_0.jpg",
-      "messages/images\\frame_2024-10-03_14-57-00_0.jpg",
-      "messages/images\\frame_2024-10-03_14-57-00_20.jpg",
-      "messages/images\\frame_2024-10-03_14-57-00_40.jpg",
-      "messages/images\\frame_2024-10-03_14-57-00_60.jpg",
-      "messages/images\\frame_2024-10-03_14-57-00_80.jpg",
-      "messages/images\\frame_2024-10-03_14-57-00_100.jpg",
-      "messages/images\\frame_2024-10-03_14-57-00_120.jpg",
-      "messages/images\\frame_2024-10-03_14-57-00_0.jpg",
-      "messages/images\\frame_2024-10-03_14-57-00_20.jpg",
-      "messages/images\\frame_2024-10-03_14-57-00_40.jpg",
-      "messages/images\\frame_2024-10-03_14-57-00_60.jpg",
-      "messages/images\\frame_2024-10-03_14-57-00_80.jpg",
-      "messages/images\\frame_2024-10-03_14-57-00_100.jpg",
-      "messages/images\\frame_2024-10-03_14-57-00_120.jpg",
-      "messages/images\\frame_2024-10-03_14-57-00_140.jpg",
-      "messages/images\\frame_2024-10-03_14-57-02_0.jpg",
-      "messages/images\\frame_2024-10-03_14-57-02_0.jpg",
-      "messages/images\\frame_2024-10-03_14-57-02_20.jpg",
-      "messages/images\\frame_2024-10-03_14-57-02_40.jpg",
-      "messages/images\\frame_2024-10-03_14-57-02_60.jpg",
-      "messages/images\\frame_2024-10-03_14-57-02_80.jpg",
-      "messages/images\\frame_2024-10-03_14-57-02_100.jpg",
-      "messages/images\\frame_2024-10-03_14-57-02_120.jpg",
-      "messages/images\\frame_2024-10-03_14-57-10_0.jpg",
-      "messages/images\\frame_2024-10-03_14-57-10_20.jpg",
-      "messages/images\\frame_2024-10-03_14-57-11_40.jpg",
-      "messages/images\\frame_2024-10-03_14-57-11_60.jpg",
-      "messages/images\\frame_2024-10-03_14-57-11_80.jpg",
-      "messages/images\\frame_2024-10-03_14-57-11_100.jpg",
-      "messages/images\\frame_2024-10-03_14-57-11_120.jpg",
-      "messages/images\\frame_2024-10-03_14-57-11_140.jpg",
-      "messages/images\\frame_2024-10-03_14-57-11_0.jpg",
-      "messages/images\\frame_2024-10-03_14-57-11_20.jpg",
-      "messages/images\\frame_2024-10-03_14-57-12_40.jpg",
-      "messages/images\\frame_2024-10-03_14-57-12_60.jpg",
-      "messages/images\\frame_2024-10-03_14-57-12_80.jpg",
-      "messages/images\\frame_2024-10-03_14-57-12_100.jpg",
-      "messages/images\\frame_2024-10-03_14-57-14_0.jpg",
-      "messages/images\\frame_2024-10-03_14-57-14_20.jpg",
-      "messages/images\\frame_2024-10-03_14-57-14_40.jpg",
-      "messages/images\\frame_2024-10-03_14-57-14_60.jpg",
-      "messages/images\\frame_2024-10-03_14-57-14_80.jpg",
-      "messages/images\\frame_2024-10-03_14-57-14_100.jpg",
-      "messages/images\\frame_2024-10-03_14-57-14_120.jpg",
-      "messages/images\\frame_2024-10-03_14-57-14_140.jpg",
-      "messages/images\\frame_2024-10-03_14-57-14_0.jpg",
-      "messages/images\\frame_2024-10-03_14-57-15_0.jpg"
+      "uploads\\1728027521.jpg",
+      "uploads\\1728027522.jpg",
+      "uploads\\1728027523.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 3,
+    "valid": true,
+    "indexes_in_merged_video": [
+      15,
+      16,
+      17
+    ],
+    "description": "a Pair of Pliers",
+    "comments": "red handles",
+    "image_paths": [
+      "uploads\\1728027524.jpg",
+      "uploads\\1728027525.jpg",
+      "uploads\\1728027526.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 1,
+    "valid": true,
+    "indexes_in_merged_video": [
+      15,
+      16,
+      17
+    ],
+    "description": "a pair of pliers",
+    "comments": "the handle is red",
+    "image_paths": [
+      "uploads\\1728027524.jpg",
+      "uploads\\1728027525.jpg",
+      "uploads\\1728027526.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 2,
+    "valid": false,
+    "indexes_in_merged_video": [
+      18,
+      19
+    ],
+    "description": "No item",
+    "comments": "Nothing to index",
+    "image_paths": [
+      "uploads\\1728027527.jpg",
+      "uploads\\1728027528.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 1,
+    "valid": false,
+    "indexes_in_merged_video": [
+      18,
+      19
+    ],
+    "description": "Person without an identifiable item",
+    "comments": "Nothing specific to index",
+    "image_paths": [
+      "uploads\\1728027527.jpg",
+      "uploads\\1728027528.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 2,
+    "valid": true,
+    "indexes_in_merged_video": [
+      20,
+      21,
+      22,
+      23,
+      24,
+      25
+    ],
+    "description": "Small blue cylindrical object",
+    "comments": "Being held in different positions",
+    "image_paths": [
+      "uploads\\1728027530.jpg",
+      "uploads\\1728027531.jpg",
+      "uploads\\1728027532.jpg",
+      "uploads\\1728027532.jpg",
+      "uploads\\1728027533.jpg",
+      "uploads\\1728027534.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 3,
+    "valid": false,
+    "indexes_in_merged_video": [
+      26,
+      27
+    ],
+    "description": "Person without an identifiable item",
+    "comments": "Nothing specific to index",
+    "image_paths": [
+      "uploads\\1728027535.jpg",
+      "uploads\\1728027536.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 4,
+    "valid": true,
+    "indexes_in_merged_video": [
+      28,
+      29
+    ],
+    "description": "Small remote control",
+    "comments": "Various buttons visible",
+    "image_paths": [
+      "uploads\\1728027537.jpg",
+      "uploads\\1728027538.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 1,
+    "valid": true,
+    "indexes_in_merged_video": [
+      20,
+      21,
+      22,
+      23,
+      24,
+      25
+    ],
+    "description": "a small blue cylindrical object",
+    "comments": "held between fingers, various angles",
+    "image_paths": [
+      "uploads\\1728027530.jpg",
+      "uploads\\1728027531.jpg",
+      "uploads\\1728027532.jpg",
+      "uploads\\1728027532.jpg",
+      "uploads\\1728027533.jpg",
+      "uploads\\1728027534.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 2,
+    "valid": false,
+    "indexes_in_merged_video": [
+      26,
+      27
+    ],
+    "description": "No item",
+    "comments": "Nothing to index",
+    "image_paths": [
+      "uploads\\1728027535.jpg",
+      "uploads\\1728027536.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 3,
+    "valid": true,
+    "indexes_in_merged_video": [
+      28,
+      29
+    ],
+    "description": "a small remote control",
+    "comments": "shown from the top displaying colored buttons",
+    "image_paths": [
+      "uploads\\1728027537.jpg",
+      "uploads\\1728027538.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 4,
+    "valid": false,
+    "indexes_in_merged_video": [
+      30,
+      31
+    ],
+    "description": "No item",
+    "comments": "Nothing to index",
+    "image_paths": [
+      "uploads\\1728027539.jpg",
+      "uploads\\1728027540.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 1,
+    "valid": false,
+    "indexes_in_merged_video": [
+      30,
+      31
+    ],
+    "description": "No item",
+    "comments": "Nothing to index",
+    "image_paths": [
+      "uploads\\1728027539.jpg",
+      "uploads\\1728027540.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 2,
+    "valid": true,
+    "indexes_in_merged_video": [
+      32,
+      33
+    ],
+    "description": "Bag of buttons",
+    "comments": "Contains multiple buttons with various designs",
+    "image_paths": [
+      "uploads\\1728027542.jpg",
+      "uploads\\1728027542.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 3,
+    "valid": false,
+    "indexes_in_merged_video": [
+      34,
+      35
+    ],
+    "description": "No item",
+    "comments": "Nothing to index",
+    "image_paths": [
+      "uploads\\1728027544.jpg",
+      "uploads\\1728027544.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 4,
+    "valid": true,
+    "indexes_in_merged_video": [
+      36,
+      37,
+      38
+    ],
+    "description": "Wristwatch",
+    "comments": "Digital display with a strap",
+    "image_paths": [
+      "uploads\\1728027546.jpg",
+      "uploads\\1728027546.jpg",
+      "uploads\\1728027547.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 1,
+    "valid": true,
+    "indexes_in_merged_video": [
+      32,
+      33
+    ],
+    "description": "Bag with buttons",
+    "comments": "Buttons are visible through the plastic bag",
+    "image_paths": [
+      "uploads\\1728027542.jpg",
+      "uploads\\1728027542.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 2,
+    "valid": false,
+    "indexes_in_merged_video": [
+      34,
+      35
+    ],
+    "description": "No item",
+    "comments": "Nothing to index",
+    "image_paths": [
+      "uploads\\1728027544.jpg",
+      "uploads\\1728027544.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 3,
+    "valid": true,
+    "indexes_in_merged_video": [
+      36,
+      37,
+      38
+    ],
+    "description": "Watch",
+    "comments": "Round digital watch with visible display",
+    "image_paths": [
+      "uploads\\1728027546.jpg",
+      "uploads\\1728027546.jpg",
+      "uploads\\1728027547.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "valid": true,
+    "image_paths": [
+      "uploads\\1728027548.jpg",
+      "uploads\\1728027549.jpg"
     ],
     "processed": false
   }

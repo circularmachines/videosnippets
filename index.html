@@ -14,7 +14,7 @@
         .container {
             display: flex;
             gap: 20px;
-            height: 60vh; /* Fixed height for the container */
+            height: 90vh; /* Fixed height for the container */
         }
         .webcam-column, .results-column {
             flex: 1;
@@ -103,8 +103,7 @@
         <div class="webcam-column">
             <video id="localVideo" autoplay muted playsinline></video>
             <div>
-                <button id="startButton">Start Recording</button>
-                <button id="stopButton" disabled>Stop Recording</button>
+                <button id="recordButton" disabled>Start Recording</button>
             </div>
             <div id="audioIndicator"></div>
         </div>

@@ -7,6 +7,7 @@ import time
 import asyncio
 import threading
 
+
 app = Flask(__name__, static_folder='.')
 
 UPLOAD_FOLDER = 'uploads'
@@ -21,28 +22,41 @@ def index():
 def serve_file(path):
     return send_from_directory('.', path)
 
-@app.route('/upload', methods=['POST'])
-def upload_video():
-    if 'video' not in request.files:
-        return jsonify({'error': 'No video file'}), 400
+@app.route('/upload-image', methods=['POST'])
+def upload_image():
+    if 'image' not in request.files:
+        return jsonify({'error': 'No image file'}), 400
     
-    video = request.files['video']
-    filename = video.filename
+    image = request.files['image']
+    filename = image.filename
 
     if filename == '':
         return jsonify({'error': 'No selected file'}), 400
     
-    if video:
-        video_path = os.path.join(UPLOAD_FOLDER, filename)
-        video.save(video_path)
+    if image:
+        # Generate a unique filename using a timestamp
+        timestamp = int(time.time())
+        file_extension = os.path.splitext(filename)[1]
+        new_filename = f"{timestamp}{file_extension}"
+        image_path = os.path.join(UPLOAD_FOLDER, new_filename)
         
-        # Add a new entry to incoming.json
-        entry_manager.add_incoming_entry(video_path)
-        
-        return jsonify({
-            'message': 'File uploaded successfully, processing will start soon',
-            'filename': filename
-        }), 202
+        try:
+            image.save(image_path)
+            app.logger.info(f"Image saved successfully: {image_path}")
+            
+            # Add a new entry to incoming.json
+            entry_manager.add_incoming_entry(image_path)
+            entry_manager.update_outgoing_entries()
+            
+            return jsonify({
+                'message': 'Image uploaded successfully',
+                'filename': new_filename
+            }), 202
+        except Exception as e:
+            app.logger.error(f"Error saving image: {str(e)}")
+            return jsonify({'error': 'Failed to save image'}), 500
+    
+    return jsonify({'error': 'Invalid image'}), 400
 
 @app.route('/stream')
 def stream():
@@ -54,7 +68,7 @@ def stream():
                 if len(str(entries)) != last_entry_count:
                     last_entry_count = len(str(entries))
                     yield f"data: {json.dumps(entries)}\n\n"
-            time.sleep(1)  # Check for new entries every second
+            time.sleep(0.7324)  # Check for new entries every second
 
     return Response(event_stream(), content_type='text/event-stream')
 
