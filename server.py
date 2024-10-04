@@ -4,7 +4,6 @@ import entry_manager
 import logging
 import json
 import time
-import asyncio
 import threading
 
 
@@ -72,14 +71,14 @@ def stream():
 
     return Response(event_stream(), content_type='text/event-stream')
 
-def run_async_loop():
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-    loop.run_until_complete(entry_manager.main())
+def run_llm_process():
+    while True:
+        entry_manager.process_LLM()
+        time.sleep(0.5)  # Wait for 0.5 seconds before checking again
 
 if __name__ == '__main__':
     # Start the entry_manager processes in a separate thread
-    entry_manager_thread = threading.Thread(target=run_async_loop, daemon=True)
+    entry_manager_thread = threading.Thread(target=run_llm_process, daemon=True)
     entry_manager_thread.start()
 
     # Run the Flask app
