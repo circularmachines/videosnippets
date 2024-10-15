@@ -16,6 +16,42 @@ document.addEventListener('DOMContentLoaded', () => {
     let isRecording = false;
     let canvas;
 
+    const promptInput = document.getElementById('promptInput');
+    const submitPromptButton = document.getElementById('submitPrompt');
+
+    submitPromptButton.addEventListener('click', submitPrompt);
+
+    async function submitPrompt() {
+        const prompt = promptInput.value.trim();
+        if (!prompt) return;
+
+        try {
+            submitPromptButton.disabled = true;
+            recordButton.disabled = true;
+            
+            const response = await fetch('/submit-prompt', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ prompt }),
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                console.log('Prompt submitted successfully:', result);
+                promptInput.value = '';
+            } else {
+                console.error('Failed to submit prompt:', response.status, response.statusText);
+            }
+        } catch (error) {
+            console.error('Error submitting prompt:', error);
+        } finally {
+            submitPromptButton.disabled = false;
+            recordButton.disabled = false;
+        }
+    }
+
     async function startWebcam() {
         try {
             console.log('Starting webcam...');
@@ -158,9 +194,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const eventSource = new EventSource('/stream');
         
         eventSource.onmessage = function(event) {
-            const entries = JSON.parse(event.data);
-            console.log("Received entries:", entries);
-            updateResults(entries);
+            const data = JSON.parse(event.data);
+            if (data.type === 'entries') {
+                updateResults(data.entries);
+            } else if (data.type === 'prompt_processed') {
+                console.log('Prompt processed:', data.message);
+                recordButton.disabled = false;
+            }
         };
 
         eventSource.onerror = function(error) {

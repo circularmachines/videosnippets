@@ -5,6 +5,8 @@ import logging
 import json
 import time
 import threading
+import queue
+import prompt_creation
 
 
 app = Flask(__name__, static_folder='.')
@@ -57,6 +59,28 @@ def upload_image():
     
     return jsonify({'error': 'Invalid image'}), 400
 
+prompt_queue = queue.Queue()
+
+@app.route('/submit-prompt', methods=['POST'])
+def submit_prompt():
+    data = request.json
+    prompt = data.get('prompt')
+    print(prompt)
+    if not prompt:
+        return jsonify({'error': 'No prompt provided'}), 400
+    
+    try:
+        new_system_prompt = prompt_creation.process_prompt(prompt)
+        entry_manager.update_system_prompt(new_system_prompt)
+        return jsonify({
+            'message': 'Prompt processed successfully',
+            'new_system_prompt': new_system_prompt
+        }), 200
+    
+    except Exception as e:
+        app.logger.error(f"Error processing prompt: {str(e)}")
+        return jsonify({'error': 'Failed to process prompt'}), 500
+
 @app.route('/stream')
 def stream():
     def event_stream():
@@ -66,8 +90,9 @@ def stream():
             if len(entries) > 0:
                 if len(str(entries)) != last_entry_count:
                     last_entry_count = len(str(entries))
-                    yield f"data: {json.dumps(entries)}\n\n"
-            time.sleep(0.7324)  # Check for new entries every second
+                    yield f"data: {json.dumps({'type': 'entries', 'entries': entries})}\n\n"
+            
+            time.sleep(0.7324)
 
     return Response(event_stream(), content_type='text/event-stream')
 

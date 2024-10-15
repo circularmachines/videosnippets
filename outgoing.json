@@ -1,46 +1,226 @@
 [
   {
     "video_snippet_id": 1,
+    "valid": false,
+    "indexes_in_merged_video": [
+      0,
+      1,
+      2
+    ],
+    "description": "No tongue visible",
+    "comments": "Does not meet criteria",
+    "image_paths": [
+      "uploads\\1728996662.jpg",
+      "uploads\\1728996663.jpg",
+      "uploads\\1728996664.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 1,
     "valid": true,
     "indexes_in_merged_video": [
+      3,
+      4,
+      5,
+      10
+    ],
+    "description": "User making a funny face with tongue out",
+    "comments": "Includes variations of the same expression",
+    "image_paths": [
+      "uploads\\1728996665.jpg",
+      "uploads\\1728996666.jpg",
+      "uploads\\1728996667.jpg",
+      "uploads\\1728996672.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 1,
+    "valid": true,
+    "indexes_in_merged_video": [
+      11,
+      15,
+      16,
+      17
+    ],
+    "description": "Person with tongue out",
+    "comments": "Meets criteria",
+    "image_paths": [
+      "uploads\\1728996673.jpg",
+      "uploads\\1728996677.jpg",
+      "uploads\\1728996678.jpg",
+      "uploads\\1728996679.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 1,
+    "valid": true,
+    "indexes_in_merged_video": [
+      6,
+      7,
+      8,
+      9,
+      12,
+      13,
+      14,
+      18,
+      19,
+      20,
+      23,
+      24,
+      25,
+      26,
+      29
+    ],
+    "description": "A person showing various facial expressions",
+    "comments": "Includes neutral, serious, and tired expressions.",
+    "image_paths": [
+      "uploads\\1728996668.jpg",
+      "uploads\\1728996669.jpg",
+      "uploads\\1728996670.jpg",
+      "uploads\\1728996671.jpg",
+      "uploads\\1728996674.jpg",
+      "uploads\\1728996675.jpg",
+      "uploads\\1728996676.jpg",
+      "uploads\\1728996680.jpg",
+      "uploads\\1728996681.jpg",
+      "uploads\\1728996682.jpg",
+      "uploads\\1728996685.jpg",
+      "uploads\\1728996686.jpg",
+      "uploads\\1728996687.jpg",
+      "uploads\\1728996688.jpg",
+      "uploads\\1728996691.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 1,
+    "valid": true,
+    "indexes_in_merged_video": [
+      21,
+      22,
+      27,
+      28,
+      32,
+      33,
+      38
+    ],
+    "description": "Person with tongue out",
+    "comments": "Meets criteria",
+    "image_paths": [
+      "uploads\\1728996683.jpg",
+      "uploads\\1728996684.jpg",
+      "uploads\\1728996689.jpg",
+      "uploads\\1728996690.jpg",
+      "uploads\\1728996694.jpg",
+      "uploads\\1728996695.jpg",
+      "uploads\\1728996700.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 1,
+    "valid": true,
+    "indexes_in_merged_video": [
+      30,
+      31,
+      34,
+      35,
+      36,
+      37,
+      39,
+      40,
+      41,
+      42,
+      43,
+      46,
+      47,
+      48,
+      49
+    ],
+    "description": "Image of a person with similar expressions and lighting",
+    "comments": "Includes a variety of expressions, from neutral to playful",
+    "image_paths": [
+      "uploads\\1728996692.jpg",
+      "uploads\\1728996693.jpg",
+      "uploads\\1728996696.jpg",
+      "uploads\\1728996697.jpg",
+      "uploads\\1728996698.jpg",
+      "uploads\\1728996699.jpg",
+      "uploads\\1728996701.jpg",
+      "uploads\\1728996702.jpg",
+      "uploads\\1728996703.jpg",
+      "uploads\\1728996704.jpg",
+      "uploads\\1728996705.jpg",
+      "uploads\\1728996708.jpg",
+      "uploads\\1728996709.jpg",
+      "uploads\\1728996710.jpg",
+      "uploads\\1728996711.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 1,
+    "valid": true,
+    "indexes_in_merged_video": [
+      45
+    ],
+    "description": "Person with tongue out",
+    "comments": "Meets criteria",
+    "image_paths": [
+      "uploads\\1728996707.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 2,
+    "valid": true,
+    "indexes_in_merged_video": [
+      50,
+      56
+    ],
+    "description": "Person with tongue out",
+    "comments": "Meets criteria",
+    "image_paths": [
+      "uploads\\1728996712.jpg",
+      "uploads\\1728996718.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 1,
+    "valid": true,
+    "indexes_in_merged_video": [
+      44,
+      51,
+      52,
+      53,
+      54,
+      55,
+      57,
       58,
-      59
-    ],
-    "description": "Part of a torso in a grey shirt",
-    "comments": "No additional details",
-    "image_paths": [
-      "uploads\\1728030255.jpg",
-      "uploads\\1728030255.jpg"
-    ],
-    "processed": true
-  },
-  {
-    "video_snippet_id": 1,
-    "valid": true,
-    "indexes_in_merged_video": [
+      59,
       60,
-      61
+      61,
+      62
     ],
-    "description": "Facial expression with a serious look",
-    "comments": "The person has a surprised or puzzled expression.",
+    "description": "Images of a man with a beard and medium-length hair, showing various facial expressions",
+    "comments": "Images depict the individual in a consistent environment, primarily with a neutral or serious expression.",
     "image_paths": [
-      "uploads\\1728286298.jpg",
-      "uploads\\1728286299.jpg"
-    ],
-    "processed": true
-  },
-  {
-    "video_snippet_id": 2,
-    "valid": true,
-    "indexes_in_merged_video": [
-      62,
-      63
-    ],
-    "description": "Facial expression with a big smile",
-    "comments": "The person is grinning widely.",
-    "image_paths": [
-      "uploads\\1728286300.jpg",
-      "uploads\\1728286301.jpg"
+      "uploads\\1728996706.jpg",
+      "uploads\\1728996713.jpg",
+      "uploads\\1728996714.jpg",
+      "uploads\\1728996715.jpg",
+      "uploads\\1728996716.jpg",
+      "uploads\\1728996717.jpg",
+      "uploads\\1728996719.jpg",
+      "uploads\\1728996720.jpg",
+      "uploads\\1728996721.jpg",
+      "uploads\\1728996722.jpg",
+      "uploads\\1728996723.jpg",
+      "uploads\\1728996724.jpg"
     ],
     "processed": true
   },
@@ -48,14 +228,20 @@
     "video_snippet_id": 1,
     "valid": true,
     "indexes_in_merged_video": [
-      64,
-      65
+      0,
+      1,
+      2,
+      3,
+      4
     ],
-    "description": "Surprised expression",
-    "comments": "Both images show a person with a shocked face.",
+    "description": "User with curly hair",
+    "comments": "Various neutral facial expressions",
     "image_paths": [
-      "uploads\\1728286302.jpg",
-      "uploads\\1728286303.jpg"
+      "uploads\\1728996727.jpg",
+      "uploads\\1728996728.jpg",
+      "uploads\\1728996729.jpg",
+      "uploads\\1728996730.jpg",
+      "uploads\\1728996731.jpg"
     ],
     "processed": true
   },
@@ -63,93 +249,26 @@
     "video_snippet_id": 2,
     "valid": true,
     "indexes_in_merged_video": [
-      66,
-      67
+      5,
+      6,
+      7,
+      8,
+      9
     ],
-    "description": "Playful expression",
-    "comments": "The person is sticking out their tongue.",
+    "description": "User with curly hair",
+    "comments": "Smiling and playful expressions",
     "image_paths": [
-      "uploads\\1728286304.jpg",
-      "uploads\\1728286305.jpg"
+      "uploads\\1728996732.jpg",
+      "uploads\\1728996733.jpg",
+      "uploads\\1728996734.jpg",
+      "uploads\\1728996735.jpg",
+      "uploads\\1728996736.jpg"
     ],
     "processed": true
   },
   {
     "valid": true,
-    "image_paths": [
-      "uploads\\1728030196.jpg",
-      "uploads\\1728030197.jpg",
-      "uploads\\1728030198.jpg",
-      "uploads\\1728030199.jpg",
-      "uploads\\1728030200.jpg",
-      "uploads\\1728030201.jpg",
-      "uploads\\1728030202.jpg",
-      "uploads\\1728030203.jpg",
-      "uploads\\1728030204.jpg",
-      "uploads\\1728030205.jpg",
-      "uploads\\1728030206.jpg",
-      "uploads\\1728030207.jpg",
-      "uploads\\1728030208.jpg",
-      "uploads\\1728030209.jpg",
-      "uploads\\1728030210.jpg",
-      "uploads\\1728030211.jpg",
-      "uploads\\1728030212.jpg",
-      "uploads\\1728030213.jpg",
-      "uploads\\1728030214.jpg",
-      "uploads\\1728030215.jpg",
-      "uploads\\1728030216.jpg",
-      "uploads\\1728030217.jpg",
-      "uploads\\1728030218.jpg",
-      "uploads\\1728030219.jpg",
-      "uploads\\1728030220.jpg",
-      "uploads\\1728030221.jpg",
-      "uploads\\1728030222.jpg",
-      "uploads\\1728030223.jpg",
-      "uploads\\1728030224.jpg",
-      "uploads\\1728030225.jpg",
-      "uploads\\1728030226.jpg",
-      "uploads\\1728030227.jpg",
-      "uploads\\1728030228.jpg",
-      "uploads\\1728030229.jpg",
-      "uploads\\1728030230.jpg",
-      "uploads\\1728030231.jpg",
-      "uploads\\1728030232.jpg",
-      "uploads\\1728030233.jpg",
-      "uploads\\1728030234.jpg",
-      "uploads\\1728030235.jpg",
-      "uploads\\1728030236.jpg",
-      "uploads\\1728030237.jpg",
-      "uploads\\1728030238.jpg",
-      "uploads\\1728030239.jpg",
-      "uploads\\1728030240.jpg",
-      "uploads\\1728030241.jpg",
-      "uploads\\1728030242.jpg",
-      "uploads\\1728030243.jpg",
-      "uploads\\1728030244.jpg",
-      "uploads\\1728030245.jpg",
-      "uploads\\1728030246.jpg",
-      "uploads\\1728030247.jpg",
-      "uploads\\1728030248.jpg",
-      "uploads\\1728030249.jpg",
-      "uploads\\1728030250.jpg",
-      "uploads\\1728030251.jpg",
-      "uploads\\1728030253.jpg",
-      "uploads\\1728030253.jpg",
-      "uploads\\1728286306.jpg",
-      "uploads\\1728286307.jpg",
-      "uploads\\1728286308.jpg",
-      "uploads\\1728286309.jpg",
-      "uploads\\1728286310.jpg",
-      "uploads\\1728286311.jpg",
-      "uploads\\1728286312.jpg",
-      "uploads\\1728286313.jpg",
-      "uploads\\1728286314.jpg",
-      "uploads\\1728286315.jpg",
-      "uploads\\1728286316.jpg",
-      "uploads\\1728286317.jpg",
-      "uploads\\1728286318.jpg",
-      "uploads\\1728286319.jpg"
-    ],
+    "image_paths": [],
     "processed": false
   }
 ]

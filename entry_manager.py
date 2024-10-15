@@ -24,7 +24,14 @@ INCOMING_FILE = 'incoming.json'
 OUTGOING_FILE = 'outgoing.json'
 IMAGES_FOLDER = 'images'
 
+global system_prompt
 system_prompt = open("system_prompt.md", "r").read()
+
+def update_system_prompt(path):
+    global system_prompt
+    system_prompt = open(path, "r").read()
+    print(f"System prompt updated to {path}")
+
 
 def load_entries(file_path):
     if os.path.exists(file_path):
