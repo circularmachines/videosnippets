@@ -1,323 +1,154 @@
 [
   {
     "video_snippet_id": 1,
-    "valid": false,
+    "valid": true,
     "indexes_in_merged_video": [
-      0,
-      1
+      58,
+      59
     ],
-    "description": "No item",
-    "comments": "Nothing to index",
+    "description": "Part of a torso in a grey shirt",
+    "comments": "No additional details",
+    "image_paths": [
+      "uploads\\1728030255.jpg",
+      "uploads\\1728030255.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 1,
+    "valid": true,
+    "indexes_in_merged_video": [
+      60,
+      61
+    ],
+    "description": "Facial expression with a serious look",
+    "comments": "The person has a surprised or puzzled expression.",
+    "image_paths": [
+      "uploads\\1728286298.jpg",
+      "uploads\\1728286299.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 2,
+    "valid": true,
+    "indexes_in_merged_video": [
+      62,
+      63
+    ],
+    "description": "Facial expression with a big smile",
+    "comments": "The person is grinning widely.",
+    "image_paths": [
+      "uploads\\1728286300.jpg",
+      "uploads\\1728286301.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 1,
+    "valid": true,
+    "indexes_in_merged_video": [
+      64,
+      65
+    ],
+    "description": "Surprised expression",
+    "comments": "Both images show a person with a shocked face.",
+    "image_paths": [
+      "uploads\\1728286302.jpg",
+      "uploads\\1728286303.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "video_snippet_id": 2,
+    "valid": true,
+    "indexes_in_merged_video": [
+      66,
+      67
+    ],
+    "description": "Playful expression",
+    "comments": "The person is sticking out their tongue.",
+    "image_paths": [
+      "uploads\\1728286304.jpg",
+      "uploads\\1728286305.jpg"
+    ],
+    "processed": true
+  },
+  {
+    "valid": true,
     "image_paths": [
       "uploads\\1728030196.jpg",
-      "uploads\\1728030197.jpg"
-    ],
-    "processed": true
-  },
-  {
-    "video_snippet_id": 1,
-    "valid": true,
-    "indexes_in_merged_video": [
-      2,
-      3,
-      4
-    ],
-    "description": "a Light Bulb",
-    "comments": "clear and round",
-    "image_paths": [
+      "uploads\\1728030197.jpg",
       "uploads\\1728030198.jpg",
       "uploads\\1728030199.jpg",
-      "uploads\\1728030200.jpg"
-    ],
-    "processed": true
-  },
-  {
-    "video_snippet_id": 2,
-    "valid": false,
-    "indexes_in_merged_video": [
-      5,
-      6
-    ],
-    "description": "No item",
-    "comments": "Nothing to index",
-    "image_paths": [
+      "uploads\\1728030200.jpg",
       "uploads\\1728030201.jpg",
-      "uploads\\1728030202.jpg"
-    ],
-    "processed": true
-  },
-  {
-    "video_snippet_id": 1,
-    "valid": true,
-    "indexes_in_merged_video": [
-      7,
-      8,
-      9
-    ],
-    "description": "a Pair of Pliers",
-    "comments": "red handle",
-    "image_paths": [
+      "uploads\\1728030202.jpg",
       "uploads\\1728030203.jpg",
       "uploads\\1728030204.jpg",
-      "uploads\\1728030205.jpg"
-    ],
-    "processed": true
-  },
-  {
-    "video_snippet_id": 2,
-    "valid": false,
-    "indexes_in_merged_video": [
-      10,
-      11
-    ],
-    "description": "No item",
-    "comments": "Nothing to index",
-    "image_paths": [
+      "uploads\\1728030205.jpg",
       "uploads\\1728030206.jpg",
-      "uploads\\1728030207.jpg"
-    ],
-    "processed": true
-  },
-  {
-    "video_snippet_id": 3,
-    "valid": true,
-    "indexes_in_merged_video": [
-      12,
-      13,
-      14
-    ],
-    "description": "a Remote Control",
-    "comments": "colorful buttons",
-    "image_paths": [
+      "uploads\\1728030207.jpg",
       "uploads\\1728030208.jpg",
       "uploads\\1728030209.jpg",
-      "uploads\\1728030210.jpg"
-    ],
-    "processed": true
-  },
-  {
-    "video_snippet_id": 4,
-    "valid": false,
-    "indexes_in_merged_video": [
-      15,
-      16
-    ],
-    "description": "No item",
-    "comments": "Nothing to index",
-    "image_paths": [
+      "uploads\\1728030210.jpg",
       "uploads\\1728030211.jpg",
-      "uploads\\1728030212.jpg"
-    ],
-    "processed": true
-  },
-  {
-    "video_snippet_id": 1,
-    "valid": false,
-    "indexes_in_merged_video": [
-      17
-    ],
-    "description": "No identifiable item",
-    "comments": "Nothing to index",
-    "image_paths": [
-      "uploads\\1728030213.jpg"
-    ],
-    "processed": true
-  },
-  {
-    "video_snippet_id": 2,
-    "valid": true,
-    "indexes_in_merged_video": [
-      18,
-      19,
-      20
-    ],
-    "description": "A USB cable with two connectors",
-    "comments": "Includes USB and another connector",
-    "image_paths": [
+      "uploads\\1728030212.jpg",
+      "uploads\\1728030213.jpg",
       "uploads\\1728030214.jpg",
       "uploads\\1728030215.jpg",
-      "uploads\\1728030216.jpg"
-    ],
-    "processed": true
-  },
-  {
-    "video_snippet_id": 3,
-    "valid": false,
-    "indexes_in_merged_video": [
-      21,
-      22,
-      23
-    ],
-    "description": "No identifiable item",
-    "comments": "Nothing to index",
-    "image_paths": [
+      "uploads\\1728030216.jpg",
       "uploads\\1728030217.jpg",
       "uploads\\1728030218.jpg",
-      "uploads\\1728030219.jpg"
-    ],
-    "processed": true
-  },
-  {
-    "video_snippet_id": 4,
-    "valid": true,
-    "indexes_in_merged_video": [
-      24,
-      25,
-      26,
-      27,
-      28
-    ],
-    "description": "A guitar capo",
-    "comments": "Black, looks like it's spring-loaded",
-    "image_paths": [
+      "uploads\\1728030219.jpg",
       "uploads\\1728030220.jpg",
       "uploads\\1728030221.jpg",
       "uploads\\1728030222.jpg",
       "uploads\\1728030223.jpg",
-      "uploads\\1728030224.jpg"
-    ],
-    "processed": true
-  },
-  {
-    "video_snippet_id": 1,
-    "valid": false,
-    "indexes_in_merged_video": [
-      29,
-      30,
-      31,
-      32,
-      33,
-      34,
-      39,
-      40
-    ],
-    "description": "No item",
-    "comments": "Nothing to index",
-    "image_paths": [
+      "uploads\\1728030224.jpg",
       "uploads\\1728030225.jpg",
       "uploads\\1728030226.jpg",
       "uploads\\1728030227.jpg",
       "uploads\\1728030228.jpg",
       "uploads\\1728030229.jpg",
       "uploads\\1728030230.jpg",
-      "uploads\\1728030235.jpg",
-      "uploads\\1728030236.jpg"
-    ],
-    "processed": true
-  },
-  {
-    "video_snippet_id": 1,
-    "valid": true,
-    "indexes_in_merged_video": [
-      35,
-      36,
-      37,
-      38
-    ],
-    "description": "a small shoe",
-    "comments": "appears to be a child's shoe with laces",
-    "image_paths": [
       "uploads\\1728030231.jpg",
       "uploads\\1728030232.jpg",
       "uploads\\1728030233.jpg",
-      "uploads\\1728030234.jpg"
-    ],
-    "processed": true
-  },
-  {
-    "video_snippet_id": 1,
-    "valid": true,
-    "indexes_in_merged_video": [
-      41,
-      47
-    ],
-    "description": "red audio cable",
-    "comments": "cable with connectors",
-    "image_paths": [
+      "uploads\\1728030234.jpg",
+      "uploads\\1728030235.jpg",
+      "uploads\\1728030236.jpg",
       "uploads\\1728030237.jpg",
-      "uploads\\1728030243.jpg"
-    ],
-    "processed": true
-  },
-  {
-    "video_snippet_id": 2,
-    "valid": false,
-    "indexes_in_merged_video": [
-      48,
-      52
-    ],
-    "description": "No item",
-    "comments": "Nothing to index",
-    "image_paths": [
-      "uploads\\1728030244.jpg",
-      "uploads\\1728030248.jpg"
-    ],
-    "processed": true
-  },
-  {
-    "video_snippet_id": 1,
-    "valid": true,
-    "indexes_in_merged_video": [
-      42,
-      43,
-      44,
-      45,
-      46
-    ],
-    "description": "a Red Cable",
-    "comments": "Red cable with a metallic connector",
-    "image_paths": [
       "uploads\\1728030238.jpg",
       "uploads\\1728030239.jpg",
       "uploads\\1728030240.jpg",
       "uploads\\1728030241.jpg",
-      "uploads\\1728030242.jpg"
-    ],
-    "processed": true
-  },
-  {
-    "video_snippet_id": 2,
-    "valid": false,
-    "indexes_in_merged_video": [
-      49,
-      50,
-      51
-    ],
-    "description": "No item",
-    "comments": "Nothing to index",
-    "image_paths": [
+      "uploads\\1728030242.jpg",
+      "uploads\\1728030243.jpg",
+      "uploads\\1728030244.jpg",
       "uploads\\1728030245.jpg",
       "uploads\\1728030246.jpg",
-      "uploads\\1728030247.jpg"
-    ],
-    "processed": true
-  },
-  {
-    "video_snippet_id": 3,
-    "valid": true,
-    "indexes_in_merged_video": [
-      53,
-      54,
-      55,
-      56,
-      57
-    ],
-    "description": "Guitar String Package",
-    "comments": "High carbon steel, acoustic/electric guitar",
-    "image_paths": [
+      "uploads\\1728030247.jpg",
+      "uploads\\1728030248.jpg",
       "uploads\\1728030249.jpg",
       "uploads\\1728030250.jpg",
       "uploads\\1728030251.jpg",
       "uploads\\1728030253.jpg",
-      "uploads\\1728030253.jpg"
-    ],
-    "processed": true
-  },
-  {
-    "valid": true,
-    "image_paths": [
-      "uploads\\1728030255.jpg",
-      "uploads\\1728030255.jpg"
+      "uploads\\1728030253.jpg",
+      "uploads\\1728286306.jpg",
+      "uploads\\1728286307.jpg",
+      "uploads\\1728286308.jpg",
+      "uploads\\1728286309.jpg",
+      "uploads\\1728286310.jpg",
+      "uploads\\1728286311.jpg",
+      "uploads\\1728286312.jpg",
+      "uploads\\1728286313.jpg",
+      "uploads\\1728286314.jpg",
+      "uploads\\1728286315.jpg",
+      "uploads\\1728286316.jpg",
+      "uploads\\1728286317.jpg",
+      "uploads\\1728286318.jpg",
+      "uploads\\1728286319.jpg"
     ],
     "processed": false
   }

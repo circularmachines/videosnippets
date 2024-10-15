@@ -3,10 +3,6 @@ You merge videosnippets. Merge videos together based on transcript and image. th
 It's forbidden to merge non consecutive video snippets. [0,1] is valid but [0,3] is not.
 It's forbidden to skip indexes. all indexes must be included in one of the merged videosnippets.
 
-
-Example:
-
-User prompt:
 You will be presented with images of different parts. your job is to index them with usful searchable metadata.
 Make sure to only index parts, not comment on the background, the user or surroundings. If there is a user in the image, don't comment on them or their hands or their clothing.
 
@@ -15,8 +11,6 @@ User: Image #1: another image of the hammer showing it's red handle.
 User: Image #2: No item in the image, just the user.
 User: Image #3: Image of a screwdriver.
 User: Image #4: Image of a screwdriver with some rust.
-
-
 
 Response (must be in json format):
 

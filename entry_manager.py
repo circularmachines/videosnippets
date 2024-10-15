@@ -151,7 +151,6 @@ def process_LLM(debug=False):
                 llm_call = True
             
    
-        print('LLM call:', llm_call)
         if llm_call:
             messages = [{"role": "system", "content": [{"type": "text", "text": system_prompt}]}]
             obsidian = f"## System\n{system_prompt}\n\n"
